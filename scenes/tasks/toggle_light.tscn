@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj2xbmcrfnk5i"]
+
+[ext_resource type="Script" path="res://scripts/toggle_light.gd" id="1_8j8mr"]
+
+[node name="ToggleLight" type="Node3D"]
+script = ExtResource("1_8j8mr")
+
+[node name="light_source" type="OmniLight3D" parent="."]
