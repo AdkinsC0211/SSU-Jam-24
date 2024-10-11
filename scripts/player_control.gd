@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_head_bobs(delta)
 	handle_fov_change(delta)
+	handle_interactions()
 	move_and_slide()
 
 func handle_movement(delta: float) -> void:
@@ -83,3 +84,26 @@ func _unhandled_input(event: InputEvent) -> void:
 			#rotate_y(-event.relative.x * SENSITIVITY)
 			camera.rotate_x(-event.relative.y * SENSITIVITY)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(90))
+
+func handle_interactions() -> void:
+	if $Neck/InteractRaycast.is_colliding():
+		var collider = $Neck/InteractRaycast.get_collider()
+		if collider.has_method("display_message"):
+			$GeneralAI/InteractionMessage.text = collider.display_message()
+		if collider.has_method("interact"):
+			if Input.is_action_just_pressed("E"):
+				collider.interact(self)
+	else:
+		$GeneralAI/InteractionMessage.text = "" # Purposefully empty string
+		
+
+func _on_interact_range_body_entered(body: Node3D) -> void:
+	if body.has_method("interact"):
+		$Crosshair.visible = true
+		
+
+
+func _on_interact_range_body_exited(body: Node3D) -> void:
+	if body.has_method("interact"):
+		$Crosshair.visible = false
+		

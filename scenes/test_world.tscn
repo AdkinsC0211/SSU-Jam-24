@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci8bj81omt75j"]
+[gd_scene load_steps=14 format=3 uid="uid://ci8bj81omt75j"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_363oy"]
+[ext_resource type="Script" path="res://scripts/interact_test_object.gd" id="2_s14ch"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ih8j5"]
 size = Vector3(100, 1, 100)
@@ -60,6 +61,9 @@ environment = SubResource("Environment_g5ygm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5797, 8.92134, 13.6462)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_s14ch")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01408, 10.0222, 0.00131989)
