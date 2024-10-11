@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dt6nkja4aj1oi"]
 
-[ext_resource type="Script" path="res://scripts/InteractableStaticBody3D.gd" id="1_8wjgf"]
+[ext_resource type="Script" path="res://scripts/InteractableStaticBody3D.gd" id="1_tfl72"]
 
 [node name="door_interactable_Static" type="StaticBody3D"]
 transform = Transform3D(1.66155, 0, 0, 0, 2.68149, 0, 0, 0, 0.591304, 0, 0, 0)
-script = ExtResource("1_8wjgf")
+script = ExtResource("1_tfl72")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
