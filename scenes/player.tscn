@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://brkxffodp8drd"]
+[gd_scene load_steps=7 format=3 uid="uid://brkxffodp8drd"]
 
 [ext_resource type="Script" path="res://scripts/player_control.gd" id="1_ar4gw"]
+[ext_resource type="PackedScene" uid="uid://bh3gr6e4uk5y1" path="res://scenes/tasks/task_list.tscn" id="2_8o5o2"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_clpwj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ue4"]
@@ -109,6 +110,10 @@ offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
+
+[node name="TaskList" parent="." instance=ExtResource("2_8o5o2")]
+visible = false
+position = Vector2(491.547, 251.953)
 
 [connection signal="body_entered" from="Neck/Interact_Range" to="." method="_on_interact_range_body_entered"]
 [connection signal="body_exited" from="Neck/Interact_Range" to="." method="_on_interact_range_body_exited"]

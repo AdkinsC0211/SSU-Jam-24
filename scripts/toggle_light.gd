@@ -12,16 +12,16 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 	
 	
 func flip_state():
 	toggle = !toggle
 	if toggle:
-		$light_source.light_energy = light_strength
+		$lampshade/light_source.light_energy = light_strength
 		return
-	$light_source.light_energy = 0
+	$lampshade/light_source.light_energy = 0
 	
 	
 	

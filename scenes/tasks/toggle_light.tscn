@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj2xbmcrfnk5i"]
+[gd_scene load_steps=3 format=3 uid="uid://bj2xbmcrfnk5i"]
 
 [ext_resource type="Script" path="res://scripts/toggle_light.gd" id="1_8j8mr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ibs5p"]
 
 [node name="ToggleLight" type="Node3D"]
 script = ExtResource("1_8j8mr")
 
-[node name="light_source" type="OmniLight3D" parent="."]
+[node name="lampshade" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.379778, 0, 0, 0, 0.178446, 0, 0, 0, 0.429917, 0, 0.202398, 0)
+mesh = SubResource("CylinderMesh_ibs5p")
+skeleton = NodePath("light_source")
+
+[node name="light_source" type="OmniLight3D" parent="lampshade"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.07661, 0)

@@ -11,6 +11,9 @@ const FOV_CHANGE := 1.5
 const BOB_FREQ := 2.0
 const BOB_AMP := 0.08
 
+#task list variable
+@onready var quest_log = $TaskList
+
 #onready vars
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
@@ -22,12 +25,17 @@ var t_bob := 0.00
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	#task list starts invisible
+	for task in quest_log.get_children():
+		task.visible = !task.visible
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_head_bobs(delta)
 	handle_fov_change(delta)
 	handle_interactions()
+	handle_quest_journal()
 	move_and_slide()
 
 func handle_movement(delta: float) -> void:
@@ -94,7 +102,11 @@ func handle_interactions() -> void:
 				collider.interact(self)
 	else:
 		$GeneralAI/InteractionMessage.text = "" # Purposefully empty string
-		
+
+func handle_quest_journal() -> void:
+	if Input.is_action_just_pressed("quest_log"):
+		for item in quest_log.get_children():
+			item.visible = !item.visible
 
 func _on_interact_range_body_entered(body: Node3D) -> void:
 	if body.has_method("interact"):
