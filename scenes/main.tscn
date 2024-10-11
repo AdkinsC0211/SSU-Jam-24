@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=19 format=3 uid="uid://bxwg5mmvsjmih"]
 
-[ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_pqm3k"]
+[ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,6 +17,45 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfynk"]
 albedo_color = Color(0, 0.0156863, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgj8x"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dvkt"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc7ig"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyihl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8i4b"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eji0q"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0hc3"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dblik"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayrfp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jadiu"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlu0v"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ab83"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43iwt"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="world_root" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -26,26 +65,144 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hlp1m")
 
-[node name="main_room" type="CSGCombiner3D" parent="."]
+[node name="first_flloor_right" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="large_room" type="CSGBox3D" parent="main_room"]
+[node name="1F_right" type="CSGBox3D" parent="first_flloor_right"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0660229, -0.463239, -6.6512)
 use_collision = true
 size = Vector3(20, 6, 35)
 material = SubResource("StandardMaterial3D_mfynk")
 
-[node name="large_space" type="CSGBox3D" parent="main_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0660229, 2.27621, -6.6512)
-operation = 2
+[node name="1F_left" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6046, -0.463239, 2.65938)
 use_collision = true
-size = Vector3(19, 9, 34)
+size = Vector3(20, 6, 16.3788)
 material = SubResource("StandardMaterial3D_mfynk")
 
-[node name="door_space" type="CSGBox3D" parent="main_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0525513, -0.739582, -23.9702)
+[node name="1F_hallway_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53825, 0.146327, -6.6512)
+operation = 2
+use_collision = true
+size = Vector3(6.05554, 4.74023, 34)
+material = SubResource("StandardMaterial3D_mfynk")
+
+[node name="1F_living_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24735, 0.147853, -15.8472)
+operation = 2
+use_collision = true
+size = Vector3(12.3897, 4.74329, 15.608)
+material = SubResource("StandardMaterial3D_mfynk")
+
+[node name="1F_kitchen_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24735, 0.135097, -1.74246)
+operation = 2
+use_collision = true
+size = Vector3(12.3897, 4.71777, 12.0602)
+material = SubResource("StandardMaterial3D_mfynk")
+
+[node name="front_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34856, -0.739582, -23.9702)
 operation = 2
 size = Vector3(2.12268, 2.96643, 0.842285)
+material = SubResource("StandardMaterial3D_qgj8x")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_pqm3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.18643, -19.0111)
+[node name="living_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.14324, -0.089649, -14.8807)
+operation = 2
+size = Vector3(11.8977, 4.2663, 0.842285)
+material = SubResource("StandardMaterial3D_3dvkt")
+
+[node name="kitchen_door_space1" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.27429, -0.739582, 1.45928)
+operation = 2
+size = Vector3(2.12268, 2.96643, 0.842285)
+material = SubResource("StandardMaterial3D_cc7ig")
+
+[node name="kitchen_door_space2" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26989, -0.089649, -7.93697)
+operation = 2
+size = Vector3(7.76519, 4.2663, 0.842285)
+material = SubResource("StandardMaterial3D_tyihl")
+
+[node name="1F_stairwell_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.27429, -0.0618069, 5.91215)
+operation = 2
+size = Vector3(2.33734, 4.32001, 0.842)
+material = SubResource("StandardMaterial3D_t8i4b")
+
+[node name="stairwell_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24735, 1.28646, 5.95332)
+operation = 2
+use_collision = true
+size = Vector3(12.3897, 7.02051, 2.95487)
+material = SubResource("StandardMaterial3D_mfynk")
+
+[node name="basement_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.27429, -0.739582, 8.92686)
+operation = 2
+size = Vector3(2.12268, 2.96643, 0.842285)
+material = SubResource("StandardMaterial3D_eji0q")
+
+[node name="basement_stair_space" type="CSGPolygon3D" parent="first_flloor_right"]
+transform = Transform3D(1.00179, 0, 0, 0, 1.00906, 0, 0, 0, 2.16719, 0.535973, 0, 10.0025)
+operation = 2
+polygon = PackedVector2Array(-7.62145, -8.12092, -7.64279, -4.94611, 2.31333, 0.735309, 2.32917, -2.36248)
+material = SubResource("StandardMaterial3D_h0hc3")
+
+[node name="1F_lefthall_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.88959, -0.0900018, 8.15431)
+operation = 2
+size = Vector3(4.38716, 4.26464, 0.842)
+material = SubResource("StandardMaterial3D_dblik")
+
+[node name="1F_lefthall_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2618, 0.136463, 8.15518)
+operation = 2
+size = Vector3(4.38889, 4.71063, 13.9322)
+material = SubResource("StandardMaterial3D_ayrfp")
+
+[node name="master_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8418, -0.734494, 5.7019)
+operation = 2
+size = Vector3(2.12268, 2.95625, 0.522583)
+material = SubResource("StandardMaterial3D_jadiu")
+
+[node name="1F_master_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.3973, 0.154324, 0.570865)
+operation = 2
+size = Vector3(9.74181, 4.73631, 13.4788)
+material = SubResource("StandardMaterial3D_ayrfp")
+
+[node name="1F_masterbath_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7962, 0.123164, 0.570865)
+operation = 2
+size = Vector3(9.74181, 4.67635, 5.06168)
+material = SubResource("StandardMaterial3D_ayrfp")
+
+[node name="1F_masterbath_door_space1" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3316, -0.736691, 5.70083)
+operation = 2
+size = Vector3(2.12268, 2.96065, 0.522522)
+material = SubResource("StandardMaterial3D_jlu0v")
+
+[node name="1F_masterbath_door_space2" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.4921, -0.736307, -1.7947)
+operation = 2
+size = Vector3(2.12268, 2.95988, 0.332092)
+material = SubResource("StandardMaterial3D_6ab83")
+
+[node name="1F_closet_door_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8135, -0.735543, 5.7019)
+operation = 2
+size = Vector3(2.12268, 2.95835, 0.521362)
+material = SubResource("StandardMaterial3D_43iwt")
+
+[node name="1F_closet_space" type="CSGBox3D" parent="first_flloor_right"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.8072, 0.135769, 8.15518)
+operation = 2
+size = Vector3(4.38889, 4.7031, 4.63723)
+material = SubResource("StandardMaterial3D_ayrfp")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_mwm7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25987, -1.21188, -22.7394)
