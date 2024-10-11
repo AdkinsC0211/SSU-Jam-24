@@ -5,9 +5,13 @@ var light_toggle: bool = true
 var y_movement: float = -1.3
 @export var controlled_lights: Array[toggle_light] = []
 
+
+	
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	interactMessage = "Press E to turn the light off"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,4 +26,9 @@ func interact(_body: CharacterBody3D) -> void:
 	
 	for light in controlled_lights:
 		light.flip_state()
+		
+	if light_toggle != true:
+		interactMessage = "Press E to turn the lights on"
+	else:
+		interactMessage = "Press E to turn the light off"
 	
