@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://we13p4es2pxs"]
+
+[ext_resource type="Script" path="res://scripts/child.gd" id="1_1gtr3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ebn6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ef37n"]
+
+[node name="InteractableRigidBody3D" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_1gtr3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0ebn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ef37n")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
