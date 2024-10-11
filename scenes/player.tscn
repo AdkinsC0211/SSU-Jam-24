@@ -11,7 +11,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_70rtp"]
 size = Vector3(2, 2, 4)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -111,7 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 
-[node name="TaskList" parent="." instance=ExtResource("2_8o5o2")]
+[node name="TaskList" parent="." groups=["Player"] instance=ExtResource("2_8o5o2")]
 visible = false
 position = Vector2(491.547, 251.953)
 

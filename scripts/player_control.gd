@@ -109,6 +109,7 @@ func handle_quest_journal() -> void:
 			item.visible = !item.visible
 
 func _on_interact_range_body_entered(body: Node3D) -> void:
+	print("")
 	if body.has_method("interact"):
 		$Crosshair.visible = true
 		
