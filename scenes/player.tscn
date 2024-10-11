@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://brkxffodp8drd"]
+
+[ext_resource type="Script" path="res://scripts/player_control.gd" id="1_ar4gw"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_clpwj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ue4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5gl54"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_ar4gw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_t7ue4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5gl54")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.761471, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_clpwj")
+
+[node name="Resume" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Resume"
+
+[connection signal="pressed" from="PauseMenu/Resume" to="PauseMenu" method="_on_resume_pressed"]
