@@ -5,7 +5,7 @@ const JUMP_VELOCITY = 4.5
 var SENSITIVITY = GameInfo.sensitivity
 const WALKSPEED := 5.0
 const RUNSPEED := 10.0
-const BASE_FOV := 75
+var BASE_FOV := GameInfo.fov
 const FOV_CHANGE := 1.5
 
 const BOB_FREQ := 2.0
@@ -88,9 +88,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func handle_interactions() -> void:
 	if $Neck/InteractRaycast.is_colliding():
 		var collider = $Neck/InteractRaycast.get_collider()
-		if collider.has_method("display_message"):
-			$GeneralAI/InteractionMessage.text = collider.display_message()
 		if collider.has_method("interact"):
+			$GeneralAI/InteractionMessage.text = collider.interactMessage
 			if Input.is_action_just_pressed("E"):
 				collider.interact(self)
 	else:
