@@ -27,8 +27,7 @@ func _on_area_3d_body_shape_entered(_body_rid, body, _body_shape_index, _local_s
 
 
 func _on_break_open_delay_timeout():
-	$window_piece_manager/WindowSection.rotate_y(deg_to_rad(90))
-	$window_piece_manager/WindowSection2.rotate_y(deg_to_rad(-90))
+	$AnimationPlayer.play("open_window",-1,1,false)
 	window_open = true
 	$Area3D.queue_free()
 
@@ -37,13 +36,13 @@ func interact(_body: CharacterBody3D) -> void:
 	var rotation_inverter = -1
 	if window_open:
 		rotation_inverter *= -1
-	
-	$window_piece_manager/WindowSection.rotate_y(deg_to_rad(-90 * rotation_inverter))
-	$window_piece_manager/WindowSection2.rotate_y(deg_to_rad(90 * rotation_inverter))
+
 	window_open = !window_open
 	if window_open:
+		$AnimationPlayer.play("open_window",-1,1,false)
 		self.interactMessage = "Press E to close window"
 		$Blinds.interactMessage = "Window is open"
 	else:
+		$AnimationPlayer.play_backwards("open_window",1)
 		self.interactMessage = "Press E to open window"
 		$Blinds.interactMessage = "Press E to close blinds"

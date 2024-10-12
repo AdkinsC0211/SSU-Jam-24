@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf0scv8y2eu8o"]
+[gd_scene load_steps=13 format=3 uid="uid://bf0scv8y2eu8o"]
 
 [ext_resource type="Script" path="res://scripts/window.gd" id="1_3e1ny"]
-[ext_resource type="PackedScene" uid="uid://rirvgn48lwcn" path="res://scenes/smaller parts/window_section.tscn" id="2_8snh0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kvv7r"]
 size = Vector3(8, 1, 4)
@@ -47,7 +46,39 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_uw3r4")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lo8ch"]
-size = Vector3(3.51624, 2.77738, 0.142822)
+size = Vector3(3.62482, 2.77738, 0.142822)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcw67"]
+size = Vector3(1.758, 1, 0.143)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cfb5a"]
+size = Vector3(1.758, 1, 0.143)
+
+[sub_resource type="Animation" id="Animation_dt7nx"]
+resource_name = "open_window"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.03333, 1, 0, 0.707107, 0, 0.707107)
+
+[sub_resource type="Animation" id="Animation_citgj"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkdsv"]
+_data = {
+"RESET": SubResource("Animation_citgj"),
+"open_window": SubResource("Animation_dt7nx")
+}
 
 [node name="Window" type="StaticBody3D"]
 collision_layer = 2
@@ -63,16 +94,9 @@ shape = SubResource("BoxShape3D_kvv7r")
 [node name="break_open_delay" type="Timer" parent="."]
 one_shot = true
 
-[node name="window_piece_manager" type="Node3D" parent="."]
-
-[node name="WindowSection2" parent="window_piece_manager" instance=ExtResource("2_8snh0")]
-transform = Transform3D(1.80216, -2.42703e-07, 8.74228e-08, -1.5755e-07, -2.7762, -7.64274e-15, 1.5755e-07, 0, -1, -1.80194, 0.688136, 0)
-
-[node name="WindowSection" parent="window_piece_manager" instance=ExtResource("2_8snh0")]
-transform = Transform3D(-1.80216, -2.42703e-07, 0, -1.5755e-07, 2.7762, 8.74228e-08, -1.37735e-14, 2.42703e-07, -1, 1.81047, 0.688136, 0)
-
 [node name="Blinds" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28742, 0.663388, 0.183629)
+visible = false
 collision_layer = 2
 collision_mask = 2
 script = SubResource("GDScript_0dbjc")
@@ -87,8 +111,23 @@ transform = Transform3D(3.8, 0, 0, 0, 3, 0, 0, 0, 0.1, 1.24556, 0, 0)
 mesh = SubResource("BoxMesh_gp81f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123901, 0.687953, 0.00744629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542908, 0, 0)
 shape = SubResource("BoxShape3D_lo8ch")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.08496, 0, 0, 0, 2.74232, 0, 0, 0, 0.825958, 0.804687, 0, 0)
+mesh = SubResource("BoxMesh_fcw67")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997784, 0, 0, 0, 2.74232, 0, 0, 0, 0.825958, -0.996234, 1.19209e-07, -0.000496864)
+mesh = SubResource("BoxMesh_cfb5a")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tkdsv")
+}
 
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
 [connection signal="timeout" from="break_open_delay" to="." method="_on_break_open_delay_timeout"]

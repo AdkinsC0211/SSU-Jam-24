@@ -252,4 +252,4 @@ size = Vector3(1.867, 2.8, 0.342)
 material = SubResource("StandardMaterial3D_qgj8x")
 
 [node name="door_interactable_Static" parent="." instance=ExtResource("3_hipbb")]
-transform = Transform3D(-5.2894e-08, 0, 1, 0, 1, 0, -1.21007, 0, -4.37114e-08, 3.99831, -0.395769, 2.48043)
+transform = Transform3D(-5.28938e-08, 0, 1, 0, 1, 0, -1.21007, 0, -4.37114e-08, 3.99831, -0.395769, 2.48043)

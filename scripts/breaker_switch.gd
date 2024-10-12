@@ -6,9 +6,6 @@ var y_movement: float = -1.3
 @export var controlled_lights: Array[toggle_light] = []
 
 
-	
-	
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interactMessage = "Press E to turn the light off"
@@ -24,9 +21,10 @@ func interact(_body: CharacterBody3D) -> void:
 	$breaker_switch.translate(Vector3(0, y_movement, 0))
 	y_movement *= -1
 	
-	for light in controlled_lights:
-		light.flip_state()
-		
+	if len(controlled_lights) > 0:
+		for light in controlled_lights:
+			light.flip_state()
+			
 	if light_toggle != true:
 		interactMessage = "Press E to turn the lights on"
 	else:
