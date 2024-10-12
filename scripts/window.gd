@@ -18,7 +18,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if window_open and $Wind.playing==false:
+		$Wind.play()
+	elif not window_open:
+		if not $AnimationPlayer.is_playing():
+			$Wind.stop()
 	
 func _on_area_3d_body_shape_entered(_body_rid, body, _body_shape_index, _local_shape_index):
 	if body.is_in_group("Player") and window_open == false:

@@ -44,7 +44,6 @@ func _process(_delta: float) -> void:
 		right_gain_mod += check_length/2 - ($RRayCast3D2.get_collision_point() - $RRayCast3D2.global_transform.origin).length() / 2
 	
 	audio_pan.pan = left_gain_mod/check_length - right_gain_mod/check_length
-	print(left_gain_mod/check_length - right_gain_mod/check_length)
 func change_ambience(audiostream:AudioStream):
 	if audiostream != left_ear.stream:
 		var old_left = left_ear
@@ -72,10 +71,10 @@ func change_ambience(audiostream:AudioStream):
 		temp.tween_property(left_ear, "volume_db", -20, 0)
 		temp.tween_property(right_ear, "volume_db", -20, 0)
 		temp.tween_property(back_ear, "volume_db", -20, 0)
-		temp.chain().tween_property(left_ear, "volume_db", 0, 3)
+		temp.chain().tween_property(left_ear, "volume_db", -5, 3)
 		temp.set_parallel(true)
-		temp.tween_property(right_ear, "volume_db", 0, 3)
-		temp.tween_property(back_ear, "volume_db", 0, 3)
+		temp.tween_property(right_ear, "volume_db", -5, 3)
+		temp.tween_property(back_ear, "volume_db", -5, 3)
 		temp.tween_property(old_left, "volume_db", -20, 3)
 		temp.tween_property(old_right, "volume_db", -20, 3)
 		temp.tween_property(old_back, "volume_db", -20, 3)
