@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci8bj81omt75j"]
+[gd_scene load_steps=17 format=3 uid="uid://ci8bj81omt75j"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_363oy"]
 [ext_resource type="Script" path="res://scripts/interact_test_object.gd" id="2_s14ch"]
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="3_ib47n"]
+[ext_resource type="PackedScene" uid="uid://dh5ib2ovyhgg1" path="res://scenes/menus.tscn" id="4_x3oh8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfdvm"]
 
@@ -107,3 +108,5 @@ shape = SubResource("ConvexPolygonShape3D_7cm6f")
 [node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_ib47n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, 16)
 player = NodePath("../CharacterBody3D")
+
+[node name="MenuRoot" parent="." instance=ExtResource("4_x3oh8")]
