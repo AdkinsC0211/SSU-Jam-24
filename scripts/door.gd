@@ -1,6 +1,6 @@
 extends InteractableStaticBody3D
 
-var door_open: bool = false
+var door_open: bool = true
 var door_locked: bool = false
 var first_hit = true
 

@@ -48,4 +48,5 @@ func interact(_body: CharacterBody3D) -> void:
 		else:
 			$AnimationPlayer.play_backwards("open_window",-1)
 			self.interactMessage = "Press E to open window"
+			$Blinds.interactMessage = "Press E to close blinds"
 		window_open = !window_open
