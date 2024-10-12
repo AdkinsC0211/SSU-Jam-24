@@ -86,8 +86,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(90))
 
 func handle_interactions() -> void:
-	if $Neck/InteractRaycast.is_colliding():
-		var collider = $Neck/InteractRaycast.get_collider()
+	if $Neck/Camera3D/InteractRaycast.is_colliding():
+		var collider = $Neck/Camera3D/InteractRaycast.get_collider()
 		if collider.has_method("interact"):
 			$GeneralAI/InteractionMessage.text = collider.interactMessage
 			if Input.is_action_just_pressed("E"):
