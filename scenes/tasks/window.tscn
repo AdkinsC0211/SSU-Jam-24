@@ -1,0 +1,266 @@
+[gd_scene load_steps=17 format=3 uid="uid://bf0scv8y2eu8o"]
+
+[ext_resource type="Script" path="res://scripts/window.gd" id="1_3e1ny"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvv7r"]
+size = Vector3(8, 1, 4)
+
+[sub_resource type="GDScript" id="GDScript_0dbjc"]
+script/source = "extends InteractableStaticBody3D
+
+#blinds variables
+var blinds_open: bool = true
+var blinds_offset_x: float = -3.5
+
+@onready var window_parent = self.get_parent()
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.interactMessage = \"Press E to close blinds\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+
+
+func interact(_body: CharacterBody3D) -> void:
+	if window_parent.window_open == false:
+		#self.translate(Vector3(blinds_offset_x,0,0))
+		blinds_offset_x *= -1
+		if blinds_open: 
+			$AnimationPlayer.play(\"open_blinds\",-1,1,false)
+			self.interactMessage = \"Press E to open blinds\"
+		else:
+			$AnimationPlayer.play_backwards(\"open_blinds\",-1)
+			self.interactMessage = \"Press E to close blinds\"
+		blinds_open = !blinds_open
+	
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kbtkt"]
+size = Vector3(3.8, 3, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uw3r4"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gp81f"]
+material = SubResource("StandardMaterial3D_uw3r4")
+
+[sub_resource type="Animation" id="Animation_tiol4"]
+resource_name = "open_blinds"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.49051, 0, 0.184, 1, 1, -4.99051, 0, 0.184)
+
+[sub_resource type="Animation" id="Animation_2srg5"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.49051, 0, 0.184)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mmi3"]
+_data = {
+"RESET": SubResource("Animation_2srg5"),
+"open_blinds": SubResource("Animation_tiol4")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lo8ch"]
+size = Vector3(3.62482, 2.77738, 0.142822)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcw67"]
+size = Vector3(1.758, 1, 0.143)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cfb5a"]
+size = Vector3(1.758, 1, 0.143)
+
+[sub_resource type="Animation" id="Animation_dt7nx"]
+resource_name = "open_window"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.996234, 1.19209e-07, -0.000496864), Vector3(-1.78261, 1.19209e-07, 0.825575)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.804687, 0, 0), Vector3(1.68796, 0, 0.867573)]
+}
+
+[sub_resource type="Animation" id="Animation_citgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blinds")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -1.40462, 0, 0.184)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.996234, 1.19209e-07, -0.000496864)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.804687, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6abph"]
+resource_name = "open_blinds"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blinds")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.40462, 0, 0.184, 0.966667, 1, -5.05441, 0, 0.184)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkdsv"]
+_data = {
+"RESET": SubResource("Animation_citgj"),
+"open_blinds": SubResource("Animation_6abph"),
+"open_window": SubResource("Animation_dt7nx")
+}
+
+[node name="Window" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_3e1ny")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.218913, -1.13328, 2.2426)
+shape = SubResource("BoxShape3D_kvv7r")
+
+[node name="break_open_delay" type="Timer" parent="."]
+one_shot = true
+
+[node name="Blinds" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49051, 0, 0.184)
+collision_layer = 2
+collision_mask = 2
+script = SubResource("GDScript_0dbjc")
+interactMessage = "Press E to Close blinds"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blinds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07609, -0.00126851, 0)
+shape = SubResource("BoxShape3D_kbtkt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Blinds"]
+transform = Transform3D(3.8, 0, 0, 0, 3, 0, 0, 0, 0.1, 5.07433, 0, 0)
+mesh = SubResource("BoxMesh_gp81f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blinds"]
+libraries = {
+"": SubResource("AnimationLibrary_7mmi3")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542908, 0, 0)
+shape = SubResource("BoxShape3D_lo8ch")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.08496, 0, 0, 0, 2.74232, 0, 0, 0, 0.825958, 0.804687, 0, 0)
+mesh = SubResource("BoxMesh_fcw67")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997784, 0, 0, 0, 2.74232, 0, 0, 0, 0.825958, -0.996234, 1.19209e-07, -0.000496864)
+mesh = SubResource("BoxMesh_cfb5a")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_tkdsv")
+}
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="timeout" from="break_open_delay" to="." method="_on_break_open_delay_timeout"]

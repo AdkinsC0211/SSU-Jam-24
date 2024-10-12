@@ -1,7 +1,15 @@
+
+[gd_scene load_steps=22 format=3 uid="uid://bxwg5mmvsjmih"]
+
 [gd_scene load_steps=29 format=3 uid="uid://bxwg5mmvsjmih"]
+
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
+
+[ext_resource type="PackedScene" path="res://scenes/Child.tscn" id="2_m3mcm"]
+[ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="3_hipbb"]
+
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="2_m3mcm"]
 [ext_resource type="PackedScene" uid="uid://dfrm0uibuqoy1" path="res://scenes/sink.tscn" id="4_bsaok"]
 [ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
@@ -10,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_ial17"]
 [ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
 [ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -262,6 +271,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22599, -4.87239, 7.64973)
 operation = 2
 size = Vector3(1.867, 2.8, 0.342)
 material = SubResource("StandardMaterial3D_qgj8x")
+
+[node name="door_interactable_Static" parent="." instance=ExtResource("3_hipbb")]
+transform = Transform3D(-5.28938e-08, 0, 1, 0, 1, 0, -1.21007, 0, -4.37114e-08, 3.99831, -0.395769, 2.48043)
 
 [node name="Timer" type="Timer" parent="."]
 

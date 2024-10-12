@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://crwrgqnjgnmxf"]
+
+[ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_lsrq3"]
+[ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="2_nkbso"]
+[ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="3_cvn31"]
+[ext_resource type="PackedScene" uid="uid://bf0scv8y2eu8o" path="res://scenes/tasks/window.tscn" id="4_24kd2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7fp57"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3akdr"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjr5a"]
+size = Vector3(129.289, 1.31686, 136.144)
+
+[sub_resource type="Environment" id="Environment_4x1b2"]
+
+[node name="TaskWorld" type="Node3D"]
+
+[node name="RigidBody3D" type="StaticBody3D" parent="."]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="RigidBody3D"]
+transform = Transform3D(45.4718, 0, 0, 0, 1, 0, 0, 0, 48.4802, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7fp57")
+material = SubResource("StandardMaterial3D_3akdr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.719163, 0, 0, 0, 0.719163, 0, 0, 0, 0.719163, 0.148652, 0.0862861, -0.211772)
+shape = SubResource("BoxShape3D_cjr5a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 116.203, 0)
+light_energy = 18.445
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4x1b2")
+
+[node name="BreakerSwitch" parent="." node_paths=PackedStringArray("controlled_lights") instance=ExtResource("2_nkbso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.925, 2.11689, -8.14827)
+controlled_lights = [NodePath("../ToggleLight")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_lsrq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2432, 1.1659, 0.331773)
+
+[node name="ToggleLight" parent="." instance=ExtResource("3_cvn31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -6)
+
+[node name="Window" parent="." instance=ExtResource("4_24kd2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1901, 1.64292, -8.25472)

@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf0scv8y2eu8o"]
+
+[ext_resource type="Script" path="res://scripts/window.gd" id="1_3e1ny"]
+[ext_resource type="PackedScene" uid="uid://rirvgn48lwcn" path="res://scenes/smaller parts/window_section.tscn" id="2_8snh0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvv7r"]
+size = Vector3(8, 1, 4)
+
+[sub_resource type="GDScript" id="GDScript_0dbjc"]
+script/source = "extends InteractableStaticBody3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func interact(body: CharacterBody3D) -> void:
+	print(\"test\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kbtkt"]
+size = Vector3(3.49463, 3.01752, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uw3r4"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gp81f"]
+material = SubResource("StandardMaterial3D_uw3r4")
+
+[node name="Window" type="Node3D"]
+script = ExtResource("1_3e1ny")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.218913, -1.13328, 2.2426)
+shape = SubResource("BoxShape3D_kvv7r")
+
+[node name="break_open_delay" type="Timer" parent="."]
+one_shot = true
+
+[node name="window_piece_manager" type="Node3D" parent="."]
+
+[node name="WindowSection2" parent="window_piece_manager" instance=ExtResource("2_8snh0")]
+transform = Transform3D(1.80216, -2.42703e-07, 8.74228e-08, -1.5755e-07, -2.7762, -7.64274e-15, 1.5755e-07, 0, -1, -1.80194, 0.688136, 0)
+
+[node name="WindowSection" parent="window_piece_manager" instance=ExtResource("2_8snh0")]
+transform = Transform3D(-1.80216, -2.42703e-07, 0, -1.5755e-07, 2.7762, 8.74228e-08, -1.37735e-14, 2.42703e-07, -1, 1.81047, 0.688136, 0)
+
+[node name="Blinds" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28742, 0.663388, 0.41588)
+collision_layer = 2
+collision_mask = 2
+script = SubResource("GDScript_0dbjc")
+interactMessage = "Press E to Close blinds"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blinds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24731, 0.0252991, 0)
+shape = SubResource("BoxShape3D_kbtkt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Blinds"]
+transform = Transform3D(3.5, 0, 0, 0, 3, 0, 0, 0, 0.1, 1.24556, 0, 0)
+mesh = SubResource("BoxMesh_gp81f")
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="timeout" from="break_open_delay" to="." method="_on_break_open_delay_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://brkxffodp8drd"]
+[gd_scene load_steps=7 format=3 uid="uid://brkxffodp8drd"]
 
 [ext_resource type="Script" path="res://scripts/player_control.gd" id="1_ar4gw"]
+[ext_resource type="PackedScene" uid="uid://bh3gr6e4uk5y1" path="res://scenes/tasks/task_list.tscn" id="2_8o5o2"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_clpwj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ue4"]
@@ -14,7 +15,7 @@ height = 3.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_70rtp"]
 size = Vector3(2, 2, 4)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -37,6 +38,7 @@ target_position = Vector3(0, 0, -4)
 collision_mask = 2
 hit_from_inside = true
 
+
 [node name="Hand" type="Node3D" parent="Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.488147, -0.181499, -1.28824)
 
@@ -45,6 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, -0.029471, -0.380296)
 target_position = Vector3(0, 0, -4)
 collision_mask = 4
 hit_from_inside = true
+
 
 [node name="Interact_Range" type="Area3D" parent="Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761471, 0)
@@ -122,6 +125,10 @@ offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
+
+[node name="TaskList" parent="." groups=["Player"] instance=ExtResource("2_8o5o2")]
+visible = false
+position = Vector2(491.547, 251.953)
 
 [connection signal="body_entered" from="Neck/Interact_Range" to="." method="_on_interact_range_body_entered"]
 [connection signal="body_exited" from="Neck/Interact_Range" to="." method="_on_interact_range_body_exited"]
