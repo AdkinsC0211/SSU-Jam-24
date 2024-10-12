@@ -9,17 +9,20 @@ script = ExtResource("1_ykkao")
 [node name="LeftEar" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 stream = ExtResource("2_afcil")
+volume_db = -5.0
 autoplay = true
 max_polyphony = 2
 
 [node name="RightEar" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 stream = ExtResource("2_afcil")
+volume_db = -5.0
 autoplay = true
 
 [node name="BackEar" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 stream = ExtResource("2_afcil")
+volume_db = -5.0
 autoplay = true
 
 [node name="RRayCast3D" type="RayCast3D" parent="."]

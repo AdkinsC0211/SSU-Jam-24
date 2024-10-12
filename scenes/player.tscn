@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bh3gr6e4uk5y1" path="res://scenes/tasks/task_list.tscn" id="2_8o5o2"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_clpwj"]
 [ext_resource type="PackedScene" uid="uid://c725emdf400vl" path="res://scenes/ambient_sounds.tscn" id="2_fjmwk"]
-[ext_resource type="PackedScene" uid="uid://dh5ib2ovyhgg1" path="res://scenes/menus.tscn" id="3_yppsh"]
+[ext_resource type="PackedScene" path="res://scenes/menus.tscn" id="3_yppsh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ue4"]
 radius = 0.25
