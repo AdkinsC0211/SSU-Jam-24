@@ -54,21 +54,6 @@ albedo_color = Color(1, 1, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_y0vpf"]
 material = SubResource("StandardMaterial3D_irojc")
 
-[sub_resource type="Animation" id="Animation_4k23g"]
-resource_name = "lock_door"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door_lock/lock_handle:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.08494e-14, 0, 0), Vector3(0, 1.5708, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_d8r0p"]
 length = 0.001
 tracks/0/type = "value"
@@ -84,6 +69,21 @@ tracks/0/keys = {
 "values": [Vector3(-1.08494e-14, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_4k23g"]
+resource_name = "lock_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_lock/lock_handle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.08494e-14, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bqd53"]
 _data = {
 "RESET": SubResource("Animation_d8r0p"),
@@ -91,7 +91,7 @@ _data = {
 }
 
 [node name="door_interactable_Static" type="StaticBody3D"]
-collision_layer = 2
+collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_pjh63")
 

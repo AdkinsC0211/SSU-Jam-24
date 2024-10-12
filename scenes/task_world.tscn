@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://crwrgqnjgnmxf"]
+[gd_scene load_steps=11 format=3 uid="uid://crwrgqnjgnmxf"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_lsrq3"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="2_nkbso"]
 [ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="3_cvn31"]
 [ext_resource type="PackedScene" uid="uid://bf0scv8y2eu8o" path="res://scenes/tasks/window.tscn" id="4_24kd2"]
 [ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="5_27w22"]
+[ext_resource type="PackedScene" uid="uid://dr62xavsfwvaj" path="res://scenes/tasks/sink_task.tscn" id="6_kxyd2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7fp57"]
 
@@ -53,3 +54,9 @@ interactMessage = "Press E to open window"
 
 [node name="door_interactable_Static" parent="." instance=ExtResource("5_27w22")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2552, 1.75431, -3.44319)
+
+[node name="sink_task_root" parent="." instance=ExtResource("6_kxyd2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.8122, 0.559806, -3.12093)
+completion_time = null
+saves_progress = null
+task_name = "dishes"

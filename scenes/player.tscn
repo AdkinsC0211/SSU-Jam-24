@@ -38,7 +38,6 @@ target_position = Vector3(0, 0, -4)
 collision_mask = 2
 hit_from_inside = true
 
-
 [node name="Hand" type="Node3D" parent="Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.488147, -0.181499, -1.28824)
 
@@ -47,7 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, -0.029471, -0.380296)
 target_position = Vector3(0, 0, -4)
 collision_mask = 4
 hit_from_inside = true
-
 
 [node name="Interact_Range" type="Area3D" parent="Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761471, 0)
