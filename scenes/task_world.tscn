@@ -48,3 +48,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.855, 4.37768, -13.3328)
 
 [node name="Window" parent="." instance=ExtResource("4_24kd2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1072, 2.72331, -13.2648)
+interactMessage = "Press E to open window"

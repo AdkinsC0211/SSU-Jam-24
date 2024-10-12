@@ -33,16 +33,15 @@ func _on_break_open_delay_timeout():
 
 
 func interact(_body: CharacterBody3D) -> void:
-	var rotation_inverter = -1
-	if window_open:
-		rotation_inverter *= -1
-
-	window_open = !window_open
-	if window_open:
-		$AnimationPlayer.play("open_window",-1,1,false)
-		self.interactMessage = "Press E to close window"
-		$Blinds.interactMessage = "Window is open"
+	$AnimationPlayer.active = true
+	if !$Blinds.blinds_open:
+		self.interactMessage = "Blinds are closed"
 	else:
-		$AnimationPlayer.play_backwards("open_window",1)
-		self.interactMessage = "Press E to open window"
-		$Blinds.interactMessage = "Press E to close blinds"
+		if !window_open:
+			$AnimationPlayer.play("open_window",-1,1,false)
+			self.interactMessage = "Press E to close window"
+			$Blinds.interactMessage = "Window is open"
+		else:
+			$AnimationPlayer.play_backwards("open_window",-1)
+			self.interactMessage = "Press E to open window"
+		window_open = !window_open
