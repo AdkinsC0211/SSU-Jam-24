@@ -6,12 +6,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfdvm"]
 
-[sub_resource type="Sky" id="Sky_duprq"]
+[sub_resource type="Sky" id="Sky_sgx0c"]
 sky_material = SubResource("ProceduralSkyMaterial_mfdvm")
 
 [sub_resource type="Environment" id="Environment_g5ygm"]
 background_mode = 2
-sky = SubResource("Sky_duprq")
+sky = SubResource("Sky_sgx0c")
 ambient_light_color = Color(0.567448, 0.480252, 0.130629, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_tbvrl"]
