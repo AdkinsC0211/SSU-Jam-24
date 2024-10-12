@@ -12,6 +12,9 @@ func _ready():
 	optionGroup.visible = false
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$CenterContainer/optionsGroup/CenterContainer/VBoxContainer/fovSlider.value = GameInfo.fov
+	$CenterContainer/optionsGroup/CenterContainer/VBoxContainer/sensSlider.value = GameInfo.sensitivity
+	$CenterContainer/optionsGroup/CenterContainer/VBoxContainer/volSlider.value = GameInfo.volume
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

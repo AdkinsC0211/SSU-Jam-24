@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh5ib2ovyhgg1"]
 
-[ext_resource type="Script" path="res://scripts/pauseMenuFinal.gd" id="1_7quha"]
+[ext_resource type="Script" path="res://scripts/menus.gd" id="1_7quha"]
 [ext_resource type="FontFile" uid="uid://cakknxsgxbvmm" path="res://fonts/Nightmare-Regular.ttf" id="2_8cobt"]
 [ext_resource type="Texture2D" uid="uid://x7bexwq03x65" path="res://images/jotchua.jpg" id="2_arclv"]
 [ext_resource type="Texture2D" uid="uid://br3gsfr1616ux" path="res://images/pauseMessage.PNG" id="4_ox45w"]
@@ -141,6 +141,9 @@ horizontal_alignment = 1
 
 [node name="fovSlider" type="HSlider" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
 layout_mode = 2
+min_value = 60.0
+max_value = 120.0
+value = 60.0
 
 [node name="sensLabel" type="Label" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -151,6 +154,10 @@ horizontal_alignment = 1
 
 [node name="sensSlider" type="HSlider" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
 layout_mode = 2
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.005
 
 [node name="volLabel" type="Label" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
 layout_mode = 2
