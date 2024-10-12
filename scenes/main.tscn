@@ -101,6 +101,8 @@ navigation_mesh = SubResource("NavigationMesh_or7vc")
 
 [node name="first_flloor" type="CSGCombiner3D" parent="NavigationRegion3D"]
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="1F_right" type="CSGBox3D" parent="NavigationRegion3D/first_flloor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0660229, -0.463239, -6.6512)
@@ -240,6 +242,8 @@ material = SubResource("StandardMaterial3D_ayrfp")
 
 [node name="basement" type="CSGCombiner3D" parent="NavigationRegion3D"]
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="BF_basement" type="CSGBox3D" parent="NavigationRegion3D/basement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94213, -4.91346, 1.11027)
@@ -272,18 +276,28 @@ material = SubResource("StandardMaterial3D_qgj8x")
 
 [node name="StaticBody3D" parent="." instance=ExtResource("4_g7j6u")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9, -1.6, -10)
+collision_layer = 5
+collision_mask = 5
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("4_bsaok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85571, -1.62261, -13.8157)
+collision_layer = 5
+collision_mask = 5
 
 [node name="StaticBody3D3" parent="." instance=ExtResource("6_o4r36")]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 6.95053, -1.42755, 10.1113)
+collision_layer = 5
+collision_mask = 5
 
 [node name="GrabbableStaticBody3D" parent="." instance=ExtResource("7_iyfut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84, -0.587164, -10.0261)
+collision_layer = 5
+collision_mask = 5
 
 [node name="GrabbableStaticBody3D2" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "collider")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55034, -1.53437, -18.071)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("8_xm34c")
 mesh = NodePath("MeshInstance3D")
 collider = NodePath("CollisionShape3D")

@@ -84,6 +84,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$PauseMenu.visible = true
 		get_tree().paused = true
+	if event.is_action_pressed("F") and $Neck/Camera3D/PlaceRaycast.is_colliding():
+		dropItem($Neck/Camera3D/PlaceRaycast.get_collision_point())
+		heldItem = null
+		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * SENSITIVITY)
@@ -95,7 +99,13 @@ func handle_interactions() -> void:
 	if $Neck/Camera3D/InteractRaycast.is_colliding():
 		var collider = $Neck/Camera3D/InteractRaycast.get_collider()
 		if collider.has_method("interact"):
-			$GeneralAI/InteractionMessage.text = collider.interactMessage
+			if collider is GrabbableStaticBody3D:
+				if not handsFull:
+					$GeneralAI/InteractionMessage.text = collider.interactMessage
+				else:
+					$GeneralAI/InteractionMessage.text = collider.interactMessageSecondary
+			else:
+				$GeneralAI/InteractionMessage.text = collider.interactMessage
 			if Input.is_action_just_pressed("E"):
 				collider.interact(self)
 				if collider is GrabbableStaticBody3D:
@@ -103,12 +113,10 @@ func handle_interactions() -> void:
 					handsFull = true
 	else:
 		$GeneralAI/InteractionMessage.text = "" # Purposefully empty string
-		
 
 func _on_interact_range_body_entered(body: Node3D) -> void:
 	if body.has_method("interact"):
 		$Crosshair.visible = true
-		
 
 func dropItem(pos : Vector3):
 	if heldItem:
