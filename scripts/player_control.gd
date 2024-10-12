@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@export var handsFull := false
+@export var hand : Node3D
+
 #relative constants
 const JUMP_VELOCITY = 4.5
 var SENSITIVITY = GameInfo.sensitivity
@@ -18,9 +21,12 @@ const BOB_AMP := 0.08
 #globals
 var speed = WALKSPEED
 var t_bob := 0.00
+var heldItem : GrabbableStaticBody3D
 
 
 func _ready() -> void:
+	if not hand:
+		hand = $Neck/Camera3D/Hand
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
@@ -92,6 +98,9 @@ func handle_interactions() -> void:
 			$GeneralAI/InteractionMessage.text = collider.interactMessage
 			if Input.is_action_just_pressed("E"):
 				collider.interact(self)
+				if collider is GrabbableStaticBody3D:
+					heldItem = collider
+					handsFull = true
 	else:
 		$GeneralAI/InteractionMessage.text = "" # Purposefully empty string
 		
@@ -101,6 +110,10 @@ func _on_interact_range_body_entered(body: Node3D) -> void:
 		$Crosshair.visible = true
 		
 
+func dropItem(pos : Vector3):
+	if heldItem:
+		heldItem.dropItem(pos)
+		handsFull = false
 
 func _on_interact_range_body_exited(body: Node3D) -> void:
 	if body.has_method("interact"):

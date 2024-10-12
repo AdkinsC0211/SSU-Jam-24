@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=30 format=3 uid="uid://bxwg5mmvsjmih"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dfrm0uibuqoy1" path="res://scenes/sink.tscn" id="4_bsaok"]
 [ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
 [ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
+[ext_resource type="PackedScene" uid="uid://c73xtpg2xdj25" path="res://scenes/grabbable_test_object.tscn" id="7_iyfut"]
+[ext_resource type="Script" path="res://scripts/GrabbableStaticBody3D.gd" id="8_xm34c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,6 +67,17 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43iwt"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5e2y7"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpxhw"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rh8a5"]
+points = PackedVector3Array(0.057132, 0.253968, 0.00951449, -0.0539574, -0.253968, -0.022216, -0.0539574, -0.253968, 0.0253906, -0.0539574, 0.253968, -0.022216, 0.0253906, -0.253968, -0.0539574, 0.00951449, -0.253968, 0.057132, -0.0142779, 0.253968, 0.057132, -0.022216, 0.253968, -0.0539574, 0.057132, -0.253968, 0.00951449, 0.0491939, 0.253968, -0.0301432, 0.0333178, 0.253968, 0.0491939, -0.0539574, 0.253968, 0.0253906, -0.0380813, -0.253968, -0.0460193, 0.0253906, 0.253968, -0.0539574, 0.0491939, -0.253968, 0.0333178, 0.057132, -0.253968, -0.0142779, -0.0301432, -0.253968, 0.0491939, -0.022216, -0.253968, -0.0539574, -0.0460193, 0.253968, -0.0380813, 0.0333178, -0.253968, 0.0491939, 0.0491939, 0.253968, 0.0333178, -0.0142779, -0.253968, 0.057132, 0.00951449, 0.253968, 0.057132, 0.057132, 0.253968, -0.0142779, -0.0301432, 0.253968, 0.0491939, 0.0491939, -0.253968, -0.0301432, -0.0460193, -0.253968, -0.0380813, -0.0380813, 0.253968, -0.0460193)
 
 [node name="world_root" type="Node3D"]
 script = ExtResource("1_4xf7i")
@@ -265,5 +278,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85571, -1.62261, -13.8157)
 
 [node name="StaticBody3D3" parent="." instance=ExtResource("6_o4r36")]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 6.95053, -1.42755, 10.1113)
+
+[node name="GrabbableStaticBody3D" parent="." instance=ExtResource("7_iyfut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84, -0.587164, -10.0261)
+
+[node name="GrabbableStaticBody3D2" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "collider")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55034, -1.53437, -18.071)
+script = ExtResource("8_xm34c")
+mesh = NodePath("MeshInstance3D")
+collider = NodePath("CollisionShape3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableStaticBody3D2"]
+mesh = SubResource("CylinderMesh_5e2y7")
+surface_material_override/0 = SubResource("StandardMaterial3D_vpxhw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableStaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_rh8a5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
