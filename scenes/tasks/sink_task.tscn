@@ -23,43 +23,8 @@ interactMessage = "Press E to do dishes"
 [node name="sink" parent="." instance=ExtResource("1_brxka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0836785, 0, -0.0143694)
 
-[node name="GrabbableStaticBody3D" parent="." instance=ExtResource("3_gqx3n")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0491921, 0.891884, -0.274802)
-collision_layer = 0
-collision_mask = 0
-
-[node name="GrabbableStaticBody3D2" parent="." instance=ExtResource("4_tpiby")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0478774, 0.903572, 0.552964)
-collision_layer = 0
-collision_mask = 0
-
-[node name="GrabbableStaticBody3D4" parent="." instance=ExtResource("5_glr4d")]
-transform = Transform3D(0.235704, 0, 0, 0, 0.174862, -0.15805, 0, 0.15805, 0.174862, -0.0702484, 0.998077, -0.671664)
-collision_layer = 0
-collision_mask = 0
-
-[node name="GrabbableStaticBody3D5" parent="." instance=ExtResource("5_glr4d")]
-transform = Transform3D(0.0845619, 0.131213, 0.0829609, 0.0140442, 0.087617, -0.152892, -0.154603, 0.0797276, 0.0314877, -0.211461, 0.977348, -0.462151)
-collision_layer = 0
-collision_mask = 0
-
-[node name="GrabbableStaticBody3D6" parent="." instance=ExtResource("6_jxm4w")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0446622, 0.931105, -0.272757)
-collision_layer = 0
-collision_mask = 0
-
-[node name="GrabbableStaticBody3D7" parent="." instance=ExtResource("6_jxm4w")]
-transform = Transform3D(0.038083, -0.297573, 0, 0.226472, 0.0289836, 0.194603, -0.193029, -0.0247036, 0.228319, 0.0404562, 0.861768, 0.224355)
-collision_layer = 0
-collision_mask = 0
-
-[node name="GrabbableStaticBody3D8" parent="." instance=ExtResource("3_gqx3n")]
-transform = Transform3D(0.16319, 0.251732, 0, -0.251732, 0.16319, 0, 0, 0, 0.3, -0.218121, 0.918888, 0.238479)
-collision_layer = 0
-collision_mask = 0
-
 [node name="water" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.325813, 0, 0, 0, 1, 0, 0, 0, 0.792966, 0, 0.913835, 0)
+transform = Transform3D(0.325813, 0, 0, 0, 1, 0, 0, 0, 0.792966, 0, 0.66557, 0)
 mesh = SubResource("PlaneMesh_dwihk")
 
 [node name="sink_collider" type="CollisionShape3D" parent="."]
@@ -69,9 +34,41 @@ shape = SubResource("BoxShape3D_1v8dc")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_right = 4.0
-offset_bottom = 27.0
-show_percentage = false
+[node name="dish_manager" type="Node3D" parent="."]
+
+[node name="GrabbableStaticBody3D" parent="dish_manager" instance=ExtResource("3_gqx3n")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0491921, 0.891884, -0.274802)
+collision_layer = 0
+collision_mask = 0
+
+[node name="GrabbableStaticBody3D2" parent="dish_manager" instance=ExtResource("4_tpiby")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0478774, 0.903572, 0.552964)
+collision_layer = 0
+collision_mask = 0
+
+[node name="GrabbableStaticBody3D4" parent="dish_manager" instance=ExtResource("5_glr4d")]
+transform = Transform3D(0.235704, 0, 0, 0, 0.174862, -0.15805, 0, 0.15805, 0.174862, -0.0702484, 0.998077, -0.671664)
+collision_layer = 0
+collision_mask = 0
+
+[node name="GrabbableStaticBody3D5" parent="dish_manager" instance=ExtResource("5_glr4d")]
+transform = Transform3D(0.0845619, 0.131213, 0.0829609, 0.0140442, 0.087617, -0.152892, -0.154603, 0.0797276, 0.0314877, -0.211461, 0.977348, -0.462151)
+collision_layer = 0
+collision_mask = 0
+
+[node name="GrabbableStaticBody3D6" parent="dish_manager" instance=ExtResource("6_jxm4w")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0446622, 0.931105, -0.272757)
+collision_layer = 0
+collision_mask = 0
+
+[node name="GrabbableStaticBody3D7" parent="dish_manager" instance=ExtResource("6_jxm4w")]
+transform = Transform3D(0.038083, -0.297573, 0, 0.226472, 0.0289836, 0.194603, -0.193029, -0.0247036, 0.228319, 0.0404562, 0.861768, 0.224355)
+collision_layer = 0
+collision_mask = 0
+
+[node name="GrabbableStaticBody3D8" parent="dish_manager" instance=ExtResource("3_gqx3n")]
+transform = Transform3D(0.16319, 0.251732, 0, -0.251732, 0.16319, 0, 0, 0, 0.3, -0.218121, 0.918888, 0.238479)
+collision_layer = 0
+collision_mask = 0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

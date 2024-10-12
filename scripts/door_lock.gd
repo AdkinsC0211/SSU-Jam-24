@@ -1,7 +1,7 @@
 extends InteractableStaticBody3D
 
 var door_locked: bool = false
-@onready var parent = self.get_parent()
+@onready var parent = self.get_parent().get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
