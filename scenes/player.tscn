@@ -4,8 +4,12 @@
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_clpwj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ue4"]
+radius = 0.25
+height = 3.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5gl54"]
+radius = 0.25
+height = 3.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_70rtp"]
 size = Vector3(2, 2, 4)
@@ -23,7 +27,7 @@ mesh = SubResource("CapsuleMesh_t7ue4")
 shape = SubResource("CapsuleShape3D_5gl54")
 
 [node name="Neck" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.761471, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15105, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=29 format=3 uid="uid://bxwg5mmvsjmih"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dfrm0uibuqoy1" path="res://scenes/sink.tscn" id="4_bsaok"]
 [ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
 [ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
-[ext_resource type="PackedScene" uid="uid://c73xtpg2xdj25" path="res://scenes/grabbable_test_object.tscn" id="7_iyfut"]
-[ext_resource type="Script" path="res://scripts/GrabbableStaticBody3D.gd" id="8_xm34c"]
+[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_rng1w"]
+[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_ial17"]
+[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
+[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -68,17 +70,6 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43iwt"]
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_5e2y7"]
-top_radius = 0.05
-bottom_radius = 0.05
-height = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpxhw"]
-albedo_color = Color(0, 1, 0, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rh8a5"]
-points = PackedVector3Array(0.057132, 0.253968, 0.00951449, -0.0539574, -0.253968, -0.022216, -0.0539574, -0.253968, 0.0253906, -0.0539574, 0.253968, -0.022216, 0.0253906, -0.253968, -0.0539574, 0.00951449, -0.253968, 0.057132, -0.0142779, 0.253968, 0.057132, -0.022216, 0.253968, -0.0539574, 0.057132, -0.253968, 0.00951449, 0.0491939, 0.253968, -0.0301432, 0.0333178, 0.253968, 0.0491939, -0.0539574, 0.253968, 0.0253906, -0.0380813, -0.253968, -0.0460193, 0.0253906, 0.253968, -0.0539574, 0.0491939, -0.253968, 0.0333178, 0.057132, -0.253968, -0.0142779, -0.0301432, -0.253968, 0.0491939, -0.022216, -0.253968, -0.0539574, -0.0460193, 0.253968, -0.0380813, 0.0333178, -0.253968, 0.0491939, 0.0491939, 0.253968, 0.0333178, -0.0142779, -0.253968, 0.057132, 0.00951449, 0.253968, 0.057132, 0.057132, 0.253968, -0.0142779, -0.0301432, 0.253968, 0.0491939, 0.0491939, -0.253968, -0.0301432, -0.0460193, -0.253968, -0.0380813, -0.0380813, 0.253968, -0.0460193)
-
 [node name="world_root" type="Node3D"]
 script = ExtResource("1_4xf7i")
 
@@ -90,7 +81,7 @@ shadow_enabled = true
 environment = SubResource("Environment_hlp1m")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_mwm7c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25987, -1.21188, -22.7394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25987, -0.888321, -22.7394)
 
 [node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_m3mcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6461, -1.05453, 8.2743)
@@ -289,24 +280,16 @@ transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 
 collision_layer = 5
 collision_mask = 5
 
-[node name="GrabbableStaticBody3D" parent="." instance=ExtResource("7_iyfut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84, -0.587164, -10.0261)
-collision_layer = 5
-collision_mask = 5
+[node name="Bowl" parent="." instance=ExtResource("9_jdxiq")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.73578, -0.4689, -10.3192)
 
-[node name="GrabbableStaticBody3D2" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "collider")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55034, -1.53437, -18.071)
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("8_xm34c")
-mesh = NodePath("MeshInstance3D")
-collider = NodePath("CollisionShape3D")
+[node name="Cup" parent="." instance=ExtResource("8_rng1w")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.2511, -0.441621, -10.0693)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabbableStaticBody3D2"]
-mesh = SubResource("CylinderMesh_5e2y7")
-surface_material_override/0 = SubResource("StandardMaterial3D_vpxhw")
+[node name="Mug" parent="." instance=ExtResource("9_ial17")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.15578, -0.429768, -9.67901)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabbableStaticBody3D2"]
-shape = SubResource("ConvexPolygonShape3D_rh8a5")
+[node name="Plate" parent="." instance=ExtResource("10_mixt5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.79919, -0.576253, -9.8933)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
