@@ -94,6 +94,7 @@ _data = {
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_pjh63")
+interactMessage = "Press E to open door"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.51975, 0, 0, 0, 2.36445, 0, 0, 0, 0.414444, 0.770835, 0, 0)
@@ -119,6 +120,7 @@ transform = Transform3D(0.247497, 0, 0, 0, -1.08185e-08, -0.247497, 0, 0.247497,
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_xnpr0")
+interactMessage = "Press E to lock door"
 
 [node name="lock_cover" type="MeshInstance3D" parent="door_lock"]
 mesh = SubResource("CylinderMesh_1sfab")

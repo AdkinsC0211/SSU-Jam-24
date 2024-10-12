@@ -17,10 +17,12 @@ func interact(_body: CharacterBody3D) -> void:
 	$AnimationPlayer.active = true
 	
 	if door_open:
-		$AnimationPlayer.play_backwards("rotation",1)
-		
-	elif !door_locked:
+		#$AnimationPlayer.play_backwards("rotation",-1)
 		$AnimationPlayer.play("rotation",-1,1,false)
+		
+	elif !door_open and !door_locked:
+		#$AnimationPlayer.play("rotation",-1,1,false)
+		$AnimationPlayer.play_backwards("rotation",-1)
 		
 	elif door_locked and door_open:
 		$AnimationPlayer.play_backwards("rotation",1)

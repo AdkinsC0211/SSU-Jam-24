@@ -52,9 +52,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.855, 4.37768, -13.3328)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1072, 2.72331, -13.2648)
 interactMessage = "Press E to open window"
 
-[node name="door_interactable_Static" parent="." instance=ExtResource("5_27w22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2552, 1.75431, -3.44319)
-
 [node name="sink_task_root" parent="." instance=ExtResource("6_kxyd2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.8122, 0.559806, -3.12093)
 task_name = "dishes"
+
+[node name="door_interactable_Static" parent="." instance=ExtResource("5_27w22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8141, 1.77886, -3.57972)
