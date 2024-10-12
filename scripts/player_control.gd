@@ -1,12 +1,15 @@
 extends CharacterBody3D
 
+@export var handsFull := false
+@export var hand : Node3D
+
 #relative constants
 const JUMP_VELOCITY = 4.5
 var SENSITIVITY = GameInfo.sensitivity
-const WALKSPEED := 5.0
-const RUNSPEED := 10.0
+const WALKSPEED := 3.0
+const RUNSPEED := 6.0
 var BASE_FOV := GameInfo.fov
-const FOV_CHANGE := 1.5
+const FOV_CHANGE := 1.25
 
 const BOB_FREQ := 2.0
 const BOB_AMP := 0.08
@@ -21,9 +24,12 @@ const BOB_AMP := 0.08
 #globals
 var speed = WALKSPEED
 var t_bob := 0.00
+var heldItem : GrabbableStaticBody3D
 
 
 func _ready() -> void:
+	if not hand:
+		hand = $Neck/Camera3D/Hand
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	#task list starts invisible
@@ -86,6 +92,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$PauseMenu.visible = true
 		get_tree().paused = true
+	if event.is_action_pressed("F") and $Neck/Camera3D/PlaceRaycast.is_colliding():
+		dropItem($Neck/Camera3D/PlaceRaycast.get_collision_point())
+		heldItem = null
+		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * SENSITIVITY)
@@ -97,23 +107,37 @@ func handle_interactions() -> void:
 	if $Neck/Camera3D/InteractRaycast.is_colliding():
 		var collider = $Neck/Camera3D/InteractRaycast.get_collider()
 		if collider.has_method("interact"):
-			$GeneralAI/InteractionMessage.text = collider.interactMessage
+			if collider is GrabbableStaticBody3D:
+				if not handsFull:
+					$GeneralAI/InteractionMessage.text = collider.interactMessage
+				else:
+					$GeneralAI/InteractionMessage.text = collider.interactMessageSecondary
+			else:
+				$GeneralAI/InteractionMessage.text = collider.interactMessage
 			if Input.is_action_just_pressed("E"):
 				collider.interact(self)
+				if collider is GrabbableStaticBody3D:
+					heldItem = collider
+					handsFull = true
 	else:
 		$GeneralAI/InteractionMessage.text = "" # Purposefully empty string
+
 
 func handle_quest_journal() -> void:
 	if Input.is_action_just_pressed("quest_log"):
 		for item in quest_log.get_children():
 			item.visible = !item.visible
 
+
 func _on_interact_range_body_entered(body: Node3D) -> void:
 	print("")
 	if body.has_method("interact"):
 		$Crosshair.visible = true
-		
 
+func dropItem(pos : Vector3):
+	if heldItem:
+		heldItem.dropItem(pos)
+		handsFull = false
 
 func _on_interact_range_body_exited(body: Node3D) -> void:
 	if body.has_method("interact"):
