@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dt6nkja4aj1oi"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_pjh63"]
-[ext_resource type="Script" path="res://scenes/door_lock.gd" id="2_xnpr0"]
+[ext_resource type="Script" path="res://scripts/door_lock.gd" id="2_xnpr0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gt14"]
 albedo_color = Color(0.513753, 1.11904e-06, 1.92523e-07, 1)
