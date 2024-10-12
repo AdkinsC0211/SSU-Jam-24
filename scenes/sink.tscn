@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dfrm0uibuqoy1"]
+[gd_scene load_steps=33 format=4 uid="uid://blw7bjna5m2j8"]
 
 [ext_resource type="Script" path="res://scripts/hinged_door.gd" id="1_yrrdk"]
 
@@ -492,59 +492,58 @@ points = PackedVector3Array(0.202733, -1.92634, 0.086988, -0.0289619, 1.66466, 2
 [node name="StaticBody3D" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 2.40746)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_17ea8")
 
 [node name="Sink" type="Node3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="sink_cabinet" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.02487)
 mesh = SubResource("ArrayMesh_swp26")
 skeleton = NodePath("")
 
 [node name="sink" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1096, 2.69244, 8.02099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1096, 2.69244, 0)
 mesh = SubResource("ArrayMesh_66m7o")
 skeleton = NodePath("")
 
 [node name="faucet" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(0.135921, 0, 0, 0, 0.160822, 0, 0, 0, 0.135921, -1.04569, 3.9626, 8.01291)
+transform = Transform3D(0.135921, 0, 0, 0, 0.160822, 0, 0, 0, 0.135921, -1.04569, 3.9626, 0)
 mesh = SubResource("ArrayMesh_3ddwm")
 skeleton = NodePath("")
 
 [node name="faucet_holder" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(0.135921, 0, 0, 0, 0.160822, 0, 0, 0, 0.135921, -1.04569, 3.75176, 8.01291)
+transform = Transform3D(0.135921, 0, 0, 0, 0.160822, 0, 0, 0, 0.135921, -1.04569, 3.75176, 0)
 mesh = SubResource("ArrayMesh_mlf8k")
 skeleton = NodePath("")
 
 [node name="left_sink_handle" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(0.14064, 0, 0, 0, 0.14064, 0, 0, 0, 0.14064, -1.05297, 3.87589, 8.98149)
+transform = Transform3D(0.14064, 0, 0, 0, 0.14064, 0, 0, 0, 0.14064, -1.05297, 3.87589, 0)
 mesh = SubResource("ArrayMesh_nipmn")
 skeleton = NodePath("")
 
 [node name="left_sink_handle_extender" type="MeshInstance3D" parent="Sink/left_sink_handle"]
-transform = Transform3D(0.574376, 0, 0, 0, 0, 0.574376, 0, -0.574376, 0, 0, 0, 2.7444)
+transform = Transform3D(0.574376, 0, 0, 0, 0, 0.574376, 0, -0.574376, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_g7kbo")
 skeleton = NodePath("")
 
 [node name="left_sink_handle_holder" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(0.0565415, 0, 0, 0, 0.0933328, 0, 0, 0, 0.0565415, -1.05297, 3.66958, 8.98149)
+transform = Transform3D(0.0565415, 0, 0, 0, 0.0933328, 0, 0, 0, 0.0565415, -1.05297, 3.66958, 0)
 mesh = SubResource("ArrayMesh_8mbky")
 skeleton = NodePath("")
 
 [node name="right_sink_handle" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(0.14064, 0, 0, 0, 0.14064, 0, 0, 0, 0.14064, -1.05297, 3.87589, 7.06048)
+transform = Transform3D(0.14064, 0, 0, 0, 0.14064, 0, 0, 0, 0.14064, -1.05297, 3.87589, 0)
 mesh = SubResource("ArrayMesh_25h81")
 skeleton = NodePath("")
 
 [node name="right_sink_handle_extender" type="MeshInstance3D" parent="Sink/right_sink_handle"]
-transform = Transform3D(0.574376, 0, 0, 0, 0, 0.574376, 0, -0.574376, 0, 0, 0, -2.74441)
+transform = Transform3D(0.574376, 0, 0, 0, 0, 0.574376, 0, -0.574376, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_q7880")
 skeleton = NodePath("")
 
 [node name="right_sink_handle_holder" type="MeshInstance3D" parent="Sink"]
-transform = Transform3D(0.0565415, 0, 0, 0, 0.0933328, 0, 0, 0, 0.0565415, -1.05297, 3.67861, 7.06048)
+transform = Transform3D(0.0565415, 0, 0, 0, 0.0933328, 0, 0, 0, 0.0565415, -1.05297, 3.67861, 0)
 mesh = SubResource("ArrayMesh_ouoa0")
 skeleton = NodePath("")
 
@@ -554,12 +553,12 @@ mesh = NodePath("left_sink_cabinet_door")
 interactCollider = NodePath("CollisionShape3D")
 
 [node name="left_sink_cabinet_door" type="MeshInstance3D" parent="Sink/LeftCabinet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.000986338, 10.9155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.000986338, 0)
 mesh = SubResource("ArrayMesh_4qjoy")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sink/LeftCabinet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.000986338, 10.9155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.000986338, 0)
 shape = SubResource("ConvexPolygonShape3D_06tti")
 
 [node name="RightCabinet" type="StaticBody3D" parent="Sink" node_paths=PackedStringArray("mesh", "interactCollider")]
@@ -569,10 +568,10 @@ interactCollider = NodePath("CollisionShape3D")
 openDegrees = -150
 
 [node name="right_sink_cabinet_door" type="MeshInstance3D" parent="Sink/RightCabinet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.188917, 5.13425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.188917, 0)
 mesh = SubResource("ArrayMesh_m37ws")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sink/RightCabinet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.188917, 5.13425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.188917, 0)
 shape = SubResource("ConvexPolygonShape3D_m771u")

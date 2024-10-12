@@ -106,6 +106,4 @@ shape = SubResource("ConvexPolygonShape3D_7cm6f")
 
 [node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_ib47n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, 16)
-collision_layer = 3
-collision_mask = 3
 player = NodePath("../CharacterBody3D")

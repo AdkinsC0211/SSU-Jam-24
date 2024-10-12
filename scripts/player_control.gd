@@ -17,6 +17,9 @@ const BOB_AMP := 0.08
 #task list variable
 @onready var quest_log = $TaskList
 
+#wait time task variables
+var doing_wait_task: bool = false
+
 #onready vars
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
@@ -71,6 +74,9 @@ func handle_movement(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, direction.x * WALKSPEED, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * WALKSPEED, delta * 3.0)
+	
+	if doing_wait_task:
+		velocity = Vector3(0,0,0)
 
 func handle_head_bobs(delta: float) -> void:
 	t_bob += delta * velocity.length() * float(is_on_floor())
