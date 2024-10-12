@@ -32,9 +32,8 @@ var heldItem : GrabbableStaticBody3D
 
 func _ready() -> void:
 	if not hand:
-		hand = $Neck/Camera3D/Hand
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+		hand = $Neck/Camera3D/Hand	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#task list starts invisible
 	for task in quest_log.get_children():
 		task.visible = !task.visible
@@ -96,7 +95,7 @@ func handle_fov_change(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$PauseMenu.visible = true
+		$MenuRoot.visible = true
 		get_tree().paused = true
 	if event.is_action_pressed("F") and $Neck/Camera3D/PlaceRaycast.is_colliding():
 		dropItem($Neck/Camera3D/PlaceRaycast.get_collision_point())
