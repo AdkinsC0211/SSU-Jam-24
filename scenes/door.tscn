@@ -1,12 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt6nkja4aj1oi"]
+[gd_scene load_steps=4 format=3 uid="uid://dt6nkja4aj1oi"]
 
 [ext_resource type="Script" path="res://scripts/InteractableStaticBody3D.gd" id="1_tfl72"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_s10eo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6sjas"]
+size = Vector3(1.52014, 2.36336, 0.42749)
+
 [node name="door_interactable_Static" type="StaticBody3D"]
-transform = Transform3D(1.66155, 0, 0, 0, 2.68149, 0, 0, 0, 0.591304, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_tfl72")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.51975, 0, 0, 0, 2.36445, 0, 0, 0, 0.414444, 0.770835, 0, 0)
+mesh = SubResource("BoxMesh_s10eo")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.770835, 0, 0)
+visible = false
 operation = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.770835, 0.001091, 0.00158691)
+shape = SubResource("BoxShape3D_6sjas")

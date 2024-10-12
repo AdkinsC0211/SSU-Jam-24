@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=22 format=3 uid="uid://bxwg5mmvsjmih"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
-[ext_resource type="PackedScene" path="res://scenes/Child.tscn" id="2_m3mcm"]
+[ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="2_m3mcm"]
+[ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="3_hipbb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -249,3 +250,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22599, -4.87239, 7.64973)
 operation = 2
 size = Vector3(1.867, 2.8, 0.342)
 material = SubResource("StandardMaterial3D_qgj8x")
+
+[node name="door_interactable_Static" parent="." instance=ExtResource("3_hipbb")]
+transform = Transform3D(-5.2894e-08, 0, 1, 0, 1, 0, -1.21007, 0, -4.37114e-08, 3.99831, -0.395769, 2.48043)
