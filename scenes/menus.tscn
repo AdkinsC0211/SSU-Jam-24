@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh5ib2ovyhgg1"]
+
+[ext_resource type="Script" path="res://scripts/menus.gd" id="1_7quha"]
+[ext_resource type="FontFile" uid="uid://cakknxsgxbvmm" path="res://fonts/Nightmare-Regular.ttf" id="2_8cobt"]
+[ext_resource type="Texture2D" uid="uid://x7bexwq03x65" path="res://images/jotchua.jpg" id="2_arclv"]
+[ext_resource type="Texture2D" uid="uid://br3gsfr1616ux" path="res://images/pauseMessage.PNG" id="4_ox45w"]
+
+[node name="MenuRoot" type="Control"]
+process_mode = 2
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_7quha")
+
+[node name="mainBGimage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_arclv")
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mainGroup" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/mainGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/mainGroup/CenterContainer"]
+layout_mode = 2
+
+[node name="playButton" type="Button" parent="CenterContainer/mainGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="optionButton" type="Button" parent="CenterContainer/mainGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="quitButton" type="Button" parent="CenterContainer/mainGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="pauseGroup" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/pauseGroup"]
+layout_mode = 2
+offset_left = -320.0
+offset_top = -390.0
+offset_right = 357.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ox45w")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/pauseGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/pauseGroup/CenterContainer"]
+layout_mode = 2
+
+[node name="resumeButton" type="Button" parent="CenterContainer/pauseGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Resume
+"
+
+[node name="optionButton" type="Button" parent="CenterContainer/pauseGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="mainmenuButton" type="Button" parent="CenterContainer/pauseGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[node name="optionsGroup" type="Control" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/optionsGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/optionsGroup/CenterContainer"]
+layout_mode = 2
+
+[node name="optionsBackButton" type="Button" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="fovLabel" type="Label" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Fov"
+horizontal_alignment = 1
+
+[node name="fovSlider" type="HSlider" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 60.0
+max_value = 120.0
+value = 60.0
+
+[node name="sensLabel" type="Label" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Mouse Sensitivity"
+horizontal_alignment = 1
+
+[node name="sensSlider" type="HSlider" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.005
+
+[node name="volLabel" type="Label" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8cobt")
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="volSlider" type="HSlider" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/mainGroup/CenterContainer/VBoxContainer/playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/mainGroup/CenterContainer/VBoxContainer/optionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="CenterContainer/mainGroup/CenterContainer/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/pauseGroup/CenterContainer/VBoxContainer/resumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/pauseGroup/CenterContainer/VBoxContainer/optionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="CenterContainer/pauseGroup/CenterContainer/VBoxContainer/mainmenuButton" to="." method="_on_mainmenu_button_pressed"]
+[connection signal="pressed" from="CenterContainer/optionsGroup/CenterContainer/VBoxContainer/optionsBackButton" to="." method="_on_options_back_button_pressed"]
