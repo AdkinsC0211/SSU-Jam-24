@@ -2,7 +2,6 @@ extends InteractableStaticBody3D
 
 
 var light_toggle: bool = true
-var y_movement: float = -1.3
 @export var controlled_lights: Array[toggle_light] = []
 
 
@@ -18,15 +17,15 @@ func _process(_delta):
 
 func interact(_body: CharacterBody3D) -> void:
 	light_toggle = !light_toggle
-	$breaker_switch.translate(Vector3(0, y_movement, 0))
-	y_movement *= -1
-	
+	$AnimationPlayer.active = true
 	if len(controlled_lights) > 0:
 		for light in controlled_lights:
 			light.flip_state()
 			
 	if light_toggle != true:
+		$AnimationPlayer.play("flip_switch",-1,1,false)
 		interactMessage = "Press E to turn the lights on"
 	else:
+		$AnimationPlayer.play_backwards("flip_switch",-1)
 		interactMessage = "Press E to turn the light off"
 	

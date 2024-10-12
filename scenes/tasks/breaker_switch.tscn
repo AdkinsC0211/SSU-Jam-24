@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://8vjefhfjin8y"]
+[gd_scene load_steps=9 format=3 uid="uid://8vjefhfjin8y"]
 
 [ext_resource type="Script" path="res://scripts/breaker_switch.gd" id="1_lvxw6"]
 
@@ -12,6 +12,66 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ljipd"]
 material = SubResource("StandardMaterial3D_2yrta")
+
+[sub_resource type="Animation" id="Animation_mmxoe"]
+resource_name = "flip_switch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("breaker_switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.521464, 0.144276), Vector3(0, -0.439257, 0.144276)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("breaker_switch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6njy0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("breaker_switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.521464, 0.144276)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("breaker_switch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwx3l"]
+_data = {
+"RESET": SubResource("Animation_6njy0"),
+"flip_switch": SubResource("Animation_mmxoe")
+}
 
 [node name="Breaker" type="StaticBody3D" node_paths=PackedStringArray("controlled_lights")]
 collision_layer = 2
@@ -32,3 +92,9 @@ shape = SubResource("BoxShape3D_60rhs")
 transform = Transform3D(0.269898, 0, 0, 0, 0.711636, 0, 0, 0, 0.240291, 0, 0.521464, 0.144276)
 mesh = SubResource("BoxMesh_ljipd")
 skeleton = NodePath("../breaker_panel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_uwx3l")
+}
