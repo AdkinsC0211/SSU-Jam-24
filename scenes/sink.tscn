@@ -1,6 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://dfrm0uibuqoy1"]
+[gd_scene load_steps=33 format=4 uid="uid://dfrm0uibuqoy1"]
 
 [ext_resource type="Script" path="res://scripts/hinged_door.gd" id="1_yrrdk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_st5p4"]
+points = PackedVector3Array(1.63286, 3.19524, 2.78229, -1.5374, -1.93485, -3.00048, -1.53207, 3.4008, -2.99043, -1.5374, -1.93485, 3.00048, 1.5373, -1.90089, -2.96235, -1.53207, 3.4008, 2.99043, 1.5373, 3.37578, -2.96235, 1.5373, -1.90089, 2.96235, 1.5373, 3.37578, 2.96235, 1.63286, 3.19524, -2.78229)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_np01j"]
 resource_name = "boring brown"
@@ -487,6 +490,10 @@ shadow_mesh = SubResource("ArrayMesh_ni5n5")
 points = PackedVector3Array(0.202733, -1.92634, 0.086988, -0.0289619, 1.66466, 2.86723, -0.0289619, 1.66466, -0.0289617, -0.0289619, -2.04246, 2.86723, -0.0289619, -2.04246, -0.0289617, 0.202733, 1.54854, 2.75128, 0.202733, -1.92634, 2.75128, 0.202733, 1.54854, 0.086988)
 
 [node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 2.40746)
+shape = SubResource("ConvexPolygonShape3D_st5p4")
 
 [node name="Sink" type="Node3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

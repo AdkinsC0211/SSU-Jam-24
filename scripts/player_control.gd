@@ -3,10 +3,10 @@ extends CharacterBody3D
 #relative constants
 const JUMP_VELOCITY = 4.5
 var SENSITIVITY = GameInfo.sensitivity
-const WALKSPEED := 5.0
-const RUNSPEED := 10.0
+const WALKSPEED := 3.0
+const RUNSPEED := 6.0
 var BASE_FOV := GameInfo.fov
-const FOV_CHANGE := 1.5
+const FOV_CHANGE := 1.25
 
 const BOB_FREQ := 2.0
 const BOB_AMP := 0.08
