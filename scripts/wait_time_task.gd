@@ -22,6 +22,7 @@ func _ready() -> void:
 	#progress_bar.visible = false
 	
 func _process(_delta):
+	pass
 	#progress_bar.value = $Timer.time_left / $Timer.wait_time * 100
 	
 # Virtual function that can be overridden by child classes

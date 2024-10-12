@@ -16,9 +16,8 @@ material = SubResource("StandardMaterial3D_quk3f")
 [sub_resource type="BoxShape3D" id="BoxShape3D_1v8dc"]
 size = Vector3(0.778564, 0.295044, 1.53711)
 
-[node name="sink_task_root" type="StaticBody3D" node_paths=PackedStringArray("progress_bar")]
+[node name="sink_task_root" type="StaticBody3D"]
 script = ExtResource("1_bpnws")
-progress_bar = NodePath("ProgressBar")
 interactMessage = "Press E to do dishes"
 
 [node name="sink" parent="." instance=ExtResource("1_brxka")]
