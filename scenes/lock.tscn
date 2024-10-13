@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7l164yhuarmd"]
+
+[ext_resource type="Script" path="res://scripts/lock.gd" id="1_6pj0r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h6m4"]
+albedo_color = Color(1, 1, 0.227451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ie658"]
+material = SubResource("StandardMaterial3D_7h6m4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcr6d"]
+albedo_color = Color(0.419813, 0.419813, 0.419813, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5dmyd"]
+material = SubResource("StandardMaterial3D_rcr6d")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0lui2"]
+size = Vector3(1, 0.612915, 1)
+
+[node name="Lock" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_6pj0r")
+interactMessage = "Press E to lock door"
+
+[node name="handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0298696, 0, 0, 0, -1.54842e-09, -0.0999603, 0, 0.0354236, -4.3694e-09, 0, 0.00425924, 0.0450318)
+mesh = SubResource("BoxMesh_ie658")
+
+[node name="lock_plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.169727, 0, 0, 0, -1.64328e-09, -0.169727, 0, 0.0375939, -7.41901e-09, 0, 0, 0)
+mesh = SubResource("CylinderMesh_5dmyd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.169727, 0, 0, 0, -7.41901e-09, -0.169727, 0, 0.169727, -7.41901e-09, 0, -5.81874e-10, 0.0133117)
+shape = SubResource("BoxShape3D_0lui2")

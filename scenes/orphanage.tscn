@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlnkpruqn5c3a"]
+[gd_scene load_steps=10 format=3 uid="uid://dlnkpruqn5c3a"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="PackedScene" uid="uid://cnowc6tenm8fx" path="res://scenes/stairs.tscn" id="2_yiu2y"]
+[ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="5_a67xa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -239,6 +240,9 @@ use_collision = true
 size = Vector3(6.31374, 0.5, 2.17575)
 material = ExtResource("1_w3kjo")
 
+[node name="InteractableStaticBody3D" parent="Node3D/church_back_stairs" instance=ExtResource("5_a67xa")]
+transform = Transform3D(-6.44004e-09, 0, 0.170569, 0, 0.170033, 0, -0.147331, 0, -7.45583e-09, 10.5359, -1.79854, 8.25116)
+
 [node name="orphanage_main" type="CSGCombiner3D" parent="Node3D"]
 transform = Transform3D(0.774964, 0, 0, 0, 1, 0, 0, 0, 0.577979, -20.7133, 1.86357, 23.4286)
 use_collision = true
@@ -403,3 +407,6 @@ size = Vector3(4.8, 0.838355, 0.171)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7076, -6.43649, 0.642069)
+
+[node name="InteractableStaticBody3D" parent="." instance=ExtResource("5_a67xa")]
+transform = Transform3D(0.415387, 0, 0, 0, 0.415387, 0, 0, 0, 0.415387, -42.3888, -10.5281, 17.8458)
