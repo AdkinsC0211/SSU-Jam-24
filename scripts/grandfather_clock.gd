@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var hours = int((GameInfo.secondspassed / 60) % 12)
+	var hours = int((GameInfo.secondspassed / 60) + 8 % 12)
 	var minutes = int(GameInfo.secondspassed % 60)
 	
 	$GrandfatherClock/hour_hand.rotation_degrees.x = (-360 * hours/12) + (-360 * minutes/(60*12))
