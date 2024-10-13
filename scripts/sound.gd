@@ -23,12 +23,13 @@ func _process(delta: float) -> void:
 		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
 		if result!={}:
-			if result["collider"] is StaticBody3D:
+			if result["collider"] is StaticBody3D or result["collider"] is CSGCombiner3D:
 				#if distance_vec.length() > 20:
 				#	if bus != "Far & Muffled":
 				#		bus = "Far & Muffled"
 				if bus != "Muffled":
 					bus = "Muffled"
+					
 			elif bus!="Master" and bus!= "Far":
 				bus = "Master"
 		#if distance_vec.length() > 20 and bus!="Far & Muffled":
@@ -45,7 +46,7 @@ func play_sound(time:float=0.0)-> void:
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
 	if result!={}:
-		if result["collider"] is StaticBody3D:
+		if result["collider"] is StaticBody3D or result["collider"] is CSGCombiner3D:
 			if distance_vec.length() > 20:
 				if bus != "Far & Muffled":
 					bus = "Far & Muffled"

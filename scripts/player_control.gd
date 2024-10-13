@@ -14,6 +14,8 @@ const FOV_CHANGE := 1.25
 const BOB_FREQ := 2.0
 const BOB_AMP := 0.08
 
+var stepped = false
+
 #task list variable
 @onready var quest_log = $TaskList
 
@@ -85,6 +87,12 @@ func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
+	if pos.y <= -0.079 and not stepped:
+		$Footstep.pitch_scale = randf_range(0.7, 1.2)
+		$Footstep.play()
+		stepped = true
+	elif pos.y >= 0.079:
+		stepped = false
 	return pos
 
 func handle_fov_change(delta: float) -> void:
@@ -100,7 +108,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("F") and $Neck/Camera3D/PlaceRaycast.is_colliding():
 		dropItem($Neck/Camera3D/PlaceRaycast.get_collision_point())
 		heldItem = null
-		
+	if event.is_action_pressed("LClick") and heldItem:
+		heldItem.use()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion and !doing_wait_task:
 			neck.rotate_y(-event.relative.x * SENSITIVITY)

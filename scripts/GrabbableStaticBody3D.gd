@@ -5,6 +5,8 @@ extends InteractableStaticBody3D
 @export var collider : CollisionShape3D
 @export var target : Node3D
 
+var player : CharacterBody3D
+
 var targetVector : Vector3
 
 @export var interactMessageSecondary = "Press E to Swap Items"
@@ -19,12 +21,14 @@ func interact(body) -> void:
 		body.dropItem(global_position)
 	collider.disabled = true
 	target = body.hand
+	player = body
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if target:
 		global_position = lerp(global_position, target.global_position, 5 * delta)
 
-			
+func use() -> void:
+	pass
 
 func dropItem(pos : Vector3) -> void:
 	global_position = pos

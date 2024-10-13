@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://brkxffodp8drd"]
+[gd_scene load_steps=10 format=3 uid="uid://brkxffodp8drd"]
 
 [ext_resource type="Script" path="res://scripts/player_control.gd" id="1_ar4gw"]
 [ext_resource type="PackedScene" uid="uid://bh3gr6e4uk5y1" path="res://scenes/tasks/task_list.tscn" id="2_8o5o2"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_clpwj"]
 [ext_resource type="PackedScene" uid="uid://c725emdf400vl" path="res://scenes/ambient_sounds.tscn" id="2_fjmwk"]
 [ext_resource type="PackedScene" path="res://scenes/menus.tscn" id="3_yppsh"]
+[ext_resource type="AudioStream" uid="uid://dq8yu5hpb40hm" path="res://sounds/footstep.ogg" id="6_eauhi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t7ue4"]
 radius = 0.25
-height = 3.0
+height = 2.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5gl54"]
 radius = 0.25
-height = 3.0
+height = 2.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_70rtp"]
 size = Vector3(2, 2, 4)
@@ -27,6 +28,7 @@ script = ExtResource("1_ar4gw")
 mesh = SubResource("CapsuleMesh_t7ue4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0095551, -0.0102487, -0.0561953)
 shape = SubResource("CapsuleShape3D_5gl54")
 
 [node name="Neck" type="Node3D" parent="."]
@@ -132,6 +134,9 @@ horizontal_alignment = 1
 [node name="TaskList" parent="." groups=["Player"] instance=ExtResource("2_8o5o2")]
 visible = false
 position = Vector2(491.547, 251.953)
+
+[node name="Footstep" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_eauhi")
 
 [connection signal="body_entered" from="Neck/Interact_Range" to="." method="_on_interact_range_body_entered"]
 [connection signal="body_exited" from="Neck/Interact_Range" to="." method="_on_interact_range_body_exited"]
