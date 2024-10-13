@@ -1,8 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://y1e8qi11lvcc"]
+[gd_scene load_steps=15 format=3 uid="uid://y1e8qi11lvcc"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_bvjiw"]
 [ext_resource type="Script" path="res://scripts/zach_task_world.gd" id="1_rfj78"]
 [ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="3_1bch8"]
+[ext_resource type="PackedScene" uid="uid://bh3gr6e4uk5y1" path="res://scenes/tasks/task_list.tscn" id="4_dcdj3"]
+[ext_resource type="PackedScene" uid="uid://wfunumlthe3u" path="res://scenes/big_cross.tscn" id="4_qpsfd"]
+[ext_resource type="PackedScene" uid="uid://5bocqpuqphub" path="res://scenes/tasks/sink_task.tscn" id="6_ea4b7"]
+[ext_resource type="PackedScene" uid="uid://bf0scv8y2eu8o" path="res://scenes/tasks/window.tscn" id="7_8o5dq"]
+[ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="8_mnjke"]
+[ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="9_706ai"]
+[ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="9_xcvtp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwvb8"]
 
@@ -13,11 +20,6 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_y0lwg")
 
 [sub_resource type="Environment" id="Environment_wxvi2"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ahmcg"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3e027"]
-size = Vector3(1, 0.41748, 2.16064)
 
 [node name="ZachTaskWorld" type="Node3D"]
 script = ExtResource("1_rfj78")
@@ -42,32 +44,50 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wxvi2")
 
+[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "bed1", "bed2", "bed3", "breaker") instance=ExtResource("4_dcdj3")]
+rosary = NodePath("../rosary_root")
+dishes = NodePath("../sink_task_root")
+window1 = NodePath("../Window")
+window2 = NodePath("../Window2")
+window3 = NodePath("../Window3")
+bed1 = NodePath("../Node3D/bed_root_node")
+bed2 = NodePath("../Node3D/bed_root_node2")
+bed3 = NodePath("../Node3D/bed_root_node3")
+breaker = NodePath("../Breaker")
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("4_qpsfd")]
+transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, -0.0143078, 2.88649, -5.62143)
+
+[node name="rosary_root" parent="." node_paths=PackedStringArray("cross") instance=ExtResource("3_1bch8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107954, 0.561688, 0.227655)
+cross = NodePath("../StaticBody3D2")
+
+[node name="sink_task_root" parent="." instance=ExtResource("6_ea4b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14558, 0.5, -2.07495)
+
+[node name="Window" parent="." instance=ExtResource("7_8o5dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27649, 2.95089, -9.62549)
+
+[node name="Window2" parent="." instance=ExtResource("7_8o5dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06304, 0, -8.47982)
+
+[node name="Window3" parent="." instance=ExtResource("7_8o5dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.26786, 6.20562, -9.55408)
+
+[node name="Breaker" parent="." instance=ExtResource("8_mnjke")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.1038, 2.58185, -3.23144)
+
+[node name="Haunter" parent="." node_paths=PackedStringArray("hauntable_tasks_manager") instance=ExtResource("9_xcvtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60839, 3.21802, 0.298946)
+hauntable_tasks_manager = NodePath("../Node3D")
+
 [node name="Node3D" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 7.415, 0, 0, 0, 1, 0, 1.905, -4.559)
-mesh = SubResource("BoxMesh_ahmcg")
-skeleton = NodePath("../..")
+[node name="bed_root_node" parent="Node3D" instance=ExtResource("9_706ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72018, 0.5, 2.12848)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(4.485, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.048, -4.559)
-mesh = SubResource("BoxMesh_ahmcg")
-skeleton = NodePath("../..")
+[node name="bed_root_node2" parent="Node3D" instance=ExtResource("9_706ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8474, 1.40601, 2.23931)
 
-[node name="Area3D" type="Area3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44353, -2.26232)
-
-[node name="cross collision" type="CollisionShape3D" parent="Node3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.479357, -0.580322)
-shape = SubResource("BoxShape3D_3e027")
-
-[node name="prayerTimer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
-[node name="rosary_root" parent="." instance=ExtResource("3_1bch8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107954, 0.561688, 0.227655)
-
-[connection signal="body_entered" from="Node3D/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Node3D/Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="timeout" from="prayerTimer" to="." method="_on_prayer_timer_timeout"]
+[node name="bed_root_node3" parent="Node3D" instance=ExtResource("9_706ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96128, 2.31202, 2.29009)
