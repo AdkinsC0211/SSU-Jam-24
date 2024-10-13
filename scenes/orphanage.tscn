@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlnkpruqn5c3a"]
+[gd_scene load_steps=13 format=3 uid="uid://dlnkpruqn5c3a"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="PackedScene" uid="uid://cnowc6tenm8fx" path="res://scenes/stairs.tscn" id="2_yiu2y"]
+[ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
+[ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
+[ext_resource type="PackedScene" uid="uid://c1ceh88vbb3a3" path="res://scenes/stall_door.tscn" id="5_is5h5"]
+[ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="6_677g2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,375 +35,561 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ga0bn")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="build_structure" type="Node3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 
-[node name="church_main" type="CSGCombiner3D" parent="Node3D"]
+[node name="church_main" type="CSGCombiner3D" parent="build_structure"]
 use_collision = true
 
-[node name="church" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="church" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 1.84589, 0.0513706)
 size = Vector3(30, 15.681, 18)
 
-[node name="church_space" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="church_space" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 2.89868, 0.0513706)
 operation = 2
 size = Vector3(28, 16.1056, 16)
 
-[node name="door_rect" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="door_rect" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.28291, 11.8436, -1.66418, 0)
 operation = 2
 size = Vector3(1.039, 7, 1)
 
-[node name="door_top" type="CSGCylinder3D" parent="Node3D/church_main"]
+[node name="door_top" type="CSGCylinder3D" parent="build_structure/church_main"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1.45978, 11.8629, 1.8016, 0)
 operation = 2
 radius = 1.5
 height = 1.5
 sides = 14
 
-[node name="right_backdoor" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="right_backdoor" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2175, -4.25134, -6.54096)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="left_backdoor" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="left_backdoor" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.218, -4.251, 6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="right_backdoor2" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="right_backdoor2" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2175, 4.55339, -6.54096)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="left_backdoor2" type="CSGBox3D" parent="Node3D/church_main"]
+[node name="left_backdoor2" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.218, 4.553, 6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="stage_ramp" type="CSGPolygon3D" parent="Node3D/church_main"]
+[node name="stage_ramp" type="CSGPolygon3D" parent="build_structure/church_main"]
 transform = Transform3D(0.978148, -0.153289, 0.140463, 0, 0.67559, 0.737277, -0.207912, -0.721166, 0.660827, -16.4287, -5.15905, 5.9762)
 polygon = PackedVector2Array(-0.126097, 0.0266304, -0.0671787, 1.08774, 1.35148, 1.09532, 1.31426, 0.0207396)
 depth = 0.01
 material = SubResource("StandardMaterial3D_3xfhd")
 
-[node name="church_inside" type="CSGCombiner3D" parent="Node3D"]
+[node name="church_inside" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 13, -16.6669, -5.09027, 0)
 use_collision = true
 
-[node name="stage" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="stage" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33242, 0)
 radius = 0.4
 sides = 16
 
-[node name="balcony" type="CSGBox3D" parent="Node3D/church_inside"]
+[node name="balcony" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929178, 8.49342, -0.453772)
 size = Vector3(1.86493, 0.5, 0.339874)
 
-[node name="balcony2" type="CSGBox3D" parent="Node3D/church_inside"]
+[node name="balcony2" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929, 8.493, 0.454)
 size = Vector3(1.86493, 0.5, 0.339874)
 
-[node name="support1" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support1" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82907, 7.41115, 0.317027)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support2" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support2" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.829, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support3" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support3" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37389, 7.41115, 0.317027)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support4" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support4" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.374, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support5" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support5" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919, 7.411, 0.317)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support6" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support6" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support7" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support7" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464, 7.411, 0.317)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="support8" type="CSGCylinder3D" parent="Node3D/church_inside"]
+[node name="support8" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463962, 7.411, -0.31702)
 radius = 0.03
 height = 15.0
 sides = 16
 
-[node name="stage_cutter" type="CSGBox3D" parent="Node3D/church_inside"]
+[node name="stage_cutter" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.240769, 0.31723, -0.0078125)
 operation = 2
 size = Vector3(0.647491, 1.65125, 1.5918)
 
-[node name="stage_stair_L" type="CSGBox3D" parent="Node3D/church_inside"]
+[node name="stage_stair_L" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(0.97809, 0, 0.208185, 0, 1, 0, -0.208185, 0, 0.97809, 0.0588191, 0.120743, 0.397824)
 size = Vector3(0.119019, 0.416168, 0.0359421)
 
-[node name="church_back" type="CSGCombiner3D" parent="Node3D"]
+[node name="church_back" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 use_collision = true
 
-[node name="church_back" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="church_back" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1717, 1.84589, 0.0513706)
 size = Vector3(15, 15.681, 18)
 
-[node name="church_back_space" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="church_back_space" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1476, 3.846, 0.051)
 operation = 2
 size = Vector3(13, 18, 16)
 
-[node name="right_backdoor" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="right_backdoor" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3733, -4.25134, -6.54096)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="left_backdoor" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="left_backdoor" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1185, -4.251, 6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="right_backdoor2" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="right_backdoor2" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.373, 4.553, -6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="left_backdoor2" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="left_backdoor2" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.118, 4.553, 6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="orphan_door" type="CSGBox3D" parent="Node3D/church_back"]
+[node name="orphan_door" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.71, -4.251, 8.72)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="church_back_inside" type="CSGCombiner3D" parent="Node3D"]
+[node name="backrooms_door" type="CSGBox3D" parent="build_structure/church_back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1126, -4.251, -0.0352226)
+operation = 2
+size = Vector3(1.5, 1.8, 1.2)
 
-[node name="balcony3" type="CSGBox3D" parent="Node3D/church_back_inside"]
+[node name="church_back_inside" type="CSGCombiner3D" parent="build_structure"]
+
+[node name="balcony3" type="CSGBox3D" parent="build_structure/church_back_inside"]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 13, -18.573, 3.404, -0.009)
 size = Vector3(0.316191, 0.5, 1.24598)
 material = ExtResource("1_w3kjo")
 
-[node name="church_back_stairs" type="Node3D" parent="Node3D"]
+[node name="church_back_stairs" type="Node3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6539, -2.38141, 0)
 
-[node name="Node3D" parent="Node3D/church_back_stairs" instance=ExtResource("2_yiu2y")]
+[node name="Node3D" parent="build_structure/church_back_stairs" instance=ExtResource("2_yiu2y")]
 transform = Transform3D(-1.31134e-08, 0, 0.2, 0, 0.2, 0, -0.3, 0, -8.74228e-09, 3.43345, -1.26342, -0.000320435)
 
-[node name="Node3D2" parent="Node3D/church_back_stairs" instance=ExtResource("2_yiu2y")]
+[node name="Node3D2" parent="build_structure/church_back_stairs" instance=ExtResource("2_yiu2y")]
 transform = Transform3D(0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.176544, 1.46468, -3.64632)
 
-[node name="Node3D3" parent="Node3D/church_back_stairs" instance=ExtResource("2_yiu2y")]
+[node name="Node3D3" parent="build_structure/church_back_stairs" instance=ExtResource("2_yiu2y")]
 transform = Transform3D(-9.83693e-09, 0, -0.2, 0, 0.2, 0, 0.225043, 0, -8.74228e-09, 7.04299, 4.40545, -6.89047)
 
-[node name="Node3D4" parent="Node3D/church_back_stairs" instance=ExtResource("2_yiu2y")]
+[node name="Node3D4" parent="build_structure/church_back_stairs" instance=ExtResource("2_yiu2y")]
 transform = Transform3D(-0.3, 0, -3.01992e-08, 0, 0.2, 0, 4.52987e-08, 0, -0.2, -0.176123, 1.46441, 3.646)
 
-[node name="Node3D5" parent="Node3D/church_back_stairs" instance=ExtResource("2_yiu2y")]
+[node name="Node3D5" parent="build_structure/church_back_stairs" instance=ExtResource("2_yiu2y")]
 transform = Transform3D(-9.83693e-09, 0, -0.2, 0, 0.2, 0, 0.225043, 0, -8.74228e-09, 7.043, 4.405, 6.89)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/church_back_stairs"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/church_back_stairs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356831, 0.0902963, -0.00408936)
 use_collision = true
 size = Vector3(2.72076, 0.5, 3.83606)
 material = ExtResource("1_w3kjo")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/church_back_stairs"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/church_back_stairs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.163, 2.818, -6.888)
 use_collision = true
 size = Vector3(6.31374, 0.5, 2.17575)
 material = ExtResource("1_w3kjo")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/church_back_stairs"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/church_back_stairs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16273, 2.818, 6.888)
 use_collision = true
 size = Vector3(6.31374, 0.5, 2.17575)
 material = ExtResource("1_w3kjo")
 
-[node name="orphanage_main" type="CSGCombiner3D" parent="Node3D"]
+[node name="orphanage_main" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(0.774964, 0, 0, 0, 1, 0, 0, 0, 0.577979, -20.7133, 1.86357, 23.4286)
 use_collision = true
 
-[node name="orphanage" type="CSGBox3D" parent="Node3D/orphanage_main"]
+[node name="orphanage" type="CSGBox3D" parent="build_structure/orphanage_main"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.801, 0)
 size = Vector3(28.1138, 4.07899, 50.0762)
 
-[node name="orphanage2" type="CSGBox3D" parent="Node3D/orphanage_main"]
+[node name="orphanage2" type="CSGBox3D" parent="build_structure/orphanage_main"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.039999, -5.05479, -8.8373)
 operation = 2
 size = Vector3(26.114, 3.92106, 32.6659)
 
-[node name="orphanage_rooms" type="Node3D" parent="Node3D"]
+[node name="orphanage_rooms" type="Node3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.713, 0, 23.429)
 
-[node name="orphanage_room1" type="CSGCombiner3D" parent="Node3D/orphanage_rooms"]
+[node name="orphanage_room1" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, -11.2568)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room1"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room1"]
 size = Vector3(3.98404, 2.64844, 6.30859)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room1"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room1"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room1"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="orphanage_room2" type="CSGCombiner3D" parent="Node3D/orphanage_rooms"]
+[node name="orphanage_room2" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, -4.95286)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room2"]
 size = Vector3(3.98404, 2.64844, 6.30859)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room2"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room2"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room2"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="orphanage_room3" type="CSGCombiner3D" parent="Node3D/orphanage_rooms"]
+[node name="orphanage_room3" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, 1.31672)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room3"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room3"]
 size = Vector3(3.98404, 2.64844, 6.30859)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room3"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room3"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room3"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="orphanage_room4" type="CSGCombiner3D" parent="Node3D/orphanage_rooms"]
+[node name="orphanage_room4" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, 7.6207)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room4"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room4"]
 size = Vector3(3.98404, 2.64844, 6.30859)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room4"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room4"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room4"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="orphanage_room5" type="CSGCombiner3D" parent="Node3D/orphanage_rooms"]
+[node name="orphanage_room5" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.143, -3.89134, 1.31672)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room5"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room5"]
 size = Vector3(3.98404, 2.64844, 6.30859)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room5"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room5"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room5"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="orphanage_room6" type="CSGCombiner3D" parent="Node3D/orphanage_rooms"]
+[node name="orphanage_room6" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.143, -3.89134, 7.6207)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room6"]
+[node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room6"]
 size = Vector3(3.98404, 2.64844, 6.30859)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room6"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room6"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D/orphanage_rooms/orphanage_room6"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="kitchen" type="CSGCombiner3D" parent="Node3D"]
+[node name="kitchen" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9855, -4.69237, 15.2539)
+use_collision = true
 
-[node name="kitchen" type="CSGBox3D" parent="Node3D/kitchen"]
+[node name="kitchen" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0426, 0.803466, 0.0804844)
 size = Vector3(5.64478, 2.60693, 12.5866)
 
-[node name="kitchen_space" type="CSGBox3D" parent="Node3D/kitchen"]
+[node name="kitchen_space" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00562, 0.803466, 0.0692701)
 operation = 2
 size = Vector3(5.05273, 2.60693, 12.0547)
 
-[node name="kitchen_door" type="CSGBox3D" parent="Node3D/kitchen"]
+[node name="kitchen_door" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83764, 0.43779, 4.72255)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
 
-[node name="dining_door" type="CSGBox3D" parent="Node3D/kitchen"]
+[node name="dining_door" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83764, 0.43779, -1.81976)
 operation = 2
 size = Vector3(1.5, 1.8, 6.17356)
 
-[node name="kitchen_divider" type="CSGBox3D" parent="Node3D"]
+[node name="kitchen_divider" type="CSGBox3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -5.09242, 17.2019)
 use_collision = true
 size = Vector3(5.11676, 0.802734, 0.170898)
 material = SubResource("StandardMaterial3D_ekrl6")
 
-[node name="kitchen_divider_top" type="CSGBox3D" parent="Node3D"]
+[node name="kitchen_divider_top" type="CSGBox3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.25152, -26.9875, -4.702, 17.2198)
 use_collision = true
 size = Vector3(5.11676, 0.0404053, 0.340332)
 
-[node name="kitchen_divider_top2" type="CSGBox3D" parent="Node3D"]
+[node name="kitchen_divider_top2" type="CSGBox3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -3.86288, 17.2198)
 use_collision = true
 size = Vector3(5.11676, 0.0404053, 0.340332)
 
-[node name="kitchen_divider_pillars" type="CSGCombiner3D" parent="Node3D"]
+[node name="kitchen_divider_pillars" type="CSGCombiner3D" parent="build_structure"]
 use_collision = true
 
-[node name="kitchen_divider_pillar" type="CSGBox3D" parent="Node3D/kitchen_divider_pillars"]
+[node name="kitchen_divider_pillar" type="CSGBox3D" parent="build_structure/kitchen_divider_pillars"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -4.26976, 17.2019)
 size = Vector3(5.11676, 0.834534, 0.170898)
 
-[node name="kitchen_divider_pillar2" type="CSGBox3D" parent="Node3D/kitchen_divider_pillars"]
+[node name="kitchen_divider_pillar2" type="CSGBox3D" parent="build_structure/kitchen_divider_pillars"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -4.27176, 17.2019)
 operation = 2
 size = Vector3(4.8, 0.838355, 0.171)
 
+[node name="backrooms" type="CSGCombiner3D" parent="build_structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.106, -3.187, 0)
+use_collision = true
+
+[node name="backrooms" type="CSGBox3D" parent="build_structure/backrooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.472882, 1.40825)
+size = Vector3(15, 3.44991, 20.8165)
+
+[node name="backrooms_space" type="CSGBox3D" parent="build_structure/backrooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35136, 0.234471, 1.32987)
+operation = 2
+size = Vector3(14.4525, 4.396, 19.6597)
+
+[node name="backrooms_bathroom" type="CSGCombiner3D" parent="build_structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4579, -3.5692, -5.02831)
+use_collision = true
+
+[node name="bathroom" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483505, 0, 0)
+size = Vector3(14.5164, 3.21924, 7.16357)
+
+[node name="bathroom_spaceB" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84575, 0.0216343, -0.0142002)
+operation = 2
+size = Vector3(4.07058, 5.219, 6.664)
+
+[node name="bathroom_spaceG" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85263, 0, 0)
+operation = 2
+size = Vector3(4.16435, 5.219, 6.664)
+
+[node name="bathroom_doorB" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.682098, -0.681801, 3.51987)
+operation = 2
+size = Vector3(1.5, 1.8, 1.2)
+
+[node name="bathroom_doorG" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.72833, -0.681801, 3.51987)
+operation = 2
+size = Vector3(1.5, 1.8, 1.2)
+
+[node name="backrooms_storage" type="CSGCombiner3D" parent="build_structure"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -39.2314, -3.5692, 5.04676)
+use_collision = true
+
+[node name="storage" type="CSGBox3D" parent="build_structure/backrooms_storage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483505, 0, 0)
+size = Vector3(14.5164, 3.21924, 7.16357)
+
+[node name="storage_space2" type="CSGBox3D" parent="build_structure/backrooms_storage"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 1.78846, 0, 1.88242)
+operation = 2
+size = Vector3(4.16435, 5.219, 2.89915)
+
+[node name="storage_space1" type="CSGBox3D" parent="build_structure/backrooms_storage"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -2.85263, 0, 1.88242)
+operation = 2
+size = Vector3(4.16435, 5.219, 2.89915)
+
+[node name="storage_door2" type="CSGBox3D" parent="build_structure/backrooms_storage"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.682098, -0.681801, 3.51987)
+operation = 2
+size = Vector3(1.5, 1.8, 1.2)
+
+[node name="storage_door1" type="CSGBox3D" parent="build_structure/backrooms_storage"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.72833, -0.681801, 3.51987)
+operation = 2
+size = Vector3(1.5, 1.8, 1.2)
+
+[node name="furniture_orphanage" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.836, -12.3812, 35.2323)
+
+[node name="bed_root_node" parent="furniture_orphanage" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
+
+[node name="bed_root_node2" parent="furniture_orphanage" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, -4.86799)
+
+[node name="furniture_bathroomG" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.4814, -11.3613, -13.3979)
+
+[node name="full_stall" type="Node3D" parent="furniture_bathroomG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, 6.75599)
+
+[node name="StaticBody3D" parent="furniture_bathroomG/full_stall" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomG/full_stall" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="StaticBody3D2" parent="furniture_bathroomG/full_stall" instance=ExtResource("4_yk265")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193741, 0.165088, -1.74627)
+
+[node name="full_stall2" type="Node3D" parent="furniture_bathroomG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, 2.59053)
+
+[node name="StaticBody3D" parent="furniture_bathroomG/full_stall2" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomG/full_stall2" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="StaticBody3D2" parent="furniture_bathroomG/full_stall2" instance=ExtResource("4_yk265")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193741, 0.165088, -1.74627)
+
+[node name="full_stall3" type="Node3D" parent="furniture_bathroomG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, -1.5807)
+
+[node name="StaticBody3D" parent="furniture_bathroomG/full_stall3" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomG/full_stall3" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="StaticBody3D2" parent="furniture_bathroomG/full_stall3" instance=ExtResource("4_yk265")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193741, 0.165088, -1.74627)
+
+[node name="full_stall4" type="Node3D" parent="furniture_bathroomG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, -5.76088)
+
+[node name="StaticBody3D" parent="furniture_bathroomG/full_stall4" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomG/full_stall4" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="furniture_bathroomB" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -97.4814, -11.3613, -13.3979)
+
+[node name="full_stall" type="Node3D" parent="furniture_bathroomB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, 5.10817)
+
+[node name="StaticBody3D" parent="furniture_bathroomB/full_stall" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomB/full_stall" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="StaticBody3D2" parent="furniture_bathroomB/full_stall" instance=ExtResource("4_yk265")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193741, 0.165088, -1.74627)
+
+[node name="full_stall2" type="Node3D" parent="furniture_bathroomB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, 0.942713)
+
+[node name="StaticBody3D" parent="furniture_bathroomB/full_stall2" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomB/full_stall2" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="StaticBody3D2" parent="furniture_bathroomB/full_stall2" instance=ExtResource("4_yk265")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193741, 0.165088, -1.74627)
+
+[node name="full_stall3" type="Node3D" parent="furniture_bathroomB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, -3.22852)
+
+[node name="StaticBody3D" parent="furniture_bathroomB/full_stall3" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomB/full_stall3" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="StaticBody3D2" parent="furniture_bathroomB/full_stall3" instance=ExtResource("4_yk265")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193741, 0.165088, -1.74627)
+
+[node name="full_stall4" type="Node3D" parent="furniture_bathroomB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, -7.40869)
+
+[node name="StaticBody3D" parent="furniture_bathroomB/full_stall4" instance=ExtResource("4_yk265")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.0434, 0.165088, 1.20076)
+
+[node name="InteractableStaticBody3D" parent="furniture_bathroomB/full_stall4" instance=ExtResource("5_is5h5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.0818167)
+
+[node name="furniture_storage1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.189, -10.6419, 7.58728)
+
+[node name="Breaker" parent="furniture_storage1" instance=ExtResource("6_677g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.27473)
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7076, -6.43649, 0.642069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.285, -10.0752, -9.30728)
