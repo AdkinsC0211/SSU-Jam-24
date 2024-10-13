@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://bdskpx45mgtyr"]
+[gd_scene load_steps=7 format=4 uid="uid://dt6nkja4aj1oi"]
 
 [ext_resource type="Script" path="res://scripts/lockable_door.gd" id="1_8txyg"]
-[ext_resource type="PackedScene" uid="uid://c7l164yhuarmd" path="res://scenes/lock.tscn" id="2_vej8g"]
+[ext_resource type="PackedScene" path="res://scenes/lock.tscn" id="2_vej8g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tglts"]
 resource_name = "boring brown"
@@ -47,7 +47,7 @@ shadow_mesh = SubResource("ArrayMesh_61s4l")
 points = PackedVector3Array(-0.476963, -3.24392, -4.04722, 0.0943536, 2.85012, 0.0468175, -0.476963, 2.85012, 0.0468175, 0.0943536, -3.24392, 0.0468175, 0.0943536, 2.85012, -4.04722, -0.476963, 2.85012, -4.04722, -0.476963, -3.24392, 0.0468175, 0.0943536, -3.24392, -4.04722)
 
 [node name="InteractableStaticBody3D" type="StaticBody3D" node_paths=PackedStringArray("mesh", "interactCollider")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
 script = ExtResource("1_8txyg")
 mesh = NodePath("Door2/Door")
 interactCollider = NodePath("CollisionShape3D")

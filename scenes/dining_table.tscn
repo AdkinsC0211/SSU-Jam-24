@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://c6rluul85ps0q"]
+[gd_scene load_steps=6 format=4 uid="uid://yjvu183em8yo"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xbku4"]
 points = PackedVector3Array(-8.45235, 0.182823, -16.0848, 8.6715, 0.702286, 16.605, 8.6715, 0.702286, -16.605, 8.15189, -9.15685, -15.0478, -7.54817, -8.8974, 14.8235, -7.97109, 1.43389, 15.6716, 8.15189, -9.15685, 15.0478, -7.0533, -8.8974, -15.3189, 7.78357, 1.49062, -15.8445, -7.97109, 1.43389, -15.6716, 7.78357, 1.49062, 15.8445, -8.45235, 0.182823, 16.0848, -7.0533, -8.8974, 15.3189, -7.54817, -8.8974, -14.8235, 7.27405, -8.8974, 15.3189, 7.27405, -8.8974, -15.3189, 8.07403, 1.35993, -14.9624, 8.07403, 1.35993, 14.9624)
@@ -75,6 +75,7 @@ shadow_mesh = SubResource("ArrayMesh_1d5ok")
 
 [node name="StaticBody3D" type="StaticBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+collision_layer = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
