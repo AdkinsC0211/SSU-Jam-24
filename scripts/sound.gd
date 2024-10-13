@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 		#		bus = "Far"
 		elif bus!="Master":
 			bus = "Master"
-		print(bus)
+
 
 func play_sound(time:float=0.0)-> void:
 	var distance_vec = player.global_transform.origin - global_transform.origin
@@ -44,7 +44,6 @@ func play_sound(time:float=0.0)-> void:
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
 	if result!={}:
-		print(result["collider"])
 		if result["collider"] is StaticBody3D:
 			if distance_vec.length() > 20:
 				if bus != "Far & Muffled":
