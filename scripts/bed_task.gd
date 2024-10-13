@@ -8,7 +8,7 @@ var haunted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ghost_light.visible = false
+	$ghost_light.visible = haunted
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +21,9 @@ func interact(body: CharacterBody3D) -> void:
 		player_ref = body
 		camera_return_location = body.get_node("Neck").position
 		if toggle:
+			$Ruffle.play()
+			if haunted:
+				$MonsterCatch.play()
 			body.get_node("Neck").position += Vector3(0,-2.3,0)
 			neck_moved = true
 			$ghost_light.visible = false
@@ -28,10 +31,12 @@ func interact(body: CharacterBody3D) -> void:
 		else:
 			body.get_node("Neck").position += Vector3(0,2.3,0)
 			neck_moved = false
+			$Ruffle.play()
 		
 func haunt():
 	$ghost_light.visible = true
-	haunted = false
+	haunted = true
+	$MonsterBreath.play_sound()
 
 func _on_area_3d_body_exited(body):
 	if neck_moved:
