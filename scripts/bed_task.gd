@@ -3,10 +3,12 @@ extends InteractableStaticBody3D
 var player_ref
 var camera_return_location: Vector3
 var toggle: bool = false
+var neck_moved = false
+var haunted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$ghost_light.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,10 +22,18 @@ func interact(body: CharacterBody3D) -> void:
 		camera_return_location = body.get_node("Neck").position
 		if toggle:
 			body.get_node("Neck").position += Vector3(0,-2.3,0)
+			neck_moved = true
+			$ghost_light.visible = false
+			haunted = false
 		else:
 			body.get_node("Neck").position += Vector3(0,2.3,0)
+			neck_moved = false
 		
-
+func haunt():
+	$ghost_light.visible = true
+	haunted = false
 
 func _on_area_3d_body_exited(body):
-	player_ref.get_node("Neck").position += Vector3(0,2.3,0)
+	if neck_moved:
+		body.get_node("Neck").position += Vector3(0,2.3,0)
+	

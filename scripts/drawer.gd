@@ -8,10 +8,10 @@ var open := false
 
 
 
-func interact(body):
+func interact(_body):
 	open = !open
 	
-func _process(delta):
+func _process(_delta):
 	if open and !(mesh.position == doorOpen):
 		mesh.position = lerp(mesh.position, doorOpen, 0.01)
 		interactCollider.position = mesh.position

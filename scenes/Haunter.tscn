@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0dv0qd7wjwvv"]
+
+[ext_resource type="Script" path="res://scripts/haunter.gd" id="1_nu2cw"]
+
+[node name="Haunter" type="Node3D"]
+script = ExtResource("1_nu2cw")
+
+[node name="haunt_timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="haunt_timer" to="." method="_on_haunt_timer_timeout"]

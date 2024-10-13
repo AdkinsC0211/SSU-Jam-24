@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=32 format=3 uid="uid://bxwg5mmvsjmih"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dr62xavsfwvaj" path="res://scenes/tasks/sink_task.tscn" id="11_2nfgt"]
 [ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="11_dthy1"]
 [ext_resource type="PackedScene" uid="uid://dymc3ocgp5u4w" path="res://scenes/tasks/bed_task.tscn" id="12_ouoxv"]
+[ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="13_0fvoq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -292,15 +293,21 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.79919, -0.576253, -9
 [node name="task_object_manager" type="Node" parent="."]
 
 [node name="door_interactable_Static2" parent="task_object_manager" instance=ExtResource("11_dthy1")]
-transform = Transform3D(-7.86334e-08, 0, 1.47895, 0, 2.35363, 0, -1.79892, 0, -6.46471e-08, 3.32291, -1.90472, 10.7245)
+transform = Transform3D(-7.86334e-08, 0, 1.47895, 0, 2.15597, 0, -1.79892, 0, -6.46471e-08, 3.32291, -1.89413, 10.7245)
 
 [node name="door_interactable_Static" parent="task_object_manager" instance=ExtResource("11_dthy1")]
-transform = Transform3D(-7.3852e-08, 0, 1.47231, 0, 2.14928, 0, -1.68954, 0, -6.43569e-08, 3.3634, -1.65246, 3.08742)
+transform = Transform3D(-7.3852e-08, 0, 1.47231, 0, 1.96878, 0, -1.68954, 0, -6.43569e-08, 3.3634, -1.66305, 3.08742)
 
 [node name="sink_task_root" parent="task_object_manager" instance=ExtResource("11_2nfgt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9154, -1.6518, -13.9838)
 
-[node name="bed_root_node" parent="task_object_manager" instance=ExtResource("12_ouoxv")]
+[node name="hauntable_task_manager" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59201, -2.22379, -16.1683)
+
+[node name="bed_root_node" parent="hauntable_task_manager" instance=ExtResource("12_ouoxv")]
+
+[node name="Haunter" parent="." node_paths=PackedStringArray("hauntable_tasks_manager") instance=ExtResource("13_0fvoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1507, -2.22378, -28.9838)
+hauntable_tasks_manager = NodePath("../hauntable_task_manager")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

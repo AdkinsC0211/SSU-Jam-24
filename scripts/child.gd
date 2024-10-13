@@ -10,10 +10,10 @@ func _ready() -> void:
 	target = player
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
-func interact(body : CharacterBody3D) -> void:
+func interact(_body : CharacterBody3D) -> void:
 	if target == player:
 		target = Node3D.new()
 		target.position = Vector3.ZERO

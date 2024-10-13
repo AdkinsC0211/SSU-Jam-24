@@ -28,9 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.343185, 1.18164, -1.73242)
 shape = SubResource("BoxShape3D_l3t6m")
 
 [node name="ghost_light" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105254, 0)
 light_color = Color(0, 0.341176, 1, 1)
-light_energy = 18.695
-light_indirect_energy = 1.14
+light_energy = 4.84
 
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
