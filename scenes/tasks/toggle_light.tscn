@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj2xbmcrfnk5i"]
+[gd_scene load_steps=7 format=3 uid="uid://bj2xbmcrfnk5i"]
 
 [ext_resource type="Script" path="res://scripts/toggle_light.gd" id="1_8j8mr"]
+[ext_resource type="AudioStream" uid="uid://8kfwj4wxyf2i" path="res://sounds/lightbuzz.ogg" id="2_q2wbs"]
+[ext_resource type="Script" path="res://scripts/sound.gd" id="3_oi5io"]
+[ext_resource type="AudioStream" uid="uid://choyg40hhgnnq" path="res://sounds/lightoff.ogg" id="4_ef8kg"]
+[ext_resource type="AudioStream" uid="uid://ufgqtp4dbo8m" path="res://sounds/lighton.ogg" id="4_hqvbe"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ibs5p"]
 
@@ -14,3 +18,15 @@ skeleton = NodePath("light_source")
 
 [node name="light_source" type="OmniLight3D" parent="lampshade"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.07661, 0)
+
+[node name="Buzz" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_q2wbs")
+script = ExtResource("3_oi5io")
+
+[node name="Off" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ef8kg")
+script = ExtResource("3_oi5io")
+
+[node name="On" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_hqvbe")
+script = ExtResource("3_oi5io")

@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-
-uid="uid://hgn2pcy07t5y"
-
-uid="uid://cyvvrt28ddcso"
-
-path="res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"
+uid="uid://b5de82qjrkr7i"
+path="res://.godot/imported/ElectricalSwitch.glb-ce419677276a62c1f6a238a157819881.scn"
 
 [deps]
 
-source_file="res://Meshes/BedroomObjects/Bed.glb"
-dest_files=["res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"]
+source_file="res://Meshes/GeneralObjects/ElectricalSwitch.glb"
+dest_files=["res://.godot/imported/ElectricalSwitch.glb-ce419677276a62c1f6a238a157819881.scn"]
 
 [params]
 

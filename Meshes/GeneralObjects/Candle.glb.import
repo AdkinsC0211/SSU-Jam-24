@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-
-uid="uid://hgn2pcy07t5y"
-
-uid="uid://cyvvrt28ddcso"
-
-path="res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"
+uid="uid://b2fiu3sef288o"
+path="res://.godot/imported/Candle.glb-81133cd50bba9f17905990860a0f00a1.scn"
 
 [deps]
 
-source_file="res://Meshes/BedroomObjects/Bed.glb"
-dest_files=["res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"]
+source_file="res://Meshes/GeneralObjects/Candle.glb"
+dest_files=["res://.godot/imported/Candle.glb-81133cd50bba9f17905990860a0f00a1.scn"]
 
 [params]
 

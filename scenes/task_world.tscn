@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="3_cvn31"]
 [ext_resource type="PackedScene" uid="uid://bf0scv8y2eu8o" path="res://scenes/tasks/window.tscn" id="4_24kd2"]
 [ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="5_27w22"]
-[ext_resource type="PackedScene" uid="uid://dr62xavsfwvaj" path="res://scenes/tasks/sink_task.tscn" id="6_kxyd2"]
+[ext_resource type="PackedScene" path="res://scenes/tasks/sink_task.tscn" id="6_kxyd2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7fp57"]
 
@@ -50,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.855, 4.37768, -13.3328)
 
 [node name="Window" parent="." instance=ExtResource("4_24kd2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1072, 2.72331, -13.2648)
+spoopy_window = true
 interactMessage = "Press E to open window"
 
 [node name="sink_task_root" parent="." instance=ExtResource("6_kxyd2")]

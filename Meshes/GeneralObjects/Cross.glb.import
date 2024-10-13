@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-
-uid="uid://hgn2pcy07t5y"
-
-uid="uid://cyvvrt28ddcso"
-
-path="res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"
+uid="uid://cqol0elpgrmh8"
+path="res://.godot/imported/Cross.glb-f2afe47e15d9c72b3454675b8eabe8e1.scn"
 
 [deps]
 
-source_file="res://Meshes/BedroomObjects/Bed.glb"
-dest_files=["res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"]
+source_file="res://Meshes/GeneralObjects/Cross.glb"
+dest_files=["res://.godot/imported/Cross.glb-f2afe47e15d9c72b3454675b8eabe8e1.scn"]
 
 [params]
 

@@ -13,15 +13,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
-	
-	
+	if toggle and not $On.playing:
+		if not $Buzz.playing:
+			$Buzz.play_sound()
+
 func flip_state():
 	toggle = !toggle
 	if toggle:
 		$lampshade/light_source.light_energy = light_strength
+		$On.play()
 		return
 	$lampshade/light_source.light_energy = 0
+	$Buzz.stop()
+	$Off.play()
 	
 	
 	
