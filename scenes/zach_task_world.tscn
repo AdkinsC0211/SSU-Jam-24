@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://y1e8qi11lvcc"]
+
+[ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_bvjiw"]
+[ext_resource type="Script" path="res://scripts/zach_task_world.gd" id="1_rfj78"]
+[ext_resource type="PackedScene" uid="uid://b8p42uybaforr" path="res://scenes/tasks/rosary_beads.tscn" id="2_vnpse"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwvb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0lwg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ibh6r"]
+material = SubResource("StandardMaterial3D_y0lwg")
+
+[sub_resource type="Environment" id="Environment_wxvi2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ahmcg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e027"]
+size = Vector3(1, 0.41748, 2.16064)
+
+[node name="ZachTaskWorld" type="Node3D"]
+script = ExtResource("1_rfj78")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_vwvb8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_ibh6r")
+
+[node name="player" parent="." instance=ExtResource("1_bvjiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88318, 2.14835, 4.39095)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.598409, 0.801191, 0, -0.801191, 0.598409, -4.76837e-07, 7.41848, 5.05263)
+light_energy = 18.445
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wxvi2")
+
+[node name="RosaryBeadsRoot" parent="." instance=ExtResource("2_vnpse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451429, 0.595742, 0.290142)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 7.415, 0, 0, 0, 1, 0, 1.905, -4.559)
+mesh = SubResource("BoxMesh_ahmcg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4.485, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.048, -4.559)
+mesh = SubResource("BoxMesh_ahmcg")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44353, -2.26232)
+
+[node name="cross collision" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.479357, -0.580322)
+shape = SubResource("BoxShape3D_3e027")
+
+[node name="prayerTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="Node3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Node3D/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="prayerTimer" to="." method="_on_prayer_timer_timeout"]
