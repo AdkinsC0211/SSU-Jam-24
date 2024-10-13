@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="2_m3mcm"]
-[ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
-[ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
-[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_rng1w"]
-[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_ial17"]
-[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
-[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
+[ext_resource type="PackedScene" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
+[ext_resource type="PackedScene" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
+[ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="8_rng1w"]
+[ext_resource type="PackedScene" path="res://scenes/mug.tscn" id="9_ial17"]
+[ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="9_jdxiq"]
+[ext_resource type="PackedScene" path="res://scenes/plate.tscn" id="10_mixt5"]
 [ext_resource type="PackedScene" uid="uid://dr62xavsfwvaj" path="res://scenes/tasks/sink_task.tscn" id="11_2nfgt"]
 [ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="11_dthy1"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="12_ouoxv"]
@@ -297,12 +297,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.15578, -0.429768, -9
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.79919, -0.576253, -9.8933)
 
 [node name="task_object_manager" type="Node" parent="."]
-
-[node name="door_interactable_Static2" parent="task_object_manager" instance=ExtResource("11_dthy1")]
-transform = Transform3D(-7.86334e-08, 0, 1.47895, 0, 2.15597, 0, -1.79892, 0, -6.46471e-08, 3.32291, -1.89413, 10.7245)
-
-[node name="door_interactable_Static" parent="task_object_manager" instance=ExtResource("11_dthy1")]
-transform = Transform3D(-7.3852e-08, 0, 1.47231, 0, 1.96878, 0, -1.68954, 0, -6.43569e-08, 3.3634, -1.66305, 3.08742)
 
 [node name="sink_task_root" parent="task_object_manager" instance=ExtResource("11_2nfgt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9154, -1.6518, -13.9838)

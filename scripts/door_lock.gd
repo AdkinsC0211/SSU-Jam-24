@@ -27,6 +27,7 @@ func interact(_body: CharacterBody3D) -> void:
 		interactMessage = "Press E to unlock the door"
 		if !parent.door_open:
 			parent.interactMessage = "Door is locked"
+			
 	door_locked = !door_locked
 	$Lock.pitch_scale = randf_range(0.7, 1.2)
 	$Lock.play_sound()
