@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=39 format=3 uid="uid://dwl6ycvkcannj"]
-=======
 [gd_scene load_steps=37 format=3 uid="uid://dwl6ycvkcannj"]
->>>>>>> davids_task
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
@@ -18,19 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="13_0fvoq"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="13_pvpnt"]
 [ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="15_asksr"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://67pcuoyi0tla" path="res://scenes/soap_bottle.tscn" id="16_rxfac"]
-[ext_resource type="PackedScene" uid="uid://da2stukv76ui1" path="res://scenes/mirror.tscn" id="17_5oenv"]
-[ext_resource type="PackedScene" uid="uid://bxjnys72sd7qc" path="res://scenes/shampoo_bottle.tscn" id="18_icvgt"]
-[ext_resource type="PackedScene" uid="uid://d1ghs6bsl58do" path="res://scenes/sponge.tscn" id="19_p1nfc"]
-[ext_resource type="PackedScene" uid="uid://c6rluul85ps0q" path="res://scenes/dining_table.tscn" id="20_21qdh"]
-[ext_resource type="PackedScene" uid="uid://l2278t5b11nf" path="res://scenes/bathroom_sink.tscn" id="20_hfl66"]
-=======
 [ext_resource type="PackedScene" path="res://scenes/soap_bottle.tscn" id="16_rxfac"]
 [ext_resource type="PackedScene" path="res://scenes/mirror.tscn" id="17_5oenv"]
 [ext_resource type="PackedScene" path="res://scenes/shampoo_bottle.tscn" id="18_icvgt"]
 [ext_resource type="PackedScene" path="res://scenes/sponge.tscn" id="19_p1nfc"]
->>>>>>> davids_task
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
