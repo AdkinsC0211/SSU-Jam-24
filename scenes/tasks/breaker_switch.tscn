@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://8vjefhfjin8y"]
+[gd_scene load_steps=12 format=3 uid="uid://8vjefhfjin8y"]
 
 [ext_resource type="Script" path="res://scripts/breaker_switch.gd" id="1_lvxw6"]
+[ext_resource type="AudioStream" uid="uid://kn528llwmppt" path="res://sounds/sparks.ogg" id="2_4vgcv"]
+[ext_resource type="AudioStream" uid="uid://c8kcmpn6w44wv" path="res://sounds/powerdown.ogg" id="3_orxsu"]
+[ext_resource type="Script" path="res://scripts/sound.gd" id="4_hufkf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5hdpt"]
 
@@ -97,3 +100,10 @@ active = false
 libraries = {
 "": SubResource("AnimationLibrary_uwx3l")
 }
+
+[node name="Sparks" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_4vgcv")
+
+[node name="Off" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_orxsu")
+script = ExtResource("4_hufkf")
