@@ -1,21 +1,20 @@
-[gd_scene load_steps=35 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=34 format=3 uid="uid://bxwg5mmvsjmih"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="2_m3mcm"]
-[ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
-[ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
-[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_rng1w"]
-[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_ial17"]
-[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
-[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
-[ext_resource type="PackedScene" uid="uid://dr62xavsfwvaj" path="res://scenes/tasks/sink_task.tscn" id="11_2nfgt"]
+[ext_resource type="PackedScene" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
+[ext_resource type="PackedScene" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
+[ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="8_rng1w"]
+[ext_resource type="PackedScene" path="res://scenes/mug.tscn" id="9_ial17"]
+[ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="9_jdxiq"]
+[ext_resource type="PackedScene" path="res://scenes/plate.tscn" id="10_mixt5"]
+[ext_resource type="PackedScene" path="res://scenes/tasks/sink_task.tscn" id="11_2nfgt"]
 [ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="11_dthy1"]
-[ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="12_ouoxv"]
+[ext_resource type="PackedScene" path="res://scenes/tasks/bed_task.tscn" id="12_ouoxv"]
 [ext_resource type="PackedScene" path="res://scenes/Haunter.tscn" id="13_0fvoq"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="13_pvpnt"]
 [ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="15_asksr"]
-[ext_resource type="PackedScene" uid="uid://b6fwgrx2hndob" path="res://scenes/toilet.tscn" id="16_thagn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -376,8 +375,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8394, 7.04, 16.5655)
 
 [node name="ToggleLight2" parent="light_manager" instance=ExtResource("15_asksr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21767, 1.10239, 17.2877)
-
-[node name="StaticBody3D2" parent="." instance=ExtResource("16_thagn")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.541151, -1.49094, -10.3705)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
