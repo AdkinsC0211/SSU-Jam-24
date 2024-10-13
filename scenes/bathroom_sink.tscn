@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://l2278t5b11nf"]
+[gd_scene load_steps=16 format=4 uid="uid://l2278t5b11nf"]
 
-[ext_resource type="Script" path="res://scripts/hinged_door.gd" id="1_5grwy"]
+[ext_resource type="Script" path="res://scripts/bathroomsinkfaucet.gd" id="1_juc43"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kh8mw"]
 points = PackedVector3Array(-0.441601, -2.66794, -0.998011, -0.282348, 2.35177, -1.63604, 1.07198, -2.66794, -0.121394, -0.999665, -2.66794, 0.435726, -1.15914, 2.35177, -0.440251, 1.15183, 2.35227, -0.520205, 0.43429, -2.66794, 0.993486, -0.760333, 2.43214, 1.31234, 0.593996, -2.66794, -0.918377, 0.832875, 2.43214, 1.23271, 0.753022, 2.43214, -1.31719, -0.441601, -2.66794, 0.993486, -0.920039, -2.66794, -0.59952, -0.680933, 2.43214, -1.3965, -1.15914, 2.35177, 0.435726, 1.15183, 2.27239, 0.51536, 0.912728, -2.66794, 0.594995, -0.282348, 2.27189, 1.6312, 0.275037, 2.27189, -1.63604, -1.07929, -2.66794, -0.0417598, 0.912728, -2.66794, -0.59952, 0.0361577, -2.66794, -1.07765, 0.275037, 2.35177, 1.6312, 0.115784, -2.66794, 1.07312, -1.07929, 2.27189, -0.759428, 0.593996, 2.27189, 1.47161, -1.07929, 2.19302, 0.754583, -0.601307, -2.66794, 0.913852, 0.832875, 2.27189, -1.23723, -0.840186, 2.27189, -1.23723, -0.601307, -2.66794, -0.918377, 1.07198, -2.66794, 0.116869)
@@ -181,6 +181,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_erljn")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01kkm"]
+albedo_color = Color(0, 0.407843, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ufbtq"]
+material = SubResource("StandardMaterial3D_01kkm")
+radius = 0.05
+
 [node name="StaticBody3D" type="StaticBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
@@ -201,8 +208,14 @@ transform = Transform3D(1.277, 0, 0, 0, 1, 0, 0, 0, 1, 0.217543, 0.787258, 0.996
 mesh = SubResource("ArrayMesh_4ec0t")
 skeleton = NodePath("")
 
-[node name="InteractableStaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("1_5grwy")
+[node name="InteractableStaticBody3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "interactCollider")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_juc43")
+mesh = NodePath("Node3D/bathroom_sink_faucet_handle")
+interactCollider = NodePath("CollisionShape3D")
+axis = 2
+openDegrees = 22
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableStaticBody3D"]
 transform = Transform3D(0.063678, 0, 0, 0, 0.063678, 0, 0, 0, 0.063678, 0.358246, 1.00459, -0.00400102)
@@ -214,3 +227,8 @@ shape = SubResource("ConvexPolygonShape3D_3jt2o")
 transform = Transform3D(0.063678, 0, 0, 0, 0.063678, 0, 0, 0, 0.063678, 0.358246, 1.00459, -0.00400102)
 mesh = SubResource("ArrayMesh_oaniq")
 skeleton = NodePath("")
+
+[node name="waterMesh" type="MeshInstance3D" parent="InteractableStaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.252394, -0.0672022, 0.00102329)
+mesh = SubResource("CapsuleMesh_ufbtq")
+skeleton = NodePath("../..")
