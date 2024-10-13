@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bf0scv8y2eu8o"]
+[gd_scene load_steps=21 format=3 uid="uid://bf0scv8y2eu8o"]
 
 [ext_resource type="Script" path="res://scripts/window.gd" id="1_3e1ny"]
 [ext_resource type="AudioStream" uid="uid://bys4uboy6m7i6" path="res://sounds/wind.ogg" id="2_hle0w"]
 [ext_resource type="Script" path="res://scripts/sound.gd" id="3_vr056"]
 [ext_resource type="AudioStream" uid="uid://bfgid0i3qlrxa" path="res://sounds/windowburstopen.ogg" id="4_p77er"]
+[ext_resource type="AudioStream" uid="uid://cyo5q81in62fr" path="res://sounds/windowclose.ogg" id="5_46h2f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kvv7r"]
 size = Vector3(8, 1, 4)
@@ -275,6 +276,10 @@ script = ExtResource("3_vr056")
 
 [node name="Open" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_p77er")
+script = ExtResource("3_vr056")
+
+[node name="Close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_46h2f")
 script = ExtResource("3_vr056")
 
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

@@ -7,6 +7,7 @@ extends InteractableStaticBody3D
 
 #window_variables
 var window_open: bool = false
+var one_for_the_one_time = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +24,9 @@ func _process(_delta):
 	elif not window_open:
 		if not $AnimationPlayer.is_playing():
 			$Wind.stop()
+			if one_for_the_one_time:
+				$Close.play()
+				one_for_the_one_time = false
 	
 func _on_area_3d_body_shape_entered(_body_rid, body, _body_shape_index, _local_shape_index):
 	if body.is_in_group("Player") and window_open == false:
@@ -42,6 +46,7 @@ func _on_break_open_delay_timeout():
 func interact(_body: CharacterBody3D) -> void:
 	$AnimationPlayer.active = true
 	$AnimationPlayer.speed_scale = 1
+	one_for_the_one_time = true
 	if !$Blinds.blinds_open:
 		self.interactMessage = "Blinds are closed"
 	else:
