@@ -36,3 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6716, 0)
 light_energy = 14.0
 light_size = 1.0
 omni_range = 25.0
+
+[node name="flickerTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="flickerTimer" to="." method="_on_flicker_timer_timeout"]

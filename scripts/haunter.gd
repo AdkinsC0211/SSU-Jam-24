@@ -6,7 +6,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$haunt_timer.wait_time = randf_range(60, 80)
+	$haunt_timer.wait_time = randf_range(60, 100)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
