@@ -1663,7 +1663,7 @@ stream = ExtResource("5_46h2f")
 script = ExtResource("3_vr056")
 
 [node name="Window" type="Node3D" parent="."]
-transform = Transform3D(-1.73009e-08, 0, 0.313644, 0, 0.520945, 0, -0.395798, 0, -1.37098e-08, -1.03897, 0, 0)
+transform = Transform3D(-1.43278e-06, 0, 0.313644, 0, 0.520945, 0, -0.395798, 0, -1.13539e-06, -1.03897, 0, 0)
 
 [node name="window_frame" type="MeshInstance3D" parent="Window"]
 transform = Transform3D(0, 1, 0, -2.64365, 0, 0, 0, 0, 2.64365, 0, 0, 0)
@@ -1676,7 +1676,7 @@ mesh = SubResource("ArrayMesh_8ka4q")
 skeleton = NodePath("")
 
 [node name="Window2" type="Node3D" parent="."]
-transform = Transform3D(-1.73009e-08, 0, 0.337015, 0, 0.520945, 0, -0.395798, 0, -1.47314e-08, 0.802007, 0, 0)
+transform = Transform3D(-1.43278e-06, 0, 0.337015, 0, 0.520945, 0, -0.395798, 0, -1.21999e-06, 0.802007, 0, 0)
 
 [node name="window_frame" type="MeshInstance3D" parent="Window2"]
 transform = Transform3D(0, 1, 0, -2.64365, 0, 0, 0, 0, 2.64365, 0, 0, 0)

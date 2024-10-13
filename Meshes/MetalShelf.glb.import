@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cphcdf2rxxgeo"
-path="res://.godot/imported/Child.fbx-8c263dcab6be1b44fb17ce0cdd7e0b9e.scn"
+uid="uid://cw8se51spmgvi"
+path="res://.godot/imported/MetalShelf.glb-9625e03b888f743feed06865228e5aa3.scn"
 
 [deps]
 
-source_file="res://Child.fbx"
-dest_files=["res://.godot/imported/Child.fbx-8c263dcab6be1b44fb17ce0cdd7e0b9e.scn"]
+source_file="res://Meshes/MetalShelf.glb"
+dest_files=["res://.godot/imported/MetalShelf.glb-9625e03b888f743feed06865228e5aa3.scn"]
 
 [params]
 
@@ -27,11 +27,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

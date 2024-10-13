@@ -4,6 +4,7 @@ extends InteractableStaticBody3D
 @onready var timer = $break_open_delay
 
 @export var spoopy_window: bool
+var haunted: bool = false
 
 #window_variables
 var window_open: bool = false
@@ -35,12 +36,16 @@ func _on_area_3d_body_shape_entered(_body_rid, body, _body_shape_index, _local_s
 
 
 func _on_break_open_delay_timeout():
+	if $Blinds.blinds_open == false:
+		$Blinds/AnimationPlayer.play("open_blinds")
+		
 	$AnimationPlayer.active = true
 	$AnimationPlayer.play("open_window",-1,1,false)
 	$AnimationPlayer.speed_scale = 8
 	window_open = true
 	$Area3D.queue_free()
 	$Open.play_sound()
+	haunted = true
 
 
 func interact(_body: CharacterBody3D) -> void:
@@ -58,4 +63,9 @@ func interact(_body: CharacterBody3D) -> void:
 			$AnimationPlayer.play_backwards("open_window",-1)
 			self.interactMessage = "Press E to open window"
 			$Blinds.interactMessage = "Press E to close blinds"
+			haunted = false
 		window_open = !window_open
+		
+		
+func haunt():
+	_on_break_open_delay_timeout()
