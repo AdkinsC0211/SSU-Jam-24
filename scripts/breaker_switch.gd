@@ -19,7 +19,7 @@ func _process(_delta):
 func interact(_body: CharacterBody3D) -> void:
 	light_toggle = !light_toggle
 	$AnimationPlayer.active = true
-	if len(controlled_lights) > 0:
+	if controlled_lights.get_child_count() > 0:
 		for light in controlled_lights.get_children():
 			light.flip_state()
 			

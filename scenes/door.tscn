@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dt6nkja4aj1oi"]
+[gd_scene load_steps=19 format=4 uid="uid://dt6nkja4aj1oi"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_pjh63"]
 [ext_resource type="Script" path="res://scripts/door_lock.gd" id="2_xnpr0"]
@@ -103,26 +103,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.979133, 0.568413, -0.0304261)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D:rotation")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(-0.234925, 0, 0.131949)]
 }
 
 [sub_resource type="Animation" id="Animation_cq33x"]
@@ -130,36 +130,52 @@ resource_name = "rotation"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.979133, 0.568413, -0.0304261), Vector3(0.979133, 0.568413, -0.627551)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3wq2c"]
+resource_name = "default_state"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D:rotation")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+"values": [Vector3(-0.234925, 0, 0.131949)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e4rio"]
 _data = {
 "RESET": SubResource("Animation_mis6r"),
+"default_state": SubResource("Animation_3wq2c"),
 "rotation": SubResource("Animation_cq33x")
 }
 
 [node name="door_interactable_Static" type="StaticBody3D"]
-transform = Transform3D(0.350989, 0, 0, 0, 0.350989, 0, 0, 0, 0.350989, -0.552162, -0.224712, -5.96046e-08)
+transform = Transform3D(0.350989, 0, 0, 0, 0.350989, 0, 0, 0, 0.350989, -0.234925, 0, 0.131949)
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_pjh63")
@@ -202,6 +218,7 @@ mesh = SubResource("ArrayMesh_xo6g8")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_e4rio")
 }

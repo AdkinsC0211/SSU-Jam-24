@@ -27,6 +27,7 @@ func interact(_body: CharacterBody3D) -> void:
 		interactMessage = "Press E to unlock the door"
 		if !parent.door_open:
 			parent.interactMessage = "Door is locked"
+			
 	door_locked = !door_locked
 	parent.door_locked = door_locked
 	if !parent.door_open and !door_locked:
