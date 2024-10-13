@@ -17,7 +17,7 @@ const BOB_AMP := 0.08
 var stepped = false
 
 #task list variable
-@onready var quest_log = $TaskList
+#@onready var quest_log = $TaskList
 
 #wait time task variables
 var doing_wait_task: bool = false
@@ -37,15 +37,15 @@ func _ready() -> void:
 		hand = $Neck/Camera3D/Hand	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#task list starts invisible
-	for task in quest_log.get_children():
-		task.visible = !task.visible
+	#for task in quest_log.get_children():
+	#	task.visible = !task.visible
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_head_bobs(delta)
 	handle_fov_change(delta)
 	handle_interactions()
-	handle_quest_journal()
+	#handle_quest_journal()
 	move_and_slide()
 
 func handle_movement(delta: float) -> void:
@@ -137,10 +137,10 @@ func handle_interactions() -> void:
 		$GeneralAI/InteractionMessage.text = "" # Purposefully empty string
 
 
-func handle_quest_journal() -> void:
-	if Input.is_action_just_pressed("quest_log"):
-		for item in quest_log.get_children():
-			item.visible = !item.visible
+#func handle_quest_journal() -> void:
+#	if Input.is_action_just_pressed("quest_log"):
+#		for item in quest_log.get_children():
+#			item.visible = !item.visible
 
 
 func _on_interact_range_body_entered(body: Node3D) -> void:
