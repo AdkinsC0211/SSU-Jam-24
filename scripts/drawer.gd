@@ -10,11 +10,12 @@ var open := false
 
 func interact(_body):
 	open = !open
+	$Cabinet.play()
 	
-func _process(_delta):
+func _process(delta):
 	if open and !(mesh.position == doorOpen):
-		mesh.position = lerp(mesh.position, doorOpen, 0.01)
+		mesh.position = lerp(mesh.position, doorOpen, delta*20)
 		interactCollider.position = mesh.position
 	elif !open and !(mesh.position == doorClosed):
-		mesh.position = lerp(mesh.position, doorClosed, 0.03)
+		mesh.position = lerp(mesh.position, doorClosed, delta*20)
 		interactCollider.position = mesh.position
