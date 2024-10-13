@@ -1,9 +1,9 @@
-[gd_scene load_steps=55 format=4 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=56 format=4 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
-[ext_resource type="PackedScene" path="res://scenes/stairs.tscn" id="2_yiu2y"]
+[ext_resource type="PackedScene" uid="uid://dcc5wp6facgol" path="res://scenes/stairs.tscn" id="2_yiu2y"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
 [ext_resource type="PackedScene" uid="uid://bxpdk70qrbwn6" path="res://scenes/stall_panel.tscn" id="4_yk265"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="6_ny0h2"]
 [ext_resource type="PackedScene" path="res://scenes/toilet.tscn" id="6_rtq11"]
 [ext_resource type="PackedScene" path="res://scenes/toilet_paper.tscn" id="7_1tyxx"]
+[ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="7_de6i3"]
 [ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="7_o2l0q"]
 [ext_resource type="PackedScene" path="res://scenes/bathroom_sink.tscn" id="7_wnfh0"]
 [ext_resource type="PackedScene" path="res://scenes/pepper.tscn" id="8_xxscp"]
@@ -1660,6 +1661,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.183, -12.8643, 9.2712)
 
 [node name="doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6008, -10.4168, 0.178762)
+
+[node name="InteractableStaticBody3D" parent="doors" instance=ExtResource("7_de6i3")]
+transform = Transform3D(-1.87959e-08, 0, 0.43, 0, 0.43, 0, -0.43, 0, -1.87959e-08, 5.8637, -0.0279608, 20.9743)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.5624, -10.0752, 37.4907)
