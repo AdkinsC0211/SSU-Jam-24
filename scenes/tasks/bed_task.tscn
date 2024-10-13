@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwqeh00i8jcwj"]
+[gd_scene load_steps=10 format=3 uid="uid://cx5vp8b1nd7eh"]
 
 [ext_resource type="PackedScene" uid="uid://cyvvrt28ddcso" path="res://Meshes/BedroomObjects/Bed.glb" id="1_0c4qa"]
 [ext_resource type="Script" path="res://scripts/bed_task.gd" id="1_8hebs"]
+[ext_resource type="AudioStream" uid="uid://inrjdjqgf0rb" path="res://sounds/MonsterBreath.ogg" id="3_lgmwl"]
+[ext_resource type="Script" path="res://scripts/sound.gd" id="4_qinix"]
+[ext_resource type="AudioStream" uid="uid://c6s3ymkw24yt2" path="res://sounds/RitualRumble.ogg" id="5_x1lj8"]
+[ext_resource type="AudioStream" uid="uid://drn8ypxvmrvf4" path="res://sounds/curtainmove.ogg" id="6_jnn7w"]
+[ext_resource type="AudioStream" uid="uid://bfdya45alsla3" path="res://sounds/MonsterGotcha.ogg" id="7_pm4js"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxsh8"]
 size = Vector3(2.86929, 1.40601, 4.7948)
@@ -32,5 +37,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105254, 0)
 light_color = Color(0, 0.341176, 1, 1)
 light_energy = 18.695
 light_indirect_energy = 1.14
+
+[node name="MonsterBreath" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lgmwl")
+script = ExtResource("4_qinix")
+
+[node name="Ritual" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_x1lj8")
+script = ExtResource("4_qinix")
+
+[node name="Ruffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jnn7w")
+
+[node name="MonsterCatch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pm4js")
 
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
