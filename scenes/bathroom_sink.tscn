@@ -201,11 +201,8 @@ transform = Transform3D(1.277, 0, 0, 0, 1, 0, 0, 0, 1, 0.217543, 0.787258, 0.996
 mesh = SubResource("ArrayMesh_4ec0t")
 skeleton = NodePath("")
 
-[node name="InteractableStaticBody3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "interactCollider")]
+[node name="InteractableStaticBody3D" type="StaticBody3D" parent="."]
 script = ExtResource("1_5grwy")
-mesh = NodePath("Node3D/bathroom_sink_faucet_handle")
-interactCollider = NodePath("CollisionShape3D")
-openDegrees = 25
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableStaticBody3D"]
 transform = Transform3D(0.063678, 0, 0, 0, 0.063678, 0, 0, 0, 0.063678, 0.358246, 1.00459, -0.00400102)
