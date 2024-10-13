@@ -4,6 +4,14 @@ var canPray = true
 var praying = false
 @export var cross : StaticBody3D
 
+
+func _process(delta: float) -> void:
+	if target:
+		global_position = lerp(global_position, target.global_position, 5 * delta)
+	if just_picked:
+		$PickUp.play()
+		just_picked = false
+
 func use() -> void:
 	if praying:
 		print("stopped praying")

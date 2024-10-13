@@ -11,9 +11,12 @@ enum Axis { X, Y, Z }
 var doorClosed := 0.0
 @export var openDegrees := 150
 @onready var doorOpen := doorClosed - openDegrees
+var just_closed = true
 
 func interact(_body):
 	if open: # closing door
+		just_closed = false
+		$DoorMove.play_sound()
 		open = !open
 		interactMessage = "Press E to open door"
 		if $Door2/Door/Lock.locked:
@@ -21,27 +24,31 @@ func interact(_body):
 	elif $Door2/Door/Lock.locked == false:
 		open = !open
 		interactMessage = "Press E to close door"
+		$DoorMove.play_sound()
 	else:
 		interactMessage = "Door is locked"
 		return
 
-func _process(_delta):
+func _process(delta):
 	if open and !is_door_fully_open():
-		rotate_door(doorOpen)
+		rotate_door(doorOpen, delta)
 	elif !open and !is_door_fully_closed():
-		rotate_door(doorClosed)
+		rotate_door(doorClosed,delta)
+	if is_door_fully_closed() and not just_closed:
+		just_closed = true
+		$DoorClose.play_sound()
 
 # Function to rotate the door along the selected axis
-func rotate_door(target_rotation):
+func rotate_door(target_rotation,delta):
 	match axis:
 		Axis.X:
-			mesh.rotation_degrees.x = lerp(mesh.rotation_degrees.x, target_rotation, 0.01)
+			mesh.rotation_degrees.x = move_toward(mesh.rotation_degrees.x, target_rotation, delta*100)
 			interactCollider.rotation_degrees.x = mesh.rotation_degrees.x
 		Axis.Y:
-			mesh.rotation_degrees.y = lerp(mesh.rotation_degrees.y, target_rotation, 0.01)
+			mesh.rotation_degrees.y = move_toward(mesh.rotation_degrees.y, target_rotation, delta*100)
 			interactCollider.rotation_degrees.y = mesh.rotation_degrees.y
 		Axis.Z:
-			mesh.rotation_degrees.z = lerp(mesh.rotation_degrees.z, target_rotation, 0.01)
+			mesh.rotation_degrees.z = move_toward(mesh.rotation_degrees.z, target_rotation, delta*100)
 			interactCollider.rotation_degrees.z = mesh.rotation_degrees.z
 
 # Helper functions to check if the door is fully open or closed

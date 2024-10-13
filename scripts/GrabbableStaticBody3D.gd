@@ -7,6 +7,8 @@ extends InteractableStaticBody3D
 
 var player : CharacterBody3D
 
+var just_picked = false
+
 var targetVector : Vector3
 
 @export var interactMessageSecondary = "Press E to Swap Items"
@@ -22,6 +24,7 @@ func interact(body) -> void:
 	collider.disabled = true
 	target = body.hand
 	player = body
+	just_picked = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if target:
@@ -34,3 +37,4 @@ func dropItem(pos : Vector3) -> void:
 	global_position = pos
 	collider.disabled = false
 	target = null
+	just_picked = true

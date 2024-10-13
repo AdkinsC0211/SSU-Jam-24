@@ -26,13 +26,21 @@ func _ready() -> void:
 
 func _process(delta):
 	if filling_sink:
+		if not $Scrub.playing:
+			$Scrub.play()
+			$Water.play()
 		#$water.translate(Vector3(0,.0*delta,0))
 		$water.position.y = lerp(water_start.y,
 		water_start.y + .3,
 		 ($Timer.wait_time - $Timer.time_left)/$Timer.wait_time)
+	else:
+		if $Scrub.playing:
+			$Scrub.stop()
+			$Water.stop()
 	
 # Virtual function that can be overridden by child classes
 func interact(body: CharacterBody3D) -> void:
+	$Squeak.play()
 	doing_task = !doing_task
 	if body.name ==  "CharacterBody3D":
 		player_ref = body
@@ -48,6 +56,10 @@ func interact(body: CharacterBody3D) -> void:
 
 
 func _on_timer_timeout():
+	$Scrub.stop()
+	$Water.stop()
+	$Squeak.play()
+	$FinishDishes.play()
 	player_ref.doing_wait_task = false
 	task_complete = true
 	filling_sink = false

@@ -24,7 +24,8 @@ func interact(body: CharacterBody3D) -> void:
 		$handle.rotate_z(deg_to_rad(-90))
 		interactMessage = "Press E to unlock the door"
 		handle_messages()
-		
+	$DoorLock.play_sound()
+
 func handle_messages():
 	if parent.open:
 		if self.locked:
