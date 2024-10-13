@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dwl6ycvkcannj"]
+[gd_scene load_steps=39 format=3 uid="uid://dwl6ycvkcannj"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://da2stukv76ui1" path="res://scenes/mirror.tscn" id="17_5oenv"]
 [ext_resource type="PackedScene" uid="uid://bxjnys72sd7qc" path="res://scenes/shampoo_bottle.tscn" id="18_icvgt"]
 [ext_resource type="PackedScene" uid="uid://d1ghs6bsl58do" path="res://scenes/sponge.tscn" id="19_p1nfc"]
+[ext_resource type="PackedScene" uid="uid://l2278t5b11nf" path="res://scenes/bathroom_sink.tscn" id="20_hfl66"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -391,5 +392,8 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.31339, -0.328946, -1
 
 [node name="GrabbableStaticBody3D3" parent="." instance=ExtResource("19_p1nfc")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.32719, -0.539557, -14.3603)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("20_hfl66")]
+transform = Transform3D(-0.3, 0, 2.62268e-08, 0, 0.3, 0, -2.62268e-08, 0, -0.3, -9.25797, -0.904234, -15.8736)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
