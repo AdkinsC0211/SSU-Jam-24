@@ -26,18 +26,15 @@ func interact(_body: CharacterBody3D) -> void:
 	if light_toggle != true:
 		$AnimationPlayer.play("flip_switch",-1,1,false)
 		interactMessage = "Press E to turn the lights on"
-		$Off.play_sound()
 		
 	else:
 		$AnimationPlayer.play_backwards("flip_switch",-1)
 		interactMessage = "Press E to turn the light off"
 		haunted = false
-		$Sparks.play()
 		
 func haunt():
 	for light in controlled_lights.get_children():
 			light.flip_state()
 	haunted = true
-	$Off.play_sound()
 	
 	
