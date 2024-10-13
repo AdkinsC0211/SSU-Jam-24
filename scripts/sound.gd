@@ -6,7 +6,6 @@ var update_timer = 0.5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
-	space_state = get_world_3d().direct_space_state
 
 
 func _physics_process(_delta):
@@ -23,13 +22,12 @@ func _process(delta: float) -> void:
 		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
 		if result!={}:
-			if result["collider"] is StaticBody3D or result["collider"] is CSGCombiner3D:
+			if result["collider"] is StaticBody3D:
 				#if distance_vec.length() > 20:
 				#	if bus != "Far & Muffled":
 				#		bus = "Far & Muffled"
 				if bus != "Muffled":
 					bus = "Muffled"
-					
 			elif bus!="Master" and bus!= "Far":
 				bus = "Master"
 		#if distance_vec.length() > 20 and bus!="Far & Muffled":
@@ -46,7 +44,7 @@ func play_sound(time:float=0.0)-> void:
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
 	if result!={}:
-		if result["collider"] is StaticBody3D or result["collider"] is CSGCombiner3D:
+		if result["collider"] is StaticBody3D:
 			if distance_vec.length() > 20:
 				if bus != "Far & Muffled":
 					bus = "Far & Muffled"
