@@ -100,7 +100,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("F") and $Neck/Camera3D/PlaceRaycast.is_colliding():
 		dropItem($Neck/Camera3D/PlaceRaycast.get_collision_point())
 		heldItem = null
-		
+	if event.is_action_pressed("LClick") and heldItem:
+		heldItem.use()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion and !doing_wait_task:
 			neck.rotate_y(-event.relative.x * SENSITIVITY)
