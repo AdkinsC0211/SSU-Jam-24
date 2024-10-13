@@ -2,7 +2,8 @@ extends InteractableStaticBody3D
 
 
 var light_toggle: bool = true
-@export var controlled_lights: Array[toggle_light] = []
+@export var controlled_lights: Node3D
+var haunted = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,13 +20,21 @@ func interact(_body: CharacterBody3D) -> void:
 	light_toggle = !light_toggle
 	$AnimationPlayer.active = true
 	if len(controlled_lights) > 0:
-		for light in controlled_lights:
+		for light in controlled_lights.get_children():
 			light.flip_state()
 			
 	if light_toggle != true:
 		$AnimationPlayer.play("flip_switch",-1,1,false)
 		interactMessage = "Press E to turn the lights on"
+		
 	else:
 		$AnimationPlayer.play_backwards("flip_switch",-1)
 		interactMessage = "Press E to turn the light off"
+		haunted = false
+		
+func haunt():
+	for light in controlled_lights.get_children():
+			light.flip_state()
+	haunted = true
+	
 	

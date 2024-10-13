@@ -73,11 +73,10 @@ _data = {
 "flip_switch": SubResource("Animation_mmxoe")
 }
 
-[node name="Breaker" type="StaticBody3D" node_paths=PackedStringArray("controlled_lights")]
+[node name="Breaker" type="StaticBody3D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_lvxw6")
-controlled_lights = [null]
 
 [node name="breaker_panel" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.116464, 0, 1.49012e-08, -5.96046e-08)
