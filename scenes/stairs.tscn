@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://cnowc6tenm8fx"]
+[gd_scene load_steps=6 format=4 uid="uid://dcc5wp6facgol"]
 
-[ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_ycaif"]
+[ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_ycaif"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l1u7y"]
 _surfaces = [{

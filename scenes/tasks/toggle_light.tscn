@@ -13,19 +13,19 @@ script = ExtResource("1_8j8mr")
 [node name="Buzz" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 stream = ExtResource("2_q2wbs")
-volume_db = -15.0
+volume_db = -23.0
 script = ExtResource("3_oi5io")
 
 [node name="Off" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 stream = ExtResource("4_ef8kg")
-volume_db = -15.0
+volume_db = -23.0
 script = ExtResource("3_oi5io")
 
 [node name="On" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 stream = ExtResource("4_hqvbe")
-volume_db = -15.0
+volume_db = -23.0
 script = ExtResource("3_oi5io")
 
 [node name="Light" parent="." instance=ExtResource("6_o5wgb")]

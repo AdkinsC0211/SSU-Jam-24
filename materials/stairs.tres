@@ -1,7 +1,7 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://4ypsj7nowab"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bieg2msvqhve6"]
 
 [resource]
 resource_name = "boring brown"
 cull_mode = 2
 albedo_color = Color(0.227264, 0.148205, 0.0735013, 1)
-roughness = 0.5
+roughness = 0.0
