@@ -1,6 +1,8 @@
-[gd_scene load_steps=23 format=4 uid="uid://gonj2438vqpw"]
+[gd_scene load_steps=25 format=4 uid="uid://5wr2qsma7yp3"]
 
 [ext_resource type="Script" path="res://scripts/grandfather_clock.gd" id="1_llep8"]
+[ext_resource type="AudioStream" uid="uid://ci6e3y734jl40" path="res://sounds/tick.ogg" id="2_a1udy"]
+[ext_resource type="Script" path="res://scripts/sound.gd" id="3_4377y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41fug"]
 resource_name = "Material.007"
@@ -358,3 +360,7 @@ skeleton = NodePath("")
 transform = Transform3D(0.0337572, 0, 0, 0, 1, 0, 0, 0, 0.109678, 0.402755, 5.66008, 0)
 mesh = SubResource("ArrayMesh_yq3e7")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_a1udy")
+script = ExtResource("3_4377y")

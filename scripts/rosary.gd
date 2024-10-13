@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func use() -> void:
 	if praying:
+		$Pray.stop()
 		print("stopped praying")
 		praying = !praying
 		player.doing_wait_task = false
@@ -23,6 +24,7 @@ func use() -> void:
 		player.doing_wait_task = true
 		print('praying')
 		$prayerTimer.start()
+		$Pray.play()
 		praying = !praying
 	
 	

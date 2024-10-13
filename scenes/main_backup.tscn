@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="3_a8av5"]
 [ext_resource type="PackedScene" path="res://scenes/cabinet.tscn" id="4_2n140"]
 [ext_resource type="PackedScene" path="res://scenes/sink.tscn" id="5_mgihw"]
-[ext_resource type="PackedScene" path="res://scenes/grandfatherclock.tscn" id="6_mwlh2"]
+[ext_resource type="PackedScene" uid="uid://5wr2qsma7yp3" path="res://scenes/grandfatherclock.tscn" id="6_mwlh2"]
 [ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="7_kqkca"]
 [ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="8_b1v6m"]
 [ext_resource type="PackedScene" path="res://scenes/mug.tscn" id="9_8ygo2"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=56 format=4 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=58 format=4 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="PackedScene" uid="uid://cnowc6tenm8fx" path="res://scenes/stairs.tscn" id="2_yiu2y"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
+[ext_resource type="Texture2D" uid="uid://cqmumixp6av8w" path="res://materials/Tiles045_2K-JPG_Color.jpg" id="3_y4u5a"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
 [ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
 [ext_resource type="PackedScene" uid="uid://cuyy1tk40x4kk" path="res://scenes/chair.tscn" id="5_8vjjt"]
@@ -41,6 +42,9 @@ albedo_color = Color(1, 1, 1, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0ap7"]
 albedo_color = Color(0.419608, 0.392157, 0.372549, 1)
 albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4b4h"]
+albedo_texture = ExtResource("3_y4u5a")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekrl6"]
 
@@ -721,6 +725,13 @@ use_collision = true
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 13, -18.573, 3.404, -0.009)
 size = Vector3(0.316191, 0.5, 1.24598)
 material = ExtResource("1_w3kjo")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="build_structure/church_back_inside"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -22.0138, -5.14429, 0)
+layers = 524288
+polygon = PackedVector2Array(-8.63448, -8.02775, -8.64546, 8.03804, 4.78006, 8.03674, 4.58059, -8.02244)
+depth = 0.01
+material = SubResource("StandardMaterial3D_s4b4h")
 
 [node name="church_back_stairs" type="Node3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6539, -2.38141, 0)
