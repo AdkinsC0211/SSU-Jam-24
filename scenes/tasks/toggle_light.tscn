@@ -21,6 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.07661, 0)
 
 [node name="Buzz" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_q2wbs")
+volume_db = -23.0
 script = ExtResource("3_oi5io")
 
 [node name="Off" type="AudioStreamPlayer3D" parent="."]
