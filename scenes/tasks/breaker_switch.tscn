@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://kn528llwmppt" path="res://sounds/sparks.ogg" id="2_4vgcv"]
 [ext_resource type="AudioStream" uid="uid://c8kcmpn6w44wv" path="res://sounds/powerdown.ogg" id="3_orxsu"]
 [ext_resource type="Script" path="res://scripts/sound.gd" id="4_hufkf"]
-[ext_resource type="PackedScene" path="res://scenes/switch.tscn" id="5_7wr1m"]
+[ext_resource type="PackedScene" uid="uid://7ailmajrs5qq" path="res://scenes/switch.tscn" id="5_7wr1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_60rhs"]
 size = Vector3(1, 1, 0.297974)

@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c180w2bc1bphn"]
+[gd_scene load_steps=6 format=3 uid="uid://c180w2bc1bphn"]
 
 [ext_resource type="Script" path="res://scripts/confession_booth.gd" id="1_6w36o"]
+[ext_resource type="PackedScene" uid="uid://cvascgm3jtw07" path="res://Meshes/ChurchObjects/Confessional.glb" id="2_qsjah"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0x35u"]
-size = Vector3(2.93771, 3.55426, 2.29565)
+size = Vector3(4.32791, 2.96254, 0.179747)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqawn"]
-albedo_color = Color(0.254902, 0, 0, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5nnx"]
+size = Vector3(0.172363, 2.77789, 1.89844)
 
-[sub_resource type="BoxMesh" id="BoxMesh_iis4c"]
-material = SubResource("StandardMaterial3D_jqawn")
+[sub_resource type="BoxShape3D" id="BoxShape3D_tg01d"]
+size = Vector3(1.17389, 2.53125, 0.110962)
 
 [node name="ConfessionBooth" type="StaticBody3D"]
 collision_layer = 3
@@ -20,9 +21,28 @@ light_color = Color(0, 0.368627, 1, 1)
 light_energy = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270081, 0.00326538, 0.00378418)
+transform = Transform3D(1.63585, 0, 0, 0, 1.63585, 0, 0, 0, 1.63585, -0.291447, 2.41701, 1.61273)
 shape = SubResource("BoxShape3D_0x35u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.92937, 0, 0, 0, 3.53397, 0, 0, 0, 2.29064, 0, 0, 0)
-mesh = SubResource("BoxMesh_iis4c")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.63585, 0, 0, 0, 1.63585, 0, 0, 0, 1.63585, -0.23194, 2.36244, -0.0146813)
+shape = SubResource("BoxShape3D_d5nnx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.63585, 0, 0, 0, 1.63585, 0, 0, 0, 1.63585, 2.92226, 2.36244, -0.0146813)
+shape = SubResource("BoxShape3D_d5nnx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.63585, 0, 0, 0, 1.63585, 0, 0, 0, 1.63585, -3.74576, 2.36244, -0.0146813)
+shape = SubResource("BoxShape3D_d5nnx")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.63585, 0, 0, 0, 1.63585, 0, 0, 0, 1.63585, -0.29185, 2.12921, -1.63263)
+shape = SubResource("BoxShape3D_tg01d")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.63585, 0, 0, 0, 1.63585, 0, 0, 0, 1.63585, -0.29185, 2.12921, -1.63263)
+shape = SubResource("BoxShape3D_tg01d")
+
+[node name="Confessional" parent="." instance=ExtResource("2_qsjah")]
+transform = Transform3D(-1.87502e-08, 0, 0.428954, 0, 0.428954, 0, -0.428954, 0, -1.87502e-08, -0.238177, 0.261929, 0.108822)

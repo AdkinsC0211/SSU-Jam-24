@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlnkpruqn5c3a"]
+[gd_scene load_steps=17 format=3 uid="uid://dlnkpruqn5c3a"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="7_3gsdm"]
 [ext_resource type="PackedScene" uid="uid://c180w2bc1bphn" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
 [ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="9_xp021"]
+[ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="11_n4c4h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -604,9 +605,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.285, -10.0752, -9.30728)
 [node name="hauntable_task_manager" type="Node3D" parent="."]
 
 [node name="ConfessionBooth" parent="hauntable_task_manager" instance=ExtResource("8_eb8u3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0841, -11.1349, 18.3539)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0841, -12.8827, 18.3539)
 
 [node name="light_manager" type="Node3D" parent="."]
 
 [node name="ToggleLight" parent="light_manager" instance=ExtResource("9_xp021")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.2587, -7.41136, 7.99888)
+
+[node name="Haunter" parent="." node_paths=PackedStringArray("hauntable_tasks_manager") instance=ExtResource("11_n4c4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50.1065, 0)
+hauntable_tasks_manager = NodePath("../hauntable_task_manager")
