@@ -1,7 +1,7 @@
 extends InteractableCharacterBody3D
 
 var player : CharacterBody3D
-const speed = 2.5
+const speed = 1.5
 const accel = 5
 var target_list: Array[Node3D] = []
 var visited_targets: Array[Node3D] = []
@@ -20,6 +20,13 @@ var pathfinding := true
 @export var bathroom: Node3D
 @export var church: Node3D
 
+var LeftLegTarget : Node3D
+var RightLegTarget : Node3D
+var LeftLegStart : Vector3
+var RightLegStart : Vector3
+var LeftLegEnd : Vector3
+var RightLegEnd : Vector3
+
 # Blinds real position
 @export var blindsAreOpen := false
 
@@ -34,8 +41,6 @@ var pathfinding := true
 @onready var curConditions = [scared, need2Pee, blindsPreferOpen, windowOpen, powerOn]
 
 func choose_behavior() -> void:
-	print(scared)
-	print(powerOn)
 	if scared:
 		# look for player
 		target_list = [playerBedroom, kitchen, church, bedroom]
@@ -52,7 +57,6 @@ func choose_behavior() -> void:
 				#check blinds, sleep
 				if blindsPreferOpen == blindsAreOpen:
 					target_list = [bed]
-	print("target_list: ", target_list)
 
 #var behavior_table: Dictionary = {
 	##[scared, need2pee, blindsPreferOpen, windowOpen, powerOn]
@@ -119,7 +123,6 @@ func find_closest_target() -> Node3D:
 		if distance < min_distance:
 			min_distance = distance
 			closest_target = target
-	print("closest target: ", closest_target)
 	return closest_target
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -131,30 +134,39 @@ func interact(_body: CharacterBody3D) -> void:
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
+	if velocity and not $Walking/AnimationPlayer.is_playing():
+		$Walking/AnimationPlayer.play("mixamo_com")
+	elif not velocity:
+		$Walking/AnimationPlayer.stop()
+		
+	global_rotation = Vector3.ZERO
+
 	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	if followingPlr:
-		$NavigationAgent3D.target_desired_distance = 3
-	else:
-		$NavigationAgent3D.target_desired_distance = 1
+	
 	getCurrentTargetPosition()
+
+	# Navigate toward the current target
 	$NavigationAgent3D.target_position = current_target.global_position
 	var direction = ($NavigationAgent3D.get_next_path_position() - global_position).normalized()
+	look_at(Vector3($NavigationAgent3D.get_next_path_position().x, global_position.y, $NavigationAgent3D.get_next_path_position().z))
+	
 	velocity = lerp(velocity, direction * speed, delta * accel)
 	
+	# Stop near player
 	if global_position.distance_to(player.global_position) <= 3:
 		velocity = Vector3.ZERO
-	move_and_slide()
 	
+	move_and_slide()
+
+
 func getCurrentTargetPosition() -> void:
 	#curConditions = [scared, need2Pee, blindsPreferOpen, windowOpen, powerOn]
 	#print("curConditions: ", curConditions)
 	if not followingPlr:
 		choose_behavior()
 	current_target = find_closest_target()
-	print("current_target: ", current_target)
 
 func _on_navigation_agent_3d_target_reached() -> void:
 		visited_targets.append(current_target)
@@ -163,8 +175,6 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 
 func _on_plr_detector_body_entered(body: Node3D) -> void:
-	print(body)
-	print(player)
 	if body == player and body and lookingForPlr:
 		target_list = [player]
 		followingPlr = true
