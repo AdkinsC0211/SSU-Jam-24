@@ -1,0 +1,164 @@
+[gd_scene load_steps=16 format=3 uid="uid://dt6nkja4aj1oi"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_pjh63"]
+[ext_resource type="Script" path="res://scripts/door_lock.gd" id="2_xnpr0"]
+[ext_resource type="PackedScene" uid="uid://nhhmmjk255h8" path="res://Meshes/GeneralObjects/Door.glb" id="3_dyn85"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6sjas"]
+size = Vector3(1.26797, 1.82963, 0.123474)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gwqt"]
+albedo_color = Color(0.446777, 0.446777, 0.446777, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1sfab"]
+material = SubResource("StandardMaterial3D_3gwqt")
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5rqv2"]
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irojc"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y0vpf"]
+material = SubResource("StandardMaterial3D_irojc")
+
+[sub_resource type="Animation" id="Animation_d8r0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D/door_lock/lock_handle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.08494e-14, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4k23g"]
+resource_name = "lock_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D/door_lock/lock_handle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.08494e-14, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqd53"]
+_data = {
+"RESET": SubResource("Animation_d8r0p"),
+"lock_door": SubResource("Animation_4k23g")
+}
+
+[sub_resource type="Animation" id="Animation_mis6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.979133, 0.568413, -0.0304261)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cq33x"]
+resource_name = "rotation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.979133, 0.568413, -0.0304261), Vector3(0.979133, 0.568413, -0.627551)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4rio"]
+_data = {
+"RESET": SubResource("Animation_mis6r"),
+"rotation": SubResource("Animation_cq33x")
+}
+
+[node name="door_interactable_Static" type="StaticBody3D"]
+transform = Transform3D(0.350989, 0, 0, 0, 0.350989, 0, 0, 0, 0.350989, -0.336395, -0.224712, -5.96046e-08)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_pjh63")
+interactMessage = "Press E to open door"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.979133, 0.568413, -0.0304261)
+shape = SubResource("BoxShape3D_6sjas")
+
+[node name="door_mesh" parent="CollisionShape3D" instance=ExtResource("3_dyn85")]
+transform = Transform3D(-7.66091e-09, 0, -0.175261, 0, 0.175261, 0, 0.175261, 0, -7.66091e-09, -0.979133, -0.568413, 0.0304261)
+
+[node name="door_lock" type="StaticBody3D" parent="CollisionShape3D"]
+transform = Transform3D(0.127926, 0, 0, 0, -5.59184e-09, -0.127926, 0, 0.127926, -5.59184e-09, 0.473715, 0.0885476, 0.0523946)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_xnpr0")
+interactMessage = "Press E to lock door"
+
+[node name="lock_cover" type="MeshInstance3D" parent="CollisionShape3D/door_lock"]
+mesh = SubResource("CylinderMesh_1sfab")
+
+[node name="lock_collider" type="CollisionShape3D" parent="CollisionShape3D/door_lock"]
+shape = SubResource("CylinderShape3D_5rqv2")
+
+[node name="lock_handle" type="MeshInstance3D" parent="CollisionShape3D/door_lock"]
+transform = Transform3D(0.204219, 0, 0, 0, 0.491185, 5.32907e-15, 0, -5.32907e-15, 0.491185, 0, 0.249367, -1.09002e-08)
+mesh = SubResource("BoxMesh_y0vpf")
+
+[node name="lock_animation_player" type="AnimationPlayer" parent="CollisionShape3D/door_lock"]
+active = false
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_bqd53")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_e4rio")
+}

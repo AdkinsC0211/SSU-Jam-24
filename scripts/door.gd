@@ -1,20 +1,26 @@
 extends InteractableStaticBody3D
 
-var door_open: bool = false
+var door_open: bool = true
 var door_locked: bool = false
+var first_hit = true
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interactMessage = "Press E to open door"
-
-
+	$AnimationPlayer.active = true
+	#$AnimationPlayer.play("rotation")
+	$AnimationPlayer.play_backwards("rotation")
+	door_open = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
 func interact(_body: CharacterBody3D) -> void:
 	$AnimationPlayer.active = true
+	if first_hit:
+		first_hit = false
+		interactMessage = "Press E to close door"
 	
 	if door_open:
 		#$AnimationPlayer.play_backwards("rotation",-1)

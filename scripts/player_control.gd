@@ -102,7 +102,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		heldItem = null
 		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
+		if event is InputEventMouseMotion and !doing_wait_task:
 			neck.rotate_y(-event.relative.x * SENSITIVITY)
 			#rotate_y(-event.relative.x * SENSITIVITY)
 			camera.rotate_x(-event.relative.y * SENSITIVITY)

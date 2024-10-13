@@ -7,10 +7,10 @@ var doorClosed := 0.0
 @export var openDegrees := 150
 @onready var doorOpen := doorClosed - openDegrees
 
-func interact(body):
+func interact(_body):
 	open = !open
 	
-func _process(delta):
+func _process(_delta):
 	if open and !(mesh.rotation_degrees.y == doorOpen):
 		mesh.rotation_degrees.y = lerp(mesh.rotation_degrees.y, doorOpen, 0.01)
 		interactCollider.rotation_degrees.y = mesh.rotation_degrees.y

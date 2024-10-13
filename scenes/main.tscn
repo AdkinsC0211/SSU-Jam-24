@@ -1,4 +1,5 @@
 [gd_scene load_steps=33 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=34 format=3 uid="uid://bxwg5mmvsjmih"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
@@ -11,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
 [ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
 [ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="11_dthy1"]
+[ext_resource type="PackedScene" uid="uid://dymc3ocgp5u4w" path="res://scenes/tasks/bed_task.tscn" id="12_ouoxv"]
+[ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="13_0fvoq"]
+[ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="13_pvpnt"]
+[ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="15_asksr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -154,7 +159,7 @@ material = SubResource("StandardMaterial3D_3dvkt")
 [node name="kitchen_door_space1" type="CSGBox3D" parent="NavigationRegion3D/first_floor"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.27429, -0.739582, 1.45928)
 operation = 2
-size = Vector3(2.12268, 2.96643, 0.842285)
+size = Vector3(2.12268, 3.75323, 0.842285)
 material = SubResource("StandardMaterial3D_cc7ig")
 
 [node name="kitchen_door_space2" type="CSGBox3D" parent="NavigationRegion3D/first_floor"]
@@ -179,7 +184,7 @@ material = SubResource("StandardMaterial3D_mfynk")
 [node name="basement_door_space" type="CSGBox3D" parent="NavigationRegion3D/first_floor"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.27429, -0.739582, 8.92686)
 operation = 2
-size = Vector3(2.12268, 2.96643, 0.842285)
+size = Vector3(2.12268, 3.57391, 0.842285)
 material = SubResource("StandardMaterial3D_eji0q")
 
 [node name="basement_stair_space" type="CSGPolygon3D" parent="NavigationRegion3D/first_floor"]
@@ -712,11 +717,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9, -1.6, -10)
 collision_layer = 5
 collision_mask = 5
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("4_bsaok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85571, -1.62261, -13.8157)
-collision_layer = 5
-collision_mask = 5
-
 [node name="StaticBody3D3" parent="." instance=ExtResource("6_o4r36")]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 6.95053, -1.42755, 10.1113)
 collision_layer = 5
@@ -734,10 +734,87 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.15578, -0.429768, -9
 [node name="Plate" parent="." instance=ExtResource("10_mixt5")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.79919, -0.576253, -9.8933)
 
-[node name="door_interactable_Static" parent="." instance=ExtResource("11_dthy1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.36657, -0.81904, 2.18051)
+[node name="task_object_manager" type="Node" parent="."]
 
-[node name="door_interactable_Static2" parent="." instance=ExtResource("11_dthy1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.36657, -0.81904, 6.52204)
+[node name="door_interactable_Static2" parent="task_object_manager" instance=ExtResource("11_dthy1")]
+transform = Transform3D(-7.86334e-08, 0, 1.47895, 0, 2.15597, 0, -1.79892, 0, -6.46471e-08, 3.32291, -1.89413, 10.7245)
+
+[node name="door_interactable_Static" parent="task_object_manager" instance=ExtResource("11_dthy1")]
+transform = Transform3D(-7.3852e-08, 0, 1.47231, 0, 1.96878, 0, -1.68954, 0, -6.43569e-08, 3.3634, -1.66305, 3.08742)
+
+[node name="sink_task_root" parent="task_object_manager" instance=ExtResource("11_2nfgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9154, -1.6518, -13.9838)
+
+[node name="hauntable_task_manager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59201, -2.22379, -16.1683)
+
+[node name="bed_root_node" parent="hauntable_task_manager" instance=ExtResource("12_ouoxv")]
+
+[node name="Breaker" parent="hauntable_task_manager" instance=ExtResource("13_pvpnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79344, -2.71684, 8.24907)
+
+[node name="Haunter" parent="." node_paths=PackedStringArray("hauntable_tasks_manager") instance=ExtResource("13_0fvoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1507, -2.22378, -28.9838)
+hauntable_tasks_manager = NodePath("../hauntable_task_manager")
+
+[node name="light_manager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.38545, -4.94063, -7.91919)
+
+[node name="ToggleLight" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4293, 3.79364, 16.7345)
+
+[node name="ToggleLight3" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24046, 5.01236, 16.7345)
+
+[node name="ToggleLight4" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1918, 7.12759, 16.7345)
+
+[node name="ToggleLight5" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1918, 7.05477, 12.7629)
+
+[node name="ToggleLight6" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1918, 7.04043, 6.1757)
+
+[node name="ToggleLight7" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1918, 7.04043, -0.150141)
+
+[node name="ToggleLight8" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1918, 7.04043, -4.43773)
+
+[node name="ToggleLight9" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1918, 7.04043, -9.64798)
+
+[node name="ToggleLight10" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29312, 7.04043, -9.64798)
+
+[node name="ToggleLight11" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29312, 7.04043, -4.18589)
+
+[node name="ToggleLight12" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29312, 7.04043, 4.10711)
+
+[node name="ToggleLight13" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29312, 7.04043, 4.10711)
+
+[node name="ToggleLight14" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.04, 6.96192)
+
+[node name="ToggleLight15" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.04, 12.4914)
+
+[node name="ToggleLight16" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1152, 7.04, 12.4914)
+
+[node name="ToggleLight17" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1152, 7.04, 5.78208)
+
+[node name="ToggleLight18" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1152, 7.04, 16.5655)
+
+[node name="ToggleLight19" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8394, 7.04, 16.5655)
+
+[node name="ToggleLight2" parent="light_manager" instance=ExtResource("15_asksr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21767, 1.10239, 17.2877)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
