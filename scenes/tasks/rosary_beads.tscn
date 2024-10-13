@@ -1,85 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8p42uybaforr"]
 
 [ext_resource type="Script" path="res://scripts/rosary_beads.gd" id="1_fqwif"]
+[ext_resource type="PackedScene" uid="uid://8xr5klfj6x1d" path="res://Meshes/GeneralObjects/Rosary.glb" id="2_cuypt"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_eounr"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_0x1yk"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6hvk"]
+size = Vector3(1.34485, 0.149902, 1.70682)
 
 [node name="RosaryBeadsRoot" type="StaticBody3D"]
 script = ExtResource("1_fqwif")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_eounr")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0834351, -0.00805664, 0.114914)
+shape = SubResource("BoxShape3D_m6hvk")
 
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="bead1" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.000422619, 2.98023e-08, 0.279618)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0814475, 0, 0.23344)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.150521, 0, 0.175476)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.187125, -2.98023e-08, 0.0910294)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead5" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.203167, -2.98023e-08, -0.00285643)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead6" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.162748, 0, -0.0963116)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead7" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0832339, 0, -0.158127)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead8" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0134805, 2.98023e-08, -0.164503)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead9" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0945054, 0, -0.118325)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead10" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.163579, 0, -0.0603613)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead11" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.200183, -2.98023e-08, 0.0240857)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead12" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.216225, -2.98023e-08, 0.117972)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead13" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.175805, 0, 0.211427)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
-
-[node name="bead14" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0962918, 0, 0.273242)
-mesh = SubResource("SphereMesh_0x1yk")
-skeleton = NodePath("../..")
+[node name="Rosary" parent="." instance=ExtResource("2_cuypt")]
