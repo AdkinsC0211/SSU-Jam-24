@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 				#		bus = "Far & Muffled"
 				if bus != "Muffled":
 					bus = "Muffled"
-					
 			elif bus!="Master" and bus!= "Far":
 				bus = "Master"
 		#if distance_vec.length() > 20 and bus!="Far & Muffled":

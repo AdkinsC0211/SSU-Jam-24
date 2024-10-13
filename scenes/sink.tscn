@@ -548,6 +548,7 @@ mesh = SubResource("ArrayMesh_ouoa0")
 skeleton = NodePath("")
 
 [node name="LeftCabinet" type="StaticBody3D" parent="Sink" node_paths=PackedStringArray("mesh", "interactCollider")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9147)
 script = ExtResource("1_yrrdk")
 mesh = NodePath("left_sink_cabinet_door")
 interactCollider = NodePath("CollisionShape3D")
@@ -562,10 +563,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.000986338, 0)
 shape = SubResource("ConvexPolygonShape3D_06tti")
 
 [node name="RightCabinet" type="StaticBody3D" parent="Sink" node_paths=PackedStringArray("mesh", "interactCollider")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.89265)
 script = ExtResource("1_yrrdk")
 mesh = NodePath("right_sink_cabinet_door")
 interactCollider = NodePath("CollisionShape3D")
-openDegrees = -150
+openDegrees = -85
 
 [node name="right_sink_cabinet_door" type="MeshInstance3D" parent="Sink/RightCabinet"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53736, 0.188917, 0)

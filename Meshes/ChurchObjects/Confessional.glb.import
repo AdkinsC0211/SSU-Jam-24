@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drquc2at85f6s"
-path="res://.godot/imported/DoubleDoor.glb-37a044987a9a2c45f20fe46b68d234d2.scn"
+uid="uid://cvascgm3jtw07"
+path="res://.godot/imported/Confessional.glb-f40b910cea8682f2c9eecd5fd4ffc076.scn"
 
 [deps]
 
-source_file="res://Meshes/GeneralObjects/DoubleDoor.glb"
-dest_files=["res://.godot/imported/DoubleDoor.glb-37a044987a9a2c45f20fe46b68d234d2.scn"]
+source_file="res://Meshes/ChurchObjects/Confessional.glb"
+dest_files=["res://.godot/imported/Confessional.glb-f40b910cea8682f2c9eecd5fd4ffc076.scn"]
 
 [params]
 

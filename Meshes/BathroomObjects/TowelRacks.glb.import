@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drquc2at85f6s"
-path="res://.godot/imported/DoubleDoor.glb-37a044987a9a2c45f20fe46b68d234d2.scn"
+uid="uid://chil0hs8t3nu"
+path="res://.godot/imported/TowelRacks.glb-3139377c8601d023b407272b88382ba7.scn"
 
 [deps]
 
-source_file="res://Meshes/GeneralObjects/DoubleDoor.glb"
-dest_files=["res://.godot/imported/DoubleDoor.glb-37a044987a9a2c45f20fe46b68d234d2.scn"]
+source_file="res://Meshes/BathroomObjects/TowelRacks.glb"
+dest_files=["res://.godot/imported/TowelRacks.glb-3139377c8601d023b407272b88382ba7.scn"]
 
 [params]
 

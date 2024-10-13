@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://bxjnys72sd7qc"]
 
 [ext_resource type="Script" path="res://scripts/GrabbableStaticBody3D.gd" id="1_j1wmo"]
-[ext_resource type="Script" path="res://scripts/drawer.gd" id="2_q0fr6"]
+[ext_resource type="Script" path="res://scripts/shampoo_cap.gd" id="2_cqssb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tqxg2"]
 points = PackedVector3Array(-1.0889, 0.674725, -0.632075, 1.12653, 0.640653, 0.528007, 1.08842, 0.709487, 0.596821, -0.668886, -0.908193, 0.950346, 0.739568, -0.83819, -0.985854, -0.735088, 0.847654, 0.979882, 0.631583, 0.989884, -0.842232, 0.774514, -0.767341, 1.02091, -0.774514, -0.767341, -1.02091, -1.12999, -0.628746, 0.529629, -0.457196, 0.7105, -1.12554, 1.12999, -0.628746, -0.529629, -0.550144, 1.14392, 0.137221, 0.631132, 0.9191, 0.946643, 1.01572, 0.637894, -0.84067, 0.916799, -0.98046, 0.387729, -0.846391, -0.980542, -0.634554, -1.12552, 0.710525, 0.457242, -0.527955, 0.640631, 1.12655, -1.12999, -0.628746, -0.529629, 0.527955, 0.640631, -1.12655, 0.550144, 1.14392, 0.137221, 1.12999, -0.628746, 0.529629, -0.842581, 0.990306, -0.631697, 0.458535, -0.698527, -1.12883, 0.807003, 0.603905, 1.05262, -0.529578, -0.628717, 1.13001, 0.3877, -0.980443, -0.916837, -1.01926, -0.625377, 0.843596, 1.12552, 0.710525, -0.457242, -0.916799, -0.98046, 0.387729, 0.529578, -0.628717, 1.13001)
@@ -135,11 +135,11 @@ mesh = SubResource("ArrayMesh_0gjcs")
 skeleton = NodePath("")
 
 [node name="InteractableStaticBody3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "interactCollider")]
-script = ExtResource("2_q0fr6")
+script = ExtResource("2_cqssb")
 mesh = NodePath("ShampooCap/soap_bottle_cap")
 interactCollider = NodePath("CapCollision")
 doorClosed = Vector3(0.00122532, 0.298092, -0.000258144)
-doorOpen = Vector3(0.00122532, 0.469157, -0.000258144)
+doorOpen = Vector3(0.00122532, 0.454499, -0.000258144)
 
 [node name="CapCollision" type="CollisionShape3D" parent="InteractableStaticBody3D"]
 transform = Transform3D(0.133948, 0, 0, 0, 0.501542, 0, 0, 0, 0.223597, 0.00122532, 0.298092, -0.000258144)

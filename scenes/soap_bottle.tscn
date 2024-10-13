@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://67pcuoyi0tla"]
 
 [ext_resource type="Script" path="res://scripts/GrabbableStaticBody3D.gd" id="1_rko4l"]
-[ext_resource type="Script" path="res://scripts/drawer.gd" id="2_q56mj"]
+[ext_resource type="Script" path="res://scripts/soap_handle.gd" id="2_ih41b"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hj4lp"]
 points = PackedVector3Array(0.958824, 1.16392, 0.614024, -0.976283, -1.07235, -0.63302, -0.936615, -1.16226, -0.721422, 0.742799, -1.24946, 0.872007, -0.850096, 1.1188, 0.870953, 0.744993, 1.12353, -0.940127, 0.916365, -1.16475, -0.766116, -0.807629, 1.29167, -0.764583, -0.848388, -1.20241, 0.826314, -0.675891, -1.02959, -0.976265, 0.569726, 0.98947, 1, 0.616301, 1.38512, 0.703049, -0.638815, -1.38491, -0.682085, -0.591036, -0.988407, 0.998937, -0.979556, 1.0759, 0.612986, 1, -0.98947, 0.569726, 0.998902, 0.988373, -0.591209, 0.704783, 1.38859, -0.597156, -0.683926, 1.38859, 0.618014, 0.612809, -1.07593, -0.979585, -0.675891, 1.02959, -0.976265, 0.703072, -1.38517, 0.616516, -0.976265, 1.02959, -0.675891, 0.617863, -1.38869, -0.683977, -0.683961, -1.38866, 0.618044, -0.97774, -0.988068, 0.697775, 0.739078, -1.07151, 0.95333, -0.634593, 1.16091, 0.956369, 0.868762, 1.07293, 0.868762, 0.998902, -0.988373, -0.591209, -0.638778, 1.38483, -0.682045, 0.612809, 1.07593, -0.979585)
@@ -171,11 +171,11 @@ mesh = SubResource("ArrayMesh_aw2sw")
 skeleton = NodePath("")
 
 [node name="InteractableStaticBody3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "interactCollider")]
-script = ExtResource("2_q56mj")
+script = ExtResource("2_ih41b")
 mesh = NodePath("SoapHead/grouped_mesh/hand_soap_plunger")
 interactCollider = NodePath("PlungerCollision")
-doorClosed = Vector3(0.02, 0.205, 0)
-doorOpen = Vector3(0.0204737, 0.13682, -9.68575e-06)
+doorClosed = Vector3(0.0204737, 0.205254, -9.68575e-06)
+doorOpen = Vector3(0.0204737, 0.134435, -9.68575e-06)
 
 [node name="PlungerCollision" type="CollisionShape3D" parent="InteractableStaticBody3D"]
 transform = Transform3D(0.196757, 0, 0, 0, 0.196757, 0, 0, 0, 0.196757, 0.0204737, 0.205254, -9.68575e-06)
