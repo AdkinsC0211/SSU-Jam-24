@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlnkpruqn5c3a"]
+[gd_scene load_steps=14 format=3 uid="uid://dlnkpruqn5c3a"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
 [ext_resource type="PackedScene" uid="uid://c1ceh88vbb3a3" path="res://scenes/stall_door.tscn" id="5_is5h5"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="6_677g2"]
+[ext_resource type="PackedScene" uid="uid://c180w2bc1bphn" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -593,3 +594,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.27473)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.285, -10.0752, -9.30728)
+
+[node name="ConfessionBooth" parent="." instance=ExtResource("8_eb8u3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0841, -11.1349, 18.3539)
