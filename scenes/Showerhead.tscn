@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://bjmtmy7hbj07x"]
+[gd_scene load_steps=5 format=4 uid="uid://dqac5caqk36xo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a8yf"]
 resource_name = "metal"
@@ -69,6 +69,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rvn0e")
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="ShowerHead" type="Node3D" parent="."]
 
