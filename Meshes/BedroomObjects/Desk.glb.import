@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cyvvrt28ddcso"
-path="res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"
+uid="uid://hyo7fwdynwty"
+path="res://.godot/imported/Desk.glb-9dae55ece5ad947134ea453699fdb98b.scn"
 
 [deps]
 
-source_file="res://Meshes/BedroomObjects/Bed.glb"
-dest_files=["res://.godot/imported/Bed.glb-9db375dd55c869160d000ef2d248e847.scn"]
+source_file="res://Meshes/BedroomObjects/Desk.glb"
+dest_files=["res://.godot/imported/Desk.glb-9dae55ece5ad947134ea453699fdb98b.scn"]
 
 [params]
 

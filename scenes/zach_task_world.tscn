@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_bvjiw"]
 [ext_resource type="Script" path="res://scripts/zach_task_world.gd" id="1_rfj78"]
-[ext_resource type="PackedScene" uid="uid://b8p42uybaforr" path="res://scenes/tasks/rosary_beads.tscn" id="2_vnpse"]
+[ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="3_1bch8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwvb8"]
 
@@ -42,9 +42,6 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wxvi2")
 
-[node name="RosaryBeadsRoot" parent="." instance=ExtResource("2_vnpse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451429, 0.595742, 0.290142)
-
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
@@ -67,6 +64,9 @@ shape = SubResource("BoxShape3D_3e027")
 [node name="prayerTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="rosary_root" parent="." instance=ExtResource("3_1bch8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107954, 0.561688, 0.227655)
 
 [connection signal="body_entered" from="Node3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Node3D/Area3D" to="." method="_on_area_3d_body_exited"]
