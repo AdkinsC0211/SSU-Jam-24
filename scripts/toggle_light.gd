@@ -20,10 +20,10 @@ func _process(_delta):
 func flip_state():
 	toggle = !toggle
 	if toggle:
-		$lampshade/light_source.light_energy = light_strength
+		$Light/light_source.visible = true
 		$On.play()
 		return
-	$lampshade/light_source.light_energy = 0
+	$Light/light_source.visible = false
 	$Buzz.stop()
 	$Off.play()
 	

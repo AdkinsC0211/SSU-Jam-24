@@ -5,19 +5,10 @@
 [ext_resource type="Script" path="res://scripts/sound.gd" id="3_oi5io"]
 [ext_resource type="AudioStream" uid="uid://choyg40hhgnnq" path="res://sounds/lightoff.ogg" id="4_ef8kg"]
 [ext_resource type="AudioStream" uid="uid://ufgqtp4dbo8m" path="res://sounds/lighton.ogg" id="4_hqvbe"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ibs5p"]
+[ext_resource type="PackedScene" uid="uid://ttls0j23ewco" path="res://Meshes/GeneralObjects/Light.glb" id="6_o5wgb"]
 
 [node name="ToggleLight" type="Node3D"]
 script = ExtResource("1_8j8mr")
-
-[node name="lampshade" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.379778, 0, 0, 0, 0.178446, 0, 0, 0, 0.429917, 0, 0.202398, 0)
-mesh = SubResource("CylinderMesh_ibs5p")
-skeleton = NodePath("light_source")
-
-[node name="light_source" type="OmniLight3D" parent="lampshade"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.07661, 0)
 
 [node name="Buzz" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
@@ -36,3 +27,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 stream = ExtResource("4_hqvbe")
 volume_db = -23.0
 script = ExtResource("3_oi5io")
+
+[node name="Light" parent="." instance=ExtResource("6_o5wgb")]
+transform = Transform3D(0.37754, 0, 0, 0, 0.37754, 0, 0, 0, 0.37754, 0, -1.49012e-08, 0)
+
+[node name="light_source" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6716, 0)
+light_energy = 14.0
+light_size = 1.0
+omni_range = 25.0

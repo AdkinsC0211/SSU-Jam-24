@@ -9,11 +9,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-func interact(body: CharacterBody3D) -> void:
+func interact(_body: CharacterBody3D) -> void:
 	haunted = false
 	$ghost_light.visible = false
 	
