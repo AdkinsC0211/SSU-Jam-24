@@ -12,7 +12,7 @@
 size = Vector3(2.86929, 1.40601, 4.7948)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3t6m"]
-size = Vector3(7.87344, 3.36328, 8.30469)
+size = Vector3(10.5936, 3.36328, 13.5766)
 
 [node name="bed_root_node" type="StaticBody3D"]
 collision_layer = 3
@@ -29,7 +29,7 @@ shape = SubResource("BoxShape3D_nxsh8")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.343185, 1.18164, -1.73242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242191, 1.18164, -0.965224)
 shape = SubResource("BoxShape3D_l3t6m")
 
 [node name="ghost_light" type="OmniLight3D" parent="."]
