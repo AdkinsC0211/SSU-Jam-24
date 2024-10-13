@@ -1,16 +1,16 @@
-[gd_scene load_steps=33 format=3 uid="uid://bxwg5mmvsjmih"]
+[gd_scene load_steps=33 format=3 uid="uid://dhxcf3ha0djw8"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
-[ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
-[ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="2_m3mcm"]
-[ext_resource type="PackedScene" uid="uid://blw7bjna5m2j8" path="res://scenes/sink.tscn" id="4_bsaok"]
-[ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
-[ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
-[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_rng1w"]
-[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_ial17"]
-[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
-[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
-[ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="11_dthy1"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_4dm7v"]
+[ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="2_vurdn"]
+[ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="3_a8av5"]
+[ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_2n140"]
+[ext_resource type="PackedScene" uid="uid://blw7bjna5m2j8" path="res://scenes/sink.tscn" id="5_mgihw"]
+[ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_mwlh2"]
+[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="7_kqkca"]
+[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_b1v6m"]
+[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_8ygo2"]
+[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_eokee"]
+[ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="11_yohob"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4f0pa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -82,7 +82,7 @@ albedo_color = Color(1, 1, 1, 0)
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="world_root" type="Node3D"]
-script = ExtResource("1_4xf7i")
+script = ExtResource("1_4dm7v")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -91,10 +91,10 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hlp1m")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_mwm7c")]
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_vurdn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25987, -0.888321, -22.7394)
 
-[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_m3mcm")]
+[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_a8av5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6461, -1.05453, 8.2743)
 player = NodePath("../CharacterBody3D")
 
@@ -707,37 +707,37 @@ material = SubResource("StandardMaterial3D_qgj8x")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="StaticBody3D" parent="." instance=ExtResource("4_g7j6u")]
+[node name="StaticBody3D" parent="." instance=ExtResource("4_2n140")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9, -1.6, -10)
 collision_layer = 5
 collision_mask = 5
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("4_bsaok")]
+[node name="StaticBody3D2" parent="." instance=ExtResource("5_mgihw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85571, -1.62261, -13.8157)
 collision_layer = 5
 collision_mask = 5
 
-[node name="StaticBody3D3" parent="." instance=ExtResource("6_o4r36")]
+[node name="StaticBody3D3" parent="." instance=ExtResource("6_mwlh2")]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 6.95053, -1.42755, 10.1113)
 collision_layer = 5
 collision_mask = 5
 
-[node name="Bowl" parent="." instance=ExtResource("9_jdxiq")]
+[node name="Bowl" parent="." instance=ExtResource("7_kqkca")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.73578, -0.4689, -10.3192)
 
-[node name="Cup" parent="." instance=ExtResource("8_rng1w")]
+[node name="Cup" parent="." instance=ExtResource("8_b1v6m")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.2511, -0.441621, -10.0693)
 
-[node name="Mug" parent="." instance=ExtResource("9_ial17")]
+[node name="Mug" parent="." instance=ExtResource("9_8ygo2")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.15578, -0.429768, -9.67901)
 
-[node name="Plate" parent="." instance=ExtResource("10_mixt5")]
+[node name="Plate" parent="." instance=ExtResource("10_eokee")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.79919, -0.576253, -9.8933)
 
-[node name="door_interactable_Static" parent="." instance=ExtResource("11_dthy1")]
+[node name="door_interactable_Static" parent="." instance=ExtResource("11_yohob")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.36657, -0.81904, 2.18051)
 
-[node name="door_interactable_Static2" parent="." instance=ExtResource("11_dthy1")]
+[node name="door_interactable_Static2" parent="." instance=ExtResource("11_yohob")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.36657, -0.81904, 6.52204)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
