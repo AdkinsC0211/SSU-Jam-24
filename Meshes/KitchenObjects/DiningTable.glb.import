@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bsys2alnon6al"
+uid="uid://djhjdaolpu6jb"
 path="res://.godot/imported/DiningTable.glb-2ad555c053644afbd0fc0f5b7099f74b.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1
