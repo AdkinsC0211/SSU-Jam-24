@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh5ib2ovyhgg1"]
+[gd_scene load_steps=5 format=3 uid="uid://yfvwxd1tkwoj"]
 
 [ext_resource type="Script" path="res://scripts/menus.gd" id="1_7quha"]
 [ext_resource type="FontFile" uid="uid://cakknxsgxbvmm" path="res://fonts/Nightmare-Regular.ttf" id="2_8cobt"]
-[ext_resource type="Texture2D" uid="uid://x7bexwq03x65" path="res://images/jotchua.jpg" id="2_arclv"]
+[ext_resource type="Texture2D" uid="uid://dbvh2pk2q8ibd" path="res://images/main_menu_background.png" id="2_f0gpk"]
 [ext_resource type="Texture2D" uid="uid://br3gsfr1616ux" path="res://images/pauseMessage.PNG" id="4_ox45w"]
 
 [node name="MenuRoot" type="Control"]
@@ -23,9 +23,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 5.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_arclv")
+texture = ExtResource("2_f0gpk")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

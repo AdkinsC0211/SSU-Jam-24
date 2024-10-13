@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c180w2bc1bphn"]
+
+[ext_resource type="Script" path="res://scripts/confession_booth.gd" id="1_6w36o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0x35u"]
+size = Vector3(2.93771, 3.55426, 2.29565)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqawn"]
+albedo_color = Color(0.254902, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iis4c"]
+material = SubResource("StandardMaterial3D_jqawn")
+
+[node name="ConfessionBooth" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_6w36o")
+
+[node name="ghost_light" type="OmniLight3D" parent="."]
+light_color = Color(0, 0.368627, 1, 1)
+light_energy = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270081, 0.00326538, 0.00378418)
+shape = SubResource("BoxShape3D_0x35u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.92937, 0, 0, 0, 3.53397, 0, 0, 0, 2.29064, 0, 0, 0)
+mesh = SubResource("BoxMesh_iis4c")

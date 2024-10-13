@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlnkpruqn5c3a"]
+[gd_scene load_steps=15 format=3 uid="uid://dlnkpruqn5c3a"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
 [ext_resource type="PackedScene" uid="uid://c1ceh88vbb3a3" path="res://scenes/stall_door.tscn" id="5_is5h5"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="6_677g2"]
+[ext_resource type="PackedScene" uid="uid://c180w2bc1bphn" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
+[ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="9_xp021"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -822,8 +824,19 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.04352, -0.9862, -0.08
 [node name="furniture_storage1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.189, -10.6419, 7.58728)
 
-[node name="Breaker" parent="furniture_storage1" instance=ExtResource("6_677g2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.27473)
+[node name="Breaker" parent="furniture_storage1" node_paths=PackedStringArray("controlled_lights") instance=ExtResource("6_677g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2294)
+controlled_lights = NodePath("../../light_manager")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4958, -10.0752, -9.30728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.285, -10.0752, -9.30728)
+
+[node name="hauntable_task_manager" type="Node3D" parent="."]
+
+[node name="ConfessionBooth" parent="hauntable_task_manager" instance=ExtResource("8_eb8u3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0841, -11.1349, 18.3539)
+
+[node name="light_manager" type="Node3D" parent="."]
+
+[node name="ToggleLight" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.2587, -7.41136, 7.99888)
