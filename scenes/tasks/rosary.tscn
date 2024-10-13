@@ -173,22 +173,24 @@ shape = SubResource("BoxShape3D_jpc58")
 [node name="Rosary" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22201, -0.00238323, -0.38343)
 
-[node name="cross" type="MeshInstance3D" parent="Rosary"]
+[node name="grouped_mesh" type="MeshInstance3D" parent="Rosary"]
+
+[node name="cross" type="MeshInstance3D" parent="Rosary/grouped_mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144511, 0, 1.03126)
 mesh = SubResource("ArrayMesh_kss6f")
 skeleton = NodePath("")
 
-[node name="rosary_big_beads" type="MeshInstance3D" parent="Rosary"]
+[node name="rosary_big_beads" type="MeshInstance3D" parent="Rosary/grouped_mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285787, 0, 0.120451)
 mesh = SubResource("ArrayMesh_y441j")
 skeleton = NodePath("")
 
-[node name="rosary_small_beads" type="MeshInstance3D" parent="Rosary"]
+[node name="rosary_small_beads" type="MeshInstance3D" parent="Rosary/grouped_mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.251943, 0, 0.180841)
 mesh = SubResource("ArrayMesh_4cidr")
 skeleton = NodePath("")
 
-[node name="rosary_thread" type="MeshInstance3D" parent="Rosary"]
+[node name="rosary_thread" type="MeshInstance3D" parent="Rosary/grouped_mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232898, 0, 0.20024)
 mesh = SubResource("ArrayMesh_oli6g")
 skeleton = NodePath("")
