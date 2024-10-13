@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://dhxcf3ha0djw8"]
+[gd_scene load_steps=36 format=3 uid="uid://dhxcf3ha0djw8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4dm7v"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="2_vurdn"]
+[ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="3_a8av5"]
 [ext_resource type="PackedScene" uid="uid://co0ff3j7vbabp" path="res://scenes/cabinet.tscn" id="4_2n140"]
 [ext_resource type="PackedScene" uid="uid://blw7bjna5m2j8" path="res://scenes/sink.tscn" id="5_mgihw"]
 [ext_resource type="PackedScene" uid="uid://gonj2438vqpw" path="res://scenes/grandfatherclock.tscn" id="6_mwlh2"]
@@ -10,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_8ygo2"]
 [ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_eokee"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="11_pktfj"]
-[ext_resource type="PackedScene" uid="uid://wfunumlthe3u" path="res://scenes/big_cross.tscn" id="12_5radu"]
+[ext_resource type="PackedScene" path="res://scenes/big_cross.tscn" id="12_5radu"]
 [ext_resource type="PackedScene" uid="uid://dv1r3bxtxaj1q" path="res://scenes/table.tscn" id="12_78vc0"]
 [ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="13_0scs1"]
 
@@ -765,5 +766,21 @@ transform = Transform3D(-1.3, 0, 1.1365e-07, 0, 1.3, 0, -1.1365e-07, 0, -1.3, 8,
 [node name="rosary_root" parent="." node_paths=PackedStringArray("cross") instance=ExtResource("13_0scs1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8573, -1.47844, -17.8729)
 cross = NodePath("../big cross")
+
+[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("bedroom", "bed", "desk", "closet", "window", "playerBedroom", "kitchen", "bathroom", "church") instance=ExtResource("3_a8av5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70287, -0.380605, -10.0372)
+bedroom = NodePath("../Bedroom")
+bed = NodePath("../Bedroom")
+desk = NodePath("../Bedroom")
+closet = NodePath("../Bedroom")
+window = NodePath("../Bedroom")
+playerBedroom = NodePath("../PlayerBedroom")
+kitchen = NodePath("../Kitchen")
+bathroom = NodePath("../Bathroom")
+church = NodePath("../Church")
+scared = true
+
+[node name="bed_root_node2" parent="." instance=ExtResource("11_pktfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0307364, -2.22379, -12.0965)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

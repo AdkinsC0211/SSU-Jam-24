@@ -41,4 +41,5 @@ func haunt():
 func _on_area_3d_body_exited(body):
 	if neck_moved:
 		body.get_node("Neck").position += Vector3(0,2.3,0)
+		toggle = false
 	
