@@ -16,6 +16,6 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	$Timer.start(1) #This is for time of day
 	GameInfo.secondspassed += 1
-	hours = int((GameInfo.secondspassed / 60) % 12)
+	hours = int((GameInfo.secondspassed /60) % 12)
 	minutes = int(GameInfo.secondspassed % 60)
 	print("Time of day: ", hours, ":", minutes)

@@ -758,7 +758,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81353, 3.67567, -5.05236)
 [node name="PlayerBedroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2324, -1.10226, 0.360337)
 
-[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("bedroom", "bed", "desk", "closet", "window", "playerBedroom", "kitchen", "bathroom", "church") instance=ExtResource("3_a8av5")]
+[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("player", "bedroom", "bed", "desk", "closet", "window", "playerBedroom", "kitchen", "bathroom", "church") instance=ExtResource("3_a8av5")]
+scared = true
+player = NodePath("../CharacterBody3D")
 bedroom = NodePath("../Bedroom")
 bed = NodePath("../bed_root_node")
 desk = NodePath("../Table")
@@ -768,6 +770,5 @@ playerBedroom = NodePath("../PlayerBedroom")
 kitchen = NodePath("../Kitchen")
 bathroom = NodePath("../Bathroom")
 church = NodePath("../Church")
-scared = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

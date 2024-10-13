@@ -34,6 +34,6 @@ func haunt():
 	haunted = false
 
 func _on_area_3d_body_exited(body):
-	if neck_moved and body.is_in_group("Player"):
+	if neck_moved:
 		body.get_node("Neck").position += Vector3(0,2.3,0)
 	

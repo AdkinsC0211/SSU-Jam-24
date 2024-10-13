@@ -9,7 +9,7 @@ enum Axis { X, Y, Z }
 @export var axis : Axis = Axis.Y
 
 var doorClosed := 0.0
-@export var openDegrees := 105
+@export var openDegrees := 150
 @onready var doorOpen := doorClosed - openDegrees
 
 func interact(_body):
