@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=53 format=4 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Material" path="res://materials/stairs.tres" id="1_w3kjo"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" path="res://scenes/pepper.tscn" id="8_xxscp"]
 [ext_resource type="PackedScene" path="res://scenes/salt.tscn" id="9_brttr"]
 [ext_resource type="PackedScene" path="res://scenes/candle.tscn" id="10_aci4u"]
-[ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="20_puc5b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1208,8 +1207,82 @@ size = Vector3(1.405, 2.1403, 1.875)
 [node name="furniture_orphanage" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.836, -12.3812, 35.2323)
 
+[node name="closets" type="Node3D" parent="furniture_orphanage"]
+
+[node name="closet1" type="CSGCombiner3D" parent="furniture_orphanage/closets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20619, 1.3507, 0.462772)
+use_collision = true
+
+[node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
+size = Vector3(6.08716, 6.50116, 3.2417)
+
+[node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
+operation = 2
+size = Vector3(5.78528, 7.75943, 3.35376)
+
+[node name="door_space" type="CSGBox3D" parent="furniture_orphanage/closets/closet1"]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 0.0465775, 0.397182, -1.10686)
+operation = 2
+size = Vector3(0.298706, 1.8, 1.2)
+
+[node name="closet2" type="CSGCombiner3D" parent="furniture_orphanage/closets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20619, 1.3507, 16.2846)
+use_collision = true
+
+[node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
+size = Vector3(6.08716, 6.50116, 3.2417)
+
+[node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
+operation = 2
+size = Vector3(5.78528, 7.75943, 3.35376)
+
+[node name="door_space" type="CSGBox3D" parent="furniture_orphanage/closets/closet2"]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 0.0465775, 0.397182, -1.10686)
+operation = 2
+size = Vector3(0.298706, 1.8, 1.2)
+
+[node name="closet3" type="CSGCombiner3D" parent="furniture_orphanage/closets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20619, 1.3507, 31.9425)
+use_collision = true
+
+[node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
+size = Vector3(6.08716, 6.50116, 3.2417)
+
+[node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
+operation = 2
+size = Vector3(5.78528, 7.75943, 3.35376)
+
+[node name="door_space" type="CSGBox3D" parent="furniture_orphanage/closets/closet3"]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 0.0465775, 0.397182, -1.10686)
+operation = 2
+size = Vector3(0.298706, 1.8, 1.2)
+
+[node name="closet4" type="CSGCombiner3D" parent="furniture_orphanage/closets"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -28.7144, 1.3507, 21.3143)
+use_collision = true
+
+[node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
+size = Vector3(6.08716, 6.50116, 3.2417)
+
+[node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
+operation = 2
+size = Vector3(5.78528, 7.75943, 3.35376)
+
+[node name="door_space" type="CSGBox3D" parent="furniture_orphanage/closets/closet4"]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 0.0465775, 0.397182, -1.10686)
+operation = 2
+size = Vector3(0.298706, 1.8, 1.2)
+
 [node name="bed_root_node" parent="furniture_orphanage" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, -4.62482)
 
 [node name="bed_root_node2" parent="furniture_orphanage" instance=ExtResource("3_2f11t")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, -9.89761)
@@ -1395,6 +1468,8 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.561, -1.391, 7.88)
 
 [node name="Cabinet2" parent="furniture_orphanage/kitchen" instance=ExtResource("6_3vupu")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.561, -1.391, 6.93443)
+
+[node name="bedroom" type="Node3D" parent="furniture_orphanage"]
 
 [node name="furniture_bathroomG" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.4814, -11.3613, -13.3979)
@@ -1582,6 +1657,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6008, -10.4168, 0.178762)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.5624, -10.0752, 37.4907)
-
-[node name="InteractableRigidBody3D" parent="." instance=ExtResource("20_puc5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0471, -11.629, 33.8547)
