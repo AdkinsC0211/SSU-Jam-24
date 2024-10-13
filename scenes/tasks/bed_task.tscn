@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx5vp8b1nd7eh"]
+[gd_scene load_steps=10 format=3 uid="uid://cwqeh00i8jcwj"]
 
 [ext_resource type="PackedScene" uid="uid://cyvvrt28ddcso" path="res://Meshes/BedroomObjects/Bed.glb" id="1_0c4qa"]
 [ext_resource type="Script" path="res://scripts/bed_task.gd" id="1_8hebs"]
