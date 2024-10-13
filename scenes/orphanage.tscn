@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=4 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=55 format=4 uid="uid://b6glsxturcv22"]
 
+[ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
-[ext_resource type="Material" path="res://materials/stairs.tres" id="1_w3kjo"]
+[ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="PackedScene" path="res://scenes/stairs.tscn" id="2_yiu2y"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
@@ -35,6 +36,10 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xfhd"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0ap7"]
+albedo_color = Color(0.419608, 0.392157, 0.372549, 1)
+albedo_texture = ExtResource("1_1nb0r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekrl6"]
 
@@ -673,9 +678,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1717, 1.84589, 0.0513706)
 size = Vector3(15, 15.681, 18)
 
 [node name="church_back_space" type="CSGBox3D" parent="build_structure/church_back"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1476, 3.846, 0.051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1461, 3.846, 0.0221342)
 operation = 2
-size = Vector3(13, 18, 16)
+size = Vector3(12.9531, 18, 16)
+material = SubResource("StandardMaterial3D_f0ap7")
 
 [node name="right_backdoor" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3733, -4.25134, -6.54096)
