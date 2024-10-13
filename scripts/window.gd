@@ -19,7 +19,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if window_open and $Wind.playing==false:
-		$Wind.play()
+		$Wind.play_sound()
 	elif not window_open:
 		if not $AnimationPlayer.is_playing():
 			$Wind.stop()
@@ -31,13 +31,17 @@ func _on_area_3d_body_shape_entered(_body_rid, body, _body_shape_index, _local_s
 
 
 func _on_break_open_delay_timeout():
+	$AnimationPlayer.active = true
 	$AnimationPlayer.play("open_window",-1,1,false)
+	$AnimationPlayer.speed_scale = 8
 	window_open = true
 	$Area3D.queue_free()
+	$Open.play_sound()
 
 
 func interact(_body: CharacterBody3D) -> void:
 	$AnimationPlayer.active = true
+	$AnimationPlayer.speed_scale = 1
 	if !$Blinds.blinds_open:
 		self.interactMessage = "Blinds are closed"
 	else:
