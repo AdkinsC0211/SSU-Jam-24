@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://bdskpx45mgtyr"]
 
 [ext_resource type="Script" path="res://scripts/lockable_door.gd" id="1_8txyg"]
-[ext_resource type="PackedScene" uid="uid://c7l164yhuarmd" path="res://scenes/lock.tscn" id="2_vej8g"]
+[ext_resource type="PackedScene" path="res://scenes/lock.tscn" id="2_vej8g"]
 [ext_resource type="AudioStream" uid="uid://g4xplm5xdkhn" path="res://sounds/213995__fenrirfangs__door-bolt-6.wav" id="3_w4ffe"]
 [ext_resource type="Script" path="res://scripts/sound.gd" id="4_jwevt"]
 [ext_resource type="AudioStream" uid="uid://buiqigoxk3t3h" path="res://sounds/doormove.ogg" id="5_rvyrr"]
@@ -71,7 +71,6 @@ parent = NodePath("../../..")
 [node name="DoorLock" type="AudioStreamPlayer3D" parent="Door2/Door/Lock"]
 transform = Transform3D(-4.37115e-08, 0, -1, 0, 1, 0, 1, 0, -4.37115e-08, -1.96155, -0.000724246, -0.0351429)
 stream = ExtResource("3_w4ffe")
-script = ExtResource("4_jwevt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.7755, 0, 0, 0, 1.7755, 0, 0, 0, 1.7755, 0, 0, 0)
