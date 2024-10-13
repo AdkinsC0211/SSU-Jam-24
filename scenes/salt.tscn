@@ -73,6 +73,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g8480")
 
 [node name="GrabbableStaticBody3D" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_ef26n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
