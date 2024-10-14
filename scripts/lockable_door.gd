@@ -14,6 +14,7 @@ var doorClosed := 0.0
 var just_closed = true
 
 func interact(_body):
+	$DoorMove.pitch_scale = randf_range(0.7,1.2)
 	if open: # closing door
 		just_closed = false
 		$DoorMove.play_sound()
