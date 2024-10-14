@@ -96,6 +96,12 @@ func interact(_body: CharacterBody3D) -> void:
 # Called every physics frame
 func _physics_process(delta: float) -> void:
 	if not asleep:
+		
+		if followingPlr:
+			$NavigationAgent3D.target_desired_distance = 1
+		else:
+			$NavigationAgent3D.target_desired_distance = 7.5
+		
 		if velocity and not $Walking/AnimationPlayer.is_playing():
 			$Walking/AnimationPlayer.play("mixamo_com")
 		elif not velocity:
@@ -116,11 +122,12 @@ func _physics_process(delta: float) -> void:
 		getCurrentTargetPosition()
 
 		# Navigate toward the current target
-		$NavigationAgent3D.target_position = current_target.global_position
-		var direction = ($NavigationAgent3D.get_next_path_position() - global_position).normalized()
-		look_at(Vector3($NavigationAgent3D.get_next_path_position().x, global_position.y, $NavigationAgent3D.get_next_path_position().z))
-		
-		velocity = lerp(velocity, direction * speed, delta * accel)
+		if current_target:
+			$NavigationAgent3D.target_position = current_target.global_position
+			var direction = ($NavigationAgent3D.get_next_path_position() - global_position).normalized()
+			look_at(Vector3($NavigationAgent3D.get_next_path_position().x, global_position.y, $NavigationAgent3D.get_next_path_position().z))
+			
+			velocity = lerp(velocity, direction * speed, delta * accel)
 		
 		# Stop near player
 		if global_position.distance_to(player.global_position) <= 3:
@@ -146,6 +153,8 @@ func _on_navigation_agent_3d_target_reached() -> void:
 		visited_targets.append(current_target)
 		if current_target == bathroom:
 			need2Pee = false
+		if current_target == player:
+			followingPlr = false
 		if len(visited_targets) == len(target_list):
 			visited_targets = [] # if you've seen them all, start over
 		
