@@ -38,6 +38,8 @@ var RightLegEnd : Vector3
 @export var powerOn: bool = true
 @export var lookingForPlr := false
 
+@export var asleep := false
+
 @onready var curConditions = [scared, need2Pee, blindsPreferOpen, windowOpen, powerOn]
 
 func choose_behavior() -> void:
@@ -57,58 +59,12 @@ func choose_behavior() -> void:
 				#check blinds, sleep
 				if blindsPreferOpen == blindsAreOpen:
 					target_list = [bed]
-
-#var behavior_table: Dictionary = {
-	##[scared, need2pee, blindsPreferOpen, windowOpen, powerOn]
-	#[0, 0, 0, 0, 0]: [],  # 00000 # get scared
-	#[0, 0, 0, 0, 1]: [],  # 00001 # could be perfect conditions, check blinds, sleep
-	#[0, 0, 0, 1, 0]: [],  # 00010 # get scared
-	#[0, 0, 0, 1, 1]: [],  # 00011 # close window
-	#[0, 0, 1, 0, 0]: [],  # 00100 # get scared
-	#[0, 0, 1, 0, 1]: [],  # 00101 # could be perfect conditions, check blinds, sleep
-	#[0, 0, 1, 1, 0]: [],  # 00110 # get scared
-	#[0, 0, 1, 1, 1]: [],  # 00111 # close window
-	#[0, 1, 0, 0, 0]: [],  # 01000 # get scared
-	#[0, 1, 0, 0, 1]: [],  # 01001 # go pee
-	#[0, 1, 0, 1, 0]: [],  # 01010 # get scared
-	#[0, 1, 0, 1, 1]: [],  # 01011 # go pee
-	#[0, 1, 1, 0, 0]: [],  # 01100 # get scared
-	#[0, 1, 1, 0, 1]: [],  # 01101 # go pee
-	#[0, 1, 1, 1, 0]: [],  # 01110 # get scared
-	#[0, 1, 1, 1, 1]: [],  # 01111 # g
-	#[1, 0, 0, 0, 0]: [],  # 10000 # below here, scared takes priority, look for player
-	#[1, 0, 0, 0, 1]: [],  # 10001
-	#[1, 0, 0, 1, 0]: [],  # 10010
-	#[1, 0, 0, 1, 1]: [],  # 10011
-	#[1, 0, 1, 0, 0]: [],  # 10100
-	#[1, 0, 1, 0, 1]: [],  # 10101
-	#[1, 0, 1, 1, 0]: [],  # 10110
-	#[1, 0, 1, 1, 1]: [],  # 10111
-	#[1, 1, 0, 0, 0]: [],  # 11000
-	#[1, 1, 0, 0, 1]: [],  # 11001
-	#[1, 1, 0, 1, 0]: [],  # 11010
-	#[1, 1, 0, 1, 1]: [],  # 11011
-	#[1, 1, 1, 0, 0]: [],  # 11100
-	#[1, 1, 1, 0, 1]: [],  # 11101
-	#[1, 1, 1, 1, 0]: [],  # 11110
-	#[1, 1, 1, 1, 1]: []   # 11111
-#}
-
-
-# State table (key: tuple of conditions, value: list of targets)
-#var behavior_table: Dictionary = {
-	#(true, false, false, false, true): [playerBedroom, kitchen, church],  # Scared, power on
-	#(false, true, false, false, true): [bathroom],  # Need to pee, power on
-	#(false, true, false, false, false): [playerBedroom],  # Need to pee, power off
-	#(false, false, true, false, true): [window],  # Window is open
-	#(false, false, false, true, true): [window],  # Blinds need adjustment
-	#(false, false, false, false, true): [bed],  # Default: go to bed
-	#(false, false, false, false, false): [bed],  # Default with power off
-#}
+					asleep = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
+	$PPTimer.start(randi_range(120,1200))
 
 # Find the closest unvisited target
 func find_closest_target() -> Node3D:
@@ -129,36 +85,47 @@ func find_closest_target() -> Node3D:
 func _process(_delta: float) -> void:
 	pass
 
+func die():
+	queue_free()
+
 func interact(_body: CharacterBody3D) -> void:
 	followingPlr = false
+	scared = false
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
-	if velocity and not $Walking/AnimationPlayer.is_playing():
-		$Walking/AnimationPlayer.play("mixamo_com")
-	elif not velocity:
-		$Walking/AnimationPlayer.stop()
+	if not asleep:
+		if velocity and not $Walking/AnimationPlayer.is_playing():
+			$Walking/AnimationPlayer.play("mixamo_com")
+		elif not velocity:
+			$Walking/AnimationPlayer.stop()
+			
+		global_rotation = Vector3.ZERO
+
+		# Add gravity
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 		
-	global_rotation = Vector3.ZERO
+		getCurrentTargetPosition()
 
-	# Add gravity
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
-	getCurrentTargetPosition()
-
-	# Navigate toward the current target
-	$NavigationAgent3D.target_position = current_target.global_position
-	var direction = ($NavigationAgent3D.get_next_path_position() - global_position).normalized()
-	look_at(Vector3($NavigationAgent3D.get_next_path_position().x, global_position.y, $NavigationAgent3D.get_next_path_position().z))
-	
-	velocity = lerp(velocity, direction * speed, delta * accel)
-	
-	# Stop near player
-	if global_position.distance_to(player.global_position) <= 3:
-		velocity = Vector3.ZERO
-	
-	move_and_slide()
+		# Navigate toward the current target
+		$NavigationAgent3D.target_position = current_target.global_position
+		var direction = ($NavigationAgent3D.get_next_path_position() - global_position).normalized()
+		look_at(Vector3($NavigationAgent3D.get_next_path_position().x, global_position.y, $NavigationAgent3D.get_next_path_position().z))
+		
+		velocity = lerp(velocity, direction * speed, delta * accel)
+		
+		# Stop near player
+		if global_position.distance_to(player.global_position) <= 3:
+			velocity = Vector3.ZERO
+			if lookingForPlr:
+				if need2Pee:
+					target_list = [bathroom]
+				else:
+					target_list = [bedroom]
+				lookingForPlr = false
+		
+		move_and_slide()
 
 
 func getCurrentTargetPosition() -> void:
@@ -170,8 +137,11 @@ func getCurrentTargetPosition() -> void:
 
 func _on_navigation_agent_3d_target_reached() -> void:
 		visited_targets.append(current_target)
+		if current_target == bathroom:
+			need2Pee = false
 		if len(visited_targets) == len(target_list):
 			visited_targets = [] # if you've seen them all, start over
+		
 
 
 func _on_plr_detector_body_entered(body: Node3D) -> void:
@@ -179,3 +149,8 @@ func _on_plr_detector_body_entered(body: Node3D) -> void:
 		target_list = [player]
 		followingPlr = true
 		
+
+
+func _on_pp_timer_timeout() -> void:
+	need2Pee = true
+	$PPTimer.start(randi_range(120,1200))

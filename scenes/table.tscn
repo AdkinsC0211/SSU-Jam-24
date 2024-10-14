@@ -147,7 +147,8 @@ collision_mask = 3
 script = ExtResource("1_nvf3i")
 mesh = NodePath("desk_drawer")
 interactCollider = NodePath("CollisionShape3D")
-doorOpen = Vector3(-5.73743, 0, 0)
+doorClosed = Vector3(-8.408, 2.745, 4.58)
+doorOpen = Vector3(-14.145, 0, 0)
 
 [node name="desk_drawer" type="MeshInstance3D" parent="Desk/InteractableStaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.408, 2.745, 4.58)

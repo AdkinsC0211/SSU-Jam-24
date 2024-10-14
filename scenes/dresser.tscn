@@ -249,8 +249,8 @@ transform = Transform3D(4.51549, 0, 0, 0, 5.43876, 0, 0, 0, 7.58199, 0.338, 3.82
 script = ExtResource("1_g0ol4")
 mesh = NodePath("middle_dresser_drawer")
 interactCollider = NodePath("CollisionShape3D")
-doorClosed = Vector3(0, 3.829, 0)
-doorOpen = Vector3(-5.554, 3.829, 0)
+doorClosed = Vector3(-0.0748535, -0.0746494, 0)
+doorOpen = Vector3(-5.554, -0.075, 0)
 
 [node name="middle_dresser_drawer" type="MeshInstance3D" parent="Dresser/middle_dresser_drawer2"]
 transform = Transform3D(0.22146, 0, 0, 0, 0.183866, 0, 0, 0, 0.110351, -0.0748535, -0.0746494, 0)

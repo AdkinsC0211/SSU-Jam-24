@@ -17,6 +17,7 @@ func _on_burnout_counter_timeout() -> void:
 		$Candle.scale.y -= 0.1
 	$Candle/OmniLight3D.omni_range = baseRange * $Candle.scale.y
 	if $Candle.scale.y < 0.1:
-		player.handsFull = false
+		if player:
+			player.handsFull = false
 		queue_free()
 	$"Burnout Counter".start(burnoutRate)

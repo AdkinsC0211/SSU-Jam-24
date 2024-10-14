@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://eykdqh3u5e1x"]
+
+[ext_resource type="Script" path="res://Closet.gd" id="1_4xnsb"]
+[ext_resource type="AudioStream" uid="uid://inrjdjqgf0rb" path="res://sounds/MonsterBreath.ogg" id="2_bny2r"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_4xnsb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_bny2r")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
