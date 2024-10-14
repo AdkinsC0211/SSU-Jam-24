@@ -105,6 +105,12 @@ func _physics_process(delta: float) -> void:
 		# Add gravity
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+	if velocity and not $Walking/AnimationPlayer.is_playing():
+		$Walking/AnimationPlayer.play("mixamo_com")
+	elif not velocity:
+		$Walking/AnimationPlayer.stop()
+	if velocity and not $Footstep.playing:
+		$Footstep.play_sound()
 		
 		getCurrentTargetPosition()
 

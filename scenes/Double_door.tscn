@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dyc07dxycsoh3"]
+[gd_scene load_steps=11 format=4 uid="uid://dttmtefyne1l1"]
 
 [ext_resource type="Script" path="res://EntranceDoor.gd" id="1_l5w13"]
 
@@ -134,7 +134,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tnbie")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_muhci"]
+size = Vector3(1, 14.0476, 8.00052)
+
 [node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 script = ExtResource("1_l5w13")
 
 [node name="DoubleDoor" type="Node3D" parent="."]
@@ -146,3 +150,7 @@ skeleton = NodePath("")
 [node name="right_big_door" type="MeshInstance3D" parent="DoubleDoor"]
 mesh = SubResource("ArrayMesh_h3mmd")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359665, -1.52576, 0.000839233)
+shape = SubResource("BoxShape3D_muhci")

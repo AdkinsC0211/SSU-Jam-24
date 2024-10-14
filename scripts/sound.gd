@@ -3,6 +3,8 @@ extends AudioStreamPlayer3D
 var player:CharacterBody3D
 var space_state
 var update_timer = 0.5
+var kill = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -13,6 +15,9 @@ func _physics_process(_delta):
 	space_state = get_world_3d().direct_space_state
 
 func _process(delta: float) -> void:
+	if kill:
+		if not playing:
+			queue_free()
 	if playing and update_timer > 0 and stream.loop:
 		update_timer -= delta
 	elif playing and stream.loop:
@@ -59,3 +64,8 @@ func play_sound(time:float=0.0)-> void:
 	elif bus!="Master":
 		bus = "Master"
 	play(time)
+
+func detatch_play():
+	reparent(get_tree().get_root().get_child(0))
+	play_sound()
+	kill = true

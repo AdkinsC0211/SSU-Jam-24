@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwqeh00i8jcwj"]
+[gd_scene load_steps=11 format=3 uid="uid://cwqeh00i8jcwj"]
 
 [ext_resource type="PackedScene" uid="uid://cyvvrt28ddcso" path="res://Meshes/BedroomObjects/Bed.glb" id="1_0c4qa"]
 [ext_resource type="Script" path="res://scripts/bed_task.gd" id="1_8hebs"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c6s3ymkw24yt2" path="res://sounds/RitualRumble.ogg" id="5_x1lj8"]
 [ext_resource type="AudioStream" uid="uid://drn8ypxvmrvf4" path="res://sounds/curtainmove.ogg" id="6_jnn7w"]
 [ext_resource type="AudioStream" uid="uid://bfdya45alsla3" path="res://sounds/MonsterGotcha.ogg" id="7_pm4js"]
+[ext_resource type="Texture2D" uid="uid://c07xufkvegq8v" path="res://materials/salt_pile.png" id="8_5k6re"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxsh8"]
 size = Vector3(2.86929, 1.40601, 4.7948)
@@ -52,4 +53,9 @@ stream = ExtResource("6_jnn7w")
 [node name="MonsterCatch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_pm4js")
 
+[node name="salt_ring" type="Sprite3D" parent="."]
+transform = Transform3D(-1.70395e-08, -0.625975, -3.52955e-08, 0, -2.73622e-08, 0.807467, -0.389818, 2.73622e-08, 1.54281e-15, -0.112663, -0.392352, 0)
+texture = ExtResource("8_5k6re")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
