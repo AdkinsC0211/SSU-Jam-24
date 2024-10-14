@@ -1,10 +1,19 @@
-[gd_scene load_steps=70 format=4 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=134 format=4 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
+[ext_resource type="Texture2D" uid="uid://5i0y45aq0w10" path="res://images/paperwall.jpg" id="1_3d32n"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
+<<<<<<< Updated upstream
 [ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="PackedScene" uid="uid://cnowc6tenm8fx" path="res://scenes/stairs.tscn" id="2_yiu2y"]
+=======
+[ext_resource type="Texture2D" uid="uid://dnqxmo2hqsxvo" path="res://images/dirty.jpg" id="1_v8inn"]
+[ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
+[ext_resource type="Texture2D" uid="uid://d35spfabp78xe" path="res://images/stone_floor_rough.jpg" id="2_irxtc"]
+[ext_resource type="PackedScene" uid="uid://dcc5wp6facgol" path="res://scenes/stairs.tscn" id="2_yiu2y"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
+[ext_resource type="Texture2D" uid="uid://bonjari234fuq" path="res://images/wavey.jpg" id="3_pc7d0"]
 [ext_resource type="Texture2D" uid="uid://bncn8tma7ckub" path="res://materials/Tiles045_2K-JPG_Color.jpg" id="3_y4u5a"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
 [ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
@@ -21,12 +30,24 @@
 [ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="7_de6i3"]
 [ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="7_o2l0q"]
 [ext_resource type="PackedScene" path="res://scenes/bathroom_sink.tscn" id="7_wnfh0"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
 [ext_resource type="PackedScene" path="res://scenes/pew.tscn" id="8_5xyxa"]
 [ext_resource type="PackedScene" uid="uid://bdwrw0erfiysh" path="res://scenes/pepper.tscn" id="8_xxscp"]
 [ext_resource type="PackedScene" uid="uid://be8hr3nvglm5t" path="res://scenes/salt.tscn" id="9_brttr"]
 [ext_resource type="PackedScene" uid="uid://b870eulebkoub" path="res://scenes/candle.tscn" id="10_aci4u"]
 [ext_resource type="PackedScene" path="res://scenes/dresser.tscn" id="19_6k5gk"]
+=======
+[ext_resource type="PackedScene" uid="uid://dttmtefyne1l1" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
+[ext_resource type="PackedScene" uid="uid://baq3ke86bs363" path="res://scenes/pew.tscn" id="8_5xyxa"]
+[ext_resource type="PackedScene" path="res://scenes/pepper.tscn" id="8_xxscp"]
+[ext_resource type="PackedScene" path="res://scenes/salt.tscn" id="9_brttr"]
+[ext_resource type="Texture2D" uid="uid://bnjqr0aiw5555" path="res://images/brick.jpg" id="9_hdgge"]
+[ext_resource type="Texture2D" uid="uid://crx3reetlfogw" path="res://images/brightwood.jpg" id="10_6q4x1"]
+[ext_resource type="PackedScene" path="res://scenes/candle.tscn" id="10_aci4u"]
+[ext_resource type="Texture2D" uid="uid://cbn5o4fm3x7a6" path="res://images/lacecarpet.jpg" id="11_f6quf"]
+[ext_resource type="PackedScene" uid="uid://bo3oebfyyldx2" path="res://scenes/dresser.tscn" id="19_6k5gk"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" path="res://scenes/mirror.tscn" id="20_htaji"]
 [ext_resource type="PackedScene" uid="uid://dv1r3bxtxaj1q" path="res://scenes/table.tscn" id="20_rtk4q"]
 [ext_resource type="PackedScene" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
@@ -46,6 +67,9 @@ background_mode = 2
 sky = SubResource("Sky_n6v2a")
 tonemap_mode = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0lfe"]
+albedo_texture = ExtResource("1_v8inn")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xfhd"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
@@ -54,14 +78,183 @@ albedo_color = Color(1, 1, 1, 0)
 transparency = 1
 albedo_color = Color(1, 1, 0.0117647, 0.439216)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8521r"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t46sd"]
+albedo_texture = ExtResource("1_3d32n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdmhh"]
+albedo_texture = ExtResource("2_irxtc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pw3dr"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yfo8"]
+albedo_texture = ExtResource("1_3d32n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_784xo"]
+albedo_texture = ExtResource("3_pc7d0")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0ap7"]
 albedo_color = Color(0.419608, 0.392157, 0.372549, 1)
 albedo_texture = ExtResource("1_1nb0r")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4tvm"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp0s8"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijrvn"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gg3g7"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6pgv"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xwyv"]
+albedo_texture = ExtResource("3_y4u5a")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4b4h"]
 albedo_texture = ExtResource("3_y4u5a")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrga6"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nslg2"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fca0c"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahhkr"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78isc"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1fxi"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brmap"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckfed"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lj2s"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44qri"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqyav"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_if5jw"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6c3q"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gnntg"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8p7r"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojl6t"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6a15"]
+albedo_texture = ExtResource("9_hdgge")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diohb"]
+albedo_texture = ExtResource("10_6q4x1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5cdl"]
+albedo_texture = ExtResource("9_hdgge")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0klx"]
+albedo_texture = ExtResource("9_hdgge")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekrl6"]
+albedo_texture = ExtResource("2_irxtc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isacq"]
+albedo_texture = ExtResource("10_6q4x1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl83h"]
+albedo_texture = ExtResource("11_f6quf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6v1f"]
+albedo_texture = ExtResource("2_irxtc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwwip"]
+albedo_texture = ExtResource("2_irxtc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayxmd"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqspj"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxgfj"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntnup"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2vy5"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asltm"]
+albedo_texture = ExtResource("1_v8inn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4a8j"]
+albedo_texture = ExtResource("1_v8inn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqysb"]
+albedo_texture = ExtResource("1_v8inn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvkjd"]
+albedo_texture = ExtResource("1_v8inn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq2eb"]
+albedo_texture = ExtResource("1_1nb0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ytmf"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nj2s"]
+albedo_texture = ExtResource("1_v8inn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vepb5"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ih2hd"]
+albedo_texture = ExtResource("1_v8inn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q420r"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v62sp"]
+albedo_texture = ExtResource("3_y4u5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87f1q"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uusfs"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2nit"]
+albedo_texture = ExtResource("3_pc7d0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82ngm"]
+albedo_texture = ExtResource("3_pc7d0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4ofk"]
 resource_name = "lighter boring brown"
@@ -564,6 +757,7 @@ size = Vector3(30, 15.681, 18)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 2.89868, 0.0513706)
 operation = 2
 size = Vector3(28, 16.1056, 16)
+material = SubResource("StandardMaterial3D_w0lfe")
 
 [node name="door_rect" type="CSGBox3D" parent="build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 11.8436, -1.66418, 0)
@@ -612,6 +806,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.854, 2.58437, 0.00494385)
 size = Vector3(0.01, 1.2538, 3.994)
 material = SubResource("StandardMaterial3D_ywmgn")
 
+[node name="church_floor" type="CSGBox3D" parent="build_structure/church_main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83381, -5.1115, 0.184006)
+layers = 524288
+size = Vector3(29.4198, 0.001, 16.6253)
+material = SubResource("StandardMaterial3D_8521r")
+
 [node name="church_inside" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 13, -16.6669, -5.09027, 0)
 use_collision = true
@@ -620,74 +820,87 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33242, 0)
 radius = 0.4
 sides = 16
+material = SubResource("StandardMaterial3D_t46sd")
 
 [node name="balcony" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929178, 8.49342, -0.453772)
 size = Vector3(1.86493, 0.5, 0.339874)
+material = SubResource("StandardMaterial3D_hdmhh")
 
 [node name="balcony2" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929, 8.493, 0.454)
 size = Vector3(1.86493, 0.5, 0.339874)
+material = SubResource("StandardMaterial3D_hdmhh")
 
 [node name="support1" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82907, 7.41115, 0.317027)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support2" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.829, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support3" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37389, 7.41115, 0.317027)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support4" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.374, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support5" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919, 7.411, 0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support6" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support7" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464, 7.411, 0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support8" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463962, 7.411, -0.31702)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support9" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, 7.411, 0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="support10" type="CSGCylinder3D" parent="build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, 7.411, -0.317)
 radius = 0.03
 height = 15.0
 sides = 16
+material = SubResource("StandardMaterial3D_pw3dr")
 
 [node name="stage_cutter" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.240769, 0.31723, -0.0078125)
@@ -697,6 +910,7 @@ size = Vector3(0.647491, 1.65125, 1.5918)
 [node name="stage_stair_L" type="CSGBox3D" parent="build_structure/church_inside"]
 transform = Transform3D(0.97809, 0, 0.208185, 0, 1, 0, -0.208185, 0, 0.97809, 0.0588191, 0.120743, 0.397824)
 size = Vector3(0.119019, 0.416168, 0.0359421)
+material = SubResource("StandardMaterial3D_4yfo8")
 
 [node name="church_back" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -705,6 +919,7 @@ use_collision = true
 [node name="church_back" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1717, 1.84589, 0.0513706)
 size = Vector3(15, 15.681, 18)
+material = SubResource("StandardMaterial3D_784xo")
 
 [node name="church_back_space" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1461, 3.846, 0.0221342)
@@ -716,31 +931,37 @@ material = SubResource("StandardMaterial3D_f0ap7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3733, -4.25134, -6.54096)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_r4tvm")
 
 [node name="left_backdoor" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1185, -4.251, 6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_vp0s8")
 
 [node name="right_backdoor2" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.373, 4.553, -6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_ijrvn")
 
 [node name="left_backdoor2" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.118, 4.553, 6.541)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_gg3g7")
 
 [node name="orphan_door" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.71, -4.251, 8.72)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_n6pgv")
 
 [node name="backrooms_door" type="CSGBox3D" parent="build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1126, -4.251, -0.0352226)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_7xwyv")
 
 [node name="church_back_inside" type="CSGCombiner3D" parent="build_structure"]
 use_collision = true
@@ -753,7 +974,7 @@ material = ExtResource("1_w3kjo")
 [node name="churchback_floor" type="CSGPolygon3D" parent="build_structure/church_back_inside"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -22.0138, -5.14429, 0)
 layers = 524288
-polygon = PackedVector2Array(-8.63448, -8.02775, -8.64546, 8.03804, 4.78006, 8.03674, 4.58059, -8.02244)
+polygon = PackedVector2Array(-8.96317, -7.99946, -8.64546, 8.03804, 4.78006, 8.03674, 4.58059, -8.02244)
 depth = 0.01
 material = SubResource("StandardMaterial3D_s4b4h")
 
@@ -805,6 +1026,7 @@ size = Vector3(28.1138, 4.07899, 50.0762)
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.039999, -5.05479, -8.8373)
 operation = 2
 size = Vector3(26.114, 3.92106, 32.6659)
+material = SubResource("StandardMaterial3D_rrga6")
 
 [node name="orphanage_rooms" type="Node3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.713, 0, 23.429)
@@ -815,15 +1037,18 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room1"]
 size = Vector3(3.98404, 2.64844, 6.30859)
+material = SubResource("StandardMaterial3D_nslg2")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room1"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
+material = SubResource("StandardMaterial3D_fca0c")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_ahhkr")
 
 [node name="orphanage_room2" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, -4.95286)
@@ -831,15 +1056,18 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room2"]
 size = Vector3(3.98404, 2.64844, 6.30859)
+material = SubResource("StandardMaterial3D_78isc")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room2"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
+material = SubResource("StandardMaterial3D_e1fxi")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_brmap")
 
 [node name="orphanage_room3" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, 1.31672)
@@ -847,15 +1075,18 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room3"]
 size = Vector3(3.98404, 2.64844, 6.30859)
+material = SubResource("StandardMaterial3D_ckfed")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room3"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
+material = SubResource("StandardMaterial3D_8lj2s")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_44qri")
 
 [node name="orphanage_room4" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14312, -3.89134, 7.6207)
@@ -863,15 +1094,18 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room4"]
 size = Vector3(3.98404, 2.64844, 6.30859)
+material = SubResource("StandardMaterial3D_kqyav")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room4"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
+material = SubResource("StandardMaterial3D_if5jw")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_x6c3q")
 
 [node name="orphanage_room5" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.143, -3.89134, 1.31672)
@@ -879,15 +1113,18 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room5"]
 size = Vector3(3.98404, 2.64844, 6.30859)
+material = SubResource("StandardMaterial3D_gnntg")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room5"]
 operation = 2
 size = Vector3(3.5337, 3.08412, 5.809)
+material = SubResource("StandardMaterial3D_i8p7r")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="build_structure/orphanage_rooms/orphanage_room5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91776, -0.363238, -1.34224)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_ojl6t")
 
 [node name="orphanage_room6" type="CSGCombiner3D" parent="build_structure/orphanage_rooms"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.143, -3.89134, 7.6207)
@@ -912,21 +1149,25 @@ use_collision = true
 [node name="kitchen" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0426, 0.803466, 0.0804844)
 size = Vector3(5.64478, 2.60693, 12.5866)
+material = SubResource("StandardMaterial3D_y6a15")
 
 [node name="kitchen_space" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00562, 0.803466, 0.0692701)
 operation = 2
 size = Vector3(5.05273, 2.60693, 12.0547)
+material = SubResource("StandardMaterial3D_diohb")
 
 [node name="kitchen_door" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83764, 0.43779, 4.72255)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_x5cdl")
 
 [node name="dining_door" type="CSGBox3D" parent="build_structure/kitchen"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83764, 0.43779, -1.81976)
 operation = 2
 size = Vector3(1.5, 1.8, 6.17356)
+material = SubResource("StandardMaterial3D_i0klx")
 
 [node name="kitchen_divider" type="CSGBox3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -5.09242, 17.2019)
@@ -938,11 +1179,13 @@ material = SubResource("StandardMaterial3D_ekrl6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.25152, -26.9875, -4.702, 17.2198)
 use_collision = true
 size = Vector3(5.11676, 0.0404053, 0.340332)
+material = SubResource("StandardMaterial3D_isacq")
 
 [node name="kitchen_divider_top2" type="CSGBox3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -3.86288, 17.2198)
 use_collision = true
 size = Vector3(5.11676, 0.0404053, 0.340332)
+material = SubResource("StandardMaterial3D_fl83h")
 
 [node name="kitchen_divider_pillars" type="CSGCombiner3D" parent="build_structure"]
 use_collision = true
@@ -950,11 +1193,13 @@ use_collision = true
 [node name="kitchen_divider_pillar" type="CSGBox3D" parent="build_structure/kitchen_divider_pillars"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -4.26976, 17.2019)
 size = Vector3(5.11676, 0.834534, 0.170898)
+material = SubResource("StandardMaterial3D_m6v1f")
 
 [node name="kitchen_divider_pillar2" type="CSGBox3D" parent="build_structure/kitchen_divider_pillars"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -4.27176, 17.2019)
 operation = 2
 size = Vector3(4.8, 0.838355, 0.171)
+material = SubResource("StandardMaterial3D_cwwip")
 
 [node name="backrooms" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.106, -3.187, 0)
@@ -963,21 +1208,25 @@ use_collision = true
 [node name="backrooms" type="CSGBox3D" parent="build_structure/backrooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29187, -0.472882, 1.40825)
 size = Vector3(25.5837, 3.44991, 20.8165)
+material = SubResource("StandardMaterial3D_ayxmd")
 
 [node name="backrooms_space" type="CSGBox3D" parent="build_structure/backrooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35136, 0.234471, 1.32987)
 operation = 2
 size = Vector3(14.4525, 4.396, 19.6597)
+material = SubResource("StandardMaterial3D_vqspj")
 
 [node name="backrooms_space2" type="CSGBox3D" parent="build_structure/backrooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3905, 0.234471, 1.32987)
 operation = 2
 size = Vector3(10.4621, 4.396, 19.6597)
+material = SubResource("StandardMaterial3D_kxgfj")
 
 [node name="shower_door" type="CSGBox3D" parent="build_structure/backrooms"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.99617, -1.05988, 0.23099)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_ntnup")
 
 [node name="backrooms_bathroom" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4579, -3.5692, -5.02831)
@@ -986,26 +1235,31 @@ use_collision = true
 [node name="bathroom" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483505, 0, 0)
 size = Vector3(14.5164, 3.21924, 7.16357)
+material = SubResource("StandardMaterial3D_a2vy5")
 
 [node name="bathroom_spaceB" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84575, 0.0216343, -0.0142002)
 operation = 2
 size = Vector3(4.07058, 5.219, 6.664)
+material = SubResource("StandardMaterial3D_asltm")
 
 [node name="bathroom_spaceG" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85263, 0, 0)
 operation = 2
 size = Vector3(4.16435, 5.219, 6.664)
+material = SubResource("StandardMaterial3D_k4a8j")
 
 [node name="bathroom_doorB" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.682098, -0.681801, 3.51987)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_xqysb")
 
 [node name="bathroom_doorG" type="CSGBox3D" parent="build_structure/backrooms_bathroom"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.72833, -0.681801, 3.51987)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_fvkjd")
 
 [node name="backrooms_extra" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -39.2314, -3.5692, 5.04676)
@@ -1014,26 +1268,31 @@ use_collision = true
 [node name="extras" type="CSGBox3D" parent="build_structure/backrooms_extra"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.483505, 0, 0)
 size = Vector3(14.5164, 3.21924, 7.16357)
+material = SubResource("StandardMaterial3D_nq2eb")
 
 [node name="shower_space" type="CSGBox3D" parent="build_structure/backrooms_extra"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 3.26105, 0, 0.0347042)
 operation = 2
 size = Vector3(7.10952, 5.219, 6.5946)
+material = SubResource("StandardMaterial3D_4ytmf")
 
 [node name="storage_space" type="CSGBox3D" parent="build_structure/backrooms_extra"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -2.85263, 0, 1.88242)
 operation = 2
 size = Vector3(4.16435, 5.219, 2.89915)
+material = SubResource("StandardMaterial3D_8nj2s")
 
 [node name="shower_door" type="CSGBox3D" parent="build_structure/backrooms_extra"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.682098, -0.681801, 3.51987)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_vepb5")
 
 [node name="storage_door" type="CSGBox3D" parent="build_structure/backrooms_extra"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.72833, -0.681801, 3.51987)
 operation = 2
 size = Vector3(1.5, 1.8, 1.2)
+material = SubResource("StandardMaterial3D_ih2hd")
 
 [node name="backrooms_extra2" type="CSGCombiner3D" parent="build_structure"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.622, -3.619, 0.913089)
@@ -1042,11 +1301,13 @@ use_collision = true
 [node name="extras" type="CSGBox3D" parent="build_structure/backrooms_extra2"]
 transform = Transform3D(1, 0, -1.77636e-14, 0, 1, 0, 1.77636e-14, 0, 1, 2.96127, 0, 0)
 size = Vector3(7.62685, 3.21924, 7.16357)
+material = SubResource("StandardMaterial3D_q420r")
 
 [node name="shower_space" type="CSGBox3D" parent="build_structure/backrooms_extra2"]
 transform = Transform3D(1, 0, -1.77636e-14, 0, 1, 0, 1.77636e-14, 0, 1, 3.11795, 0, 0.198608)
 operation = 2
 size = Vector3(6.82331, 5.219, 6.92242)
+material = SubResource("StandardMaterial3D_v62sp")
 
 [node name="showers" type="Node3D" parent="build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.176, -4.02017, 2.77085)
@@ -1323,6 +1584,7 @@ use_collision = true
 [node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
 size = Vector3(6.08716, 6.50116, 3.2417)
+material = SubResource("StandardMaterial3D_87f1q")
 
 [node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
@@ -1341,6 +1603,7 @@ use_collision = true
 [node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
 size = Vector3(6.08716, 6.50116, 3.2417)
+material = SubResource("StandardMaterial3D_uusfs")
 
 [node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
@@ -1359,6 +1622,7 @@ use_collision = true
 [node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
 size = Vector3(6.08716, 6.50116, 3.2417)
+material = SubResource("StandardMaterial3D_w2nit")
 
 [node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
@@ -1377,6 +1641,7 @@ use_collision = true
 [node name="walls" type="CSGBox3D" parent="furniture_orphanage/closets/closet4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484627, 1.35813, 0.34697)
 size = Vector3(6.08716, 6.50116, 3.2417)
+material = SubResource("StandardMaterial3D_82ngm")
 
 [node name="space" type="CSGBox3D" parent="furniture_orphanage/closets/closet4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596325, 0.801068, 0.708897)
@@ -1569,6 +1834,12 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.561, -1.391, 7.88)
 
 [node name="Cabinet2" parent="furniture_orphanage/kitchen" instance=ExtResource("6_3vupu")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.561, -1.391, 6.93443)
+
+[node name="Cabinet3" parent="furniture_orphanage/kitchen" instance=ExtResource("6_3vupu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.561, -1.391, 6.00885)
+
+[node name="Cabinet4" parent="furniture_orphanage/kitchen" instance=ExtResource("6_3vupu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.561, -1.391, 5.06327)
 
 [node name="bedroom1" type="Node3D" parent="furniture_orphanage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75248, -0.499718, -0.806107)
@@ -2040,4 +2311,4 @@ transform = Transform3D(5.06807e-09, 0, -0.425, 0, 0.425, 0, 0.425, 0, 5.06807e-
 transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, -61.6347, -0.0679007, 1.88231)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7201, -8.94491, 42.3352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36668, -8.94491, -2.52125)
