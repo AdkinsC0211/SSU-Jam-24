@@ -9,6 +9,7 @@ func haunt():
 	
 func unhaunt():
 	$AudioStreamPlayer3D.stop()
+	$Timer.stop()
 
 func kill_orphan():
 	var closest_target: Node3D = null
