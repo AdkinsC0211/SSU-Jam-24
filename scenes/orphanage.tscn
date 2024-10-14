@@ -3,41 +3,28 @@
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="Texture2D" uid="uid://5i0y45aq0w10" path="res://images/paperwall.jpg" id="1_3d32n"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
-<<<<<<< Updated upstream
-[ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
-[ext_resource type="PackedScene" uid="uid://cnowc6tenm8fx" path="res://scenes/stairs.tscn" id="2_yiu2y"]
-=======
 [ext_resource type="Texture2D" uid="uid://dnqxmo2hqsxvo" path="res://images/dirty.jpg" id="1_v8inn"]
 [ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="Texture2D" uid="uid://d35spfabp78xe" path="res://images/stone_floor_rough.jpg" id="2_irxtc"]
 [ext_resource type="PackedScene" uid="uid://dcc5wp6facgol" path="res://scenes/stairs.tscn" id="2_yiu2y"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
 [ext_resource type="Texture2D" uid="uid://bonjari234fuq" path="res://images/wavey.jpg" id="3_pc7d0"]
 [ext_resource type="Texture2D" uid="uid://bncn8tma7ckub" path="res://materials/Tiles045_2K-JPG_Color.jpg" id="3_y4u5a"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
-[ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
-[ext_resource type="PackedScene" uid="uid://cuyy1tk40x4kk" path="res://scenes/chair.tscn" id="5_8vjjt"]
-[ext_resource type="PackedScene" path="res://scenes/big_cross.tscn" id="5_boc3o"]
-[ext_resource type="PackedScene" uid="uid://c1ceh88vbb3a3" path="res://scenes/stall_door.tscn" id="5_is5h5"]
-[ext_resource type="PackedScene" path="res://scenes/plate.tscn" id="5_vgclx"]
-[ext_resource type="PackedScene" path="res://scenes/podium.tscn" id="6_0n88v"]
+[ext_resource type="PackedScene" uid="uid://bxpdk70qrbwn6" path="res://scenes/stall_panel.tscn" id="4_yk265"]
+[ext_resource type="PackedScene" uid="uid://di0uojwwwq8xt" path="res://scenes/chair.tscn" id="5_8vjjt"]
+[ext_resource type="PackedScene" uid="uid://bj6ltbmqhhvig" path="res://scenes/big_cross.tscn" id="5_boc3o"]
+[ext_resource type="PackedScene" uid="uid://cjb848awadmxg" path="res://scenes/stall_door.tscn" id="5_is5h5"]
+[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="5_vgclx"]
+[ext_resource type="PackedScene" uid="uid://cj7ybuhiyqm6q" path="res://scenes/podium.tscn" id="6_0n88v"]
 [ext_resource type="PackedScene" uid="uid://v1m0yjfll3f8" path="res://Meshes/KitchenObjects/Cabinet.glb" id="6_3vupu"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="6_677g2"]
-[ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="6_ny0h2"]
-[ext_resource type="PackedScene" uid="uid://b6fwgrx2hndob" path="res://scenes/toilet.tscn" id="6_rtq11"]
-[ext_resource type="PackedScene" uid="uid://bj14v03t81y7v" path="res://scenes/toilet_paper.tscn" id="7_1tyxx"]
-[ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="7_de6i3"]
-[ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="7_o2l0q"]
+[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="6_ny0h2"]
+[ext_resource type="PackedScene" path="res://scenes/toilet.tscn" id="6_rtq11"]
+[ext_resource type="PackedScene" path="res://scenes/toilet_paper.tscn" id="7_1tyxx"]
+[ext_resource type="PackedScene" uid="uid://dt6nkja4aj1oi" path="res://scenes/door.tscn" id="7_de6i3"]
+[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="7_o2l0q"]
 [ext_resource type="PackedScene" path="res://scenes/bathroom_sink.tscn" id="7_wnfh0"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
-[ext_resource type="PackedScene" path="res://scenes/pew.tscn" id="8_5xyxa"]
-[ext_resource type="PackedScene" uid="uid://bdwrw0erfiysh" path="res://scenes/pepper.tscn" id="8_xxscp"]
-[ext_resource type="PackedScene" uid="uid://be8hr3nvglm5t" path="res://scenes/salt.tscn" id="9_brttr"]
-[ext_resource type="PackedScene" uid="uid://b870eulebkoub" path="res://scenes/candle.tscn" id="10_aci4u"]
-[ext_resource type="PackedScene" path="res://scenes/dresser.tscn" id="19_6k5gk"]
-=======
 [ext_resource type="PackedScene" uid="uid://dttmtefyne1l1" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
 [ext_resource type="PackedScene" uid="uid://baq3ke86bs363" path="res://scenes/pew.tscn" id="8_5xyxa"]
 [ext_resource type="PackedScene" path="res://scenes/pepper.tscn" id="8_xxscp"]
@@ -47,13 +34,12 @@
 [ext_resource type="PackedScene" path="res://scenes/candle.tscn" id="10_aci4u"]
 [ext_resource type="Texture2D" uid="uid://cbn5o4fm3x7a6" path="res://images/lacecarpet.jpg" id="11_f6quf"]
 [ext_resource type="PackedScene" uid="uid://bo3oebfyyldx2" path="res://scenes/dresser.tscn" id="19_6k5gk"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" path="res://scenes/mirror.tscn" id="20_htaji"]
-[ext_resource type="PackedScene" uid="uid://dv1r3bxtxaj1q" path="res://scenes/table.tscn" id="20_rtk4q"]
-[ext_resource type="PackedScene" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
+[ext_resource type="PackedScene" uid="uid://bddehv5kd65g2" path="res://scenes/table.tscn" id="20_rtk4q"]
+[ext_resource type="PackedScene" uid="uid://dqac5caqk36xo" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
 [ext_resource type="PackedScene" path="res://scenes/shower_controls.tscn" id="22_3uo7l"]
 [ext_resource type="PackedScene" path="res://scenes/shower_drain.tscn" id="23_xx8dx"]
-[ext_resource type="PackedScene" path="res://scenes/towel_rack.tscn" id="24_qulpj"]
+[ext_resource type="PackedScene" uid="uid://dq2h70cwwoyby" path="res://scenes/towel_rack.tscn" id="24_qulpj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -754,9 +740,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 1.84589, 0.0513706)
 size = Vector3(30, 15.681, 18)
 
 [node name="church_space" type="CSGBox3D" parent="build_structure/church_main"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 2.89868, 0.0513706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 2.14889, 0.0513706)
 operation = 2
-size = Vector3(28, 16.1056, 16)
+size = Vector3(28, 14.606, 16)
 material = SubResource("StandardMaterial3D_w0lfe")
 
 [node name="door_rect" type="CSGBox3D" parent="build_structure/church_main"]
@@ -922,9 +908,9 @@ size = Vector3(15, 15.681, 18)
 material = SubResource("StandardMaterial3D_784xo")
 
 [node name="church_back_space" type="CSGBox3D" parent="build_structure/church_back"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1461, 3.846, 0.0221342)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1461, 2.19537, 0.0221342)
 operation = 2
-size = Vector3(12.9531, 18, 16)
+size = Vector3(12.9531, 14.6987, 16)
 material = SubResource("StandardMaterial3D_f0ap7")
 
 [node name="right_backdoor" type="CSGBox3D" parent="build_structure/church_back"]
@@ -1023,9 +1009,9 @@ transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.801, 0)
 size = Vector3(28.1138, 4.07899, 50.0762)
 
 [node name="orphanage2" type="CSGBox3D" parent="build_structure/orphanage_main"]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.039999, -5.05479, -8.8373)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.0400066, -5.7537, -8.8373)
 operation = 2
-size = Vector3(26.114, 3.92106, 32.6659)
+size = Vector3(26.114, 2.52323, 32.6659)
 material = SubResource("StandardMaterial3D_rrga6")
 
 [node name="orphanage_rooms" type="Node3D" parent="build_structure"]
@@ -1211,15 +1197,15 @@ size = Vector3(25.5837, 3.44991, 20.8165)
 material = SubResource("StandardMaterial3D_ayxmd")
 
 [node name="backrooms_space" type="CSGBox3D" parent="build_structure/backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35136, 0.234471, 1.32987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35136, -0.372891, 1.32987)
 operation = 2
-size = Vector3(14.4525, 4.396, 19.6597)
+size = Vector3(14.4525, 3.18128, 19.6597)
 material = SubResource("StandardMaterial3D_vqspj")
 
 [node name="backrooms_space2" type="CSGBox3D" parent="build_structure/backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3905, 0.234471, 1.32987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3905, -0.382993, 1.32987)
 operation = 2
-size = Vector3(10.4621, 4.396, 19.6597)
+size = Vector3(10.4621, 3.16107, 19.6597)
 material = SubResource("StandardMaterial3D_kxgfj")
 
 [node name="shower_door" type="CSGBox3D" parent="build_structure/backrooms"]
