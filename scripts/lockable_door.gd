@@ -1,6 +1,6 @@
 extends InteractableStaticBody3D
 
-var open := false
+@export var open := false
 @export var mesh : MeshInstance3D
 @export var interactCollider : CollisionShape3D
 

@@ -11,6 +11,7 @@ var pathfinding := true
 
 # Points of interest
 @export var bedroom: Node3D
+@export var playerBedroom: Node3D
 @export var bed: Node3D
 @export var desk: Node3D
 @export var closet: Node3D
@@ -44,7 +45,7 @@ var RightLegEnd : Vector3
 func choose_behavior() -> void:
 	if scared:
 		# look for player
-		target_list = [kitchen, church, bedroom]
+		target_list = [kitchen, church, playerBedroom]
 		lookingForPlr = true
 	else:
 		if powerOn:
@@ -65,12 +66,12 @@ func choose_behavior() -> void:
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	$PPTimer.start(randi_range(120,1200))
+	$NavigationAgent3D.target_desired_distance = 7.5
 
 # Find the closest unvisited target
 func find_closest_target() -> Node3D:
 	var closest_target: Node3D = null
 	var min_distance: float = INF
-
 	for target in target_list:
 		if target in visited_targets:
 			continue  # Skip if already visited
@@ -112,7 +113,7 @@ func _physics_process(delta: float) -> void:
 		if velocity and not $Footstep.playing:
 			$Footstep.play_sound()
 			
-			getCurrentTargetPosition()
+		getCurrentTargetPosition()
 
 		# Navigate toward the current target
 		$NavigationAgent3D.target_position = current_target.global_position
