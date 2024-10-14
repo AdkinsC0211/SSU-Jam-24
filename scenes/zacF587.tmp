@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://y1e8qi11lvcc"]
+[gd_scene load_steps=15 format=3 uid="uid://y1e8qi11lvcc"]
 
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_bvjiw"]
 [ext_resource type="Script" path="res://scripts/zach_task_world.gd" id="1_rfj78"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="8_mnjke"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="9_706ai"]
 [ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="9_xcvtp"]
-[ext_resource type="PackedScene" uid="uid://be8hr3nvglm5t" path="res://scenes/salt.tscn" id="11_f7wk4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwvb8"]
 
@@ -45,7 +44,7 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wxvi2")
 
-[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "bed1", "bed2", "bed3", "bed4", "bed5", "bed6", "breaker") instance=ExtResource("4_dcdj3")]
+[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "bed1", "bed2", "bed3", "breaker") instance=ExtResource("4_dcdj3")]
 rosary = NodePath("../rosary_root")
 dishes = NodePath("../sink_task_root")
 window1 = NodePath("../Window")
@@ -54,9 +53,6 @@ window3 = NodePath("../Window3")
 bed1 = NodePath("../Node3D/bed_root_node")
 bed2 = NodePath("../Node3D/bed_root_node2")
 bed3 = NodePath("../Node3D/bed_root_node3")
-bed4 = NodePath("../Node3D/bed_root_node4")
-bed5 = NodePath("../Node3D/bed_root_node5")
-bed6 = NodePath("../Node3D/bed_root_node6")
 breaker = NodePath("../Breaker")
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("4_qpsfd")]
@@ -97,22 +93,10 @@ hauntable_tasks_manager = NodePath("../Node3D")
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="bed_root_node" parent="Node3D" instance=ExtResource("9_706ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72018, 1.15061, 2.12848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72018, 0.5, 2.12848)
 
 [node name="bed_root_node2" parent="Node3D" instance=ExtResource("9_706ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8474, 2.05662, 2.23931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8474, 1.40601, 2.23931)
 
 [node name="bed_root_node3" parent="Node3D" instance=ExtResource("9_706ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96128, 2.96263, 2.29009)
-
-[node name="bed_root_node4" parent="Node3D" instance=ExtResource("9_706ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56758, 3.20723, 4.36779)
-
-[node name="bed_root_node5" parent="Node3D" instance=ExtResource("9_706ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6948, 4.11324, 4.47862)
-
-[node name="bed_root_node6" parent="Node3D" instance=ExtResource("9_706ai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80868, 5.01925, 4.5294)
-
-[node name="GrabbableStaticBody3D" parent="." instance=ExtResource("11_f7wk4")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.3175, 0.5, 0.532968)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96128, 2.31202, 2.29009)

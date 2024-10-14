@@ -9,6 +9,9 @@ extends Node2D
 @export var bed1 : InteractableStaticBody3D
 @export var bed2: InteractableStaticBody3D
 @export var bed3 : InteractableStaticBody3D
+@export var bed4 : InteractableStaticBody3D
+@export var bed5: InteractableStaticBody3D
+@export var bed6 : InteractableStaticBody3D
 #@export var closet1 : Node3D
 #@export var closet2 : Node3D
 #@export var closet3 : Node3D
@@ -50,10 +53,10 @@ func _process(_delta):
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow3.visible = false
 	else:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow3.visible = true
-	if bed1.haunted == false:
-		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel.visible = false
+	if bed1.haunted == true:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/TopBedLabel.visible = true
 	else:
-		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel.visible = true
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/TopBedLabel.visible = false
 	if bed2.haunted == false:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel2.visible = false
 	else:
@@ -62,9 +65,22 @@ func _process(_delta):
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel3.visible = false
 	else:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel3.visible = true
+	if bed4.haunted == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel4.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel4.visible = true
+	if bed5.haunted == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel5.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel5.visible = true
+	if bed6.haunted == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel6.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel6.visible = true
 	if breaker.haunted == false:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = false
 	else:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = true
 	#add three closet and five demons
+	
 	

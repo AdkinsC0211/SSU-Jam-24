@@ -106,26 +106,71 @@ theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
 text = "Close the Window"
 
-[node name="CheckBedLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+[node name="TopBedLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
+text = "Place Salt Around the Bed"
+
+[node name="CheckBedLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer/TopBedLabel"]
+visible = false
+layout_mode = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jjvnu")
+theme_override_font_sizes/font_size = 25
 text = "Check Under the Bed"
+
+[node name="SaltBedLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer/TopBedLabel"]
+visible = false
+layout_mode = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jjvnu")
+theme_override_font_sizes/font_size = 25
+text = "Place salt around the bed"
+
+[node name="MakeSureLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer/TopBedLabel"]
+visible = false
+layout_mode = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jjvnu")
+theme_override_font_sizes/font_size = 25
+text = "Make sure there is no monster..."
 
 [node name="CheckBedLabel2" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
-text = "Check Under the Bed"
+text = "Place Salt Around the Bed"
 
 [node name="CheckBedLabel3" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
-text = "Check Under the Bed"
+text = "Place Salt Around the Bed"
+
+[node name="CheckBedLabel4" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jjvnu")
+theme_override_font_sizes/font_size = 25
+text = "Place Salt Around the Bed"
+
+[node name="CheckBedLabel5" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jjvnu")
+theme_override_font_sizes/font_size = 25
+text = "Place Salt Around the Bed"
+
+[node name="CheckBedLabel6" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jjvnu")
+theme_override_font_sizes/font_size = 25
+text = "Place Salt Around the Bed"
 
 [node name="CheckClosetLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 layout_mode = 2
@@ -149,6 +194,7 @@ theme_override_font_sizes/font_size = 25
 text = "Check the Closet"
 
 [node name="FlipBreakerLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
@@ -156,6 +202,7 @@ theme_override_font_sizes/font_size = 25
 text = "Flip the Breaker"
 
 [node name="KillDemonLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
@@ -163,6 +210,7 @@ theme_override_font_sizes/font_size = 25
 text = "Kill the Demon"
 
 [node name="KillDemonLabel2" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
@@ -170,6 +218,7 @@ theme_override_font_sizes/font_size = 25
 text = "Kill the Demon"
 
 [node name="KillDemonLabel3" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
@@ -177,6 +226,7 @@ theme_override_font_sizes/font_size = 25
 text = "Kill the Demon"
 
 [node name="KillDemonLabel4" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
@@ -184,6 +234,7 @@ theme_override_font_sizes/font_size = 25
 text = "Kill the Demon"
 
 [node name="KillDemonLabel5" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr8mv5nr7pruy"]
+[gd_scene load_steps=5 format=3 uid="uid://cr8mv5nr7pruy"]
 
 [ext_resource type="Script" path="res://scenes/win.gd" id="1_akh3f"]
 [ext_resource type="Texture2D" uid="uid://7n6e1dcayubb" path="res://images/finalMainMenuBG.png" id="2_xemmq"]
 [ext_resource type="AudioStream" uid="uid://cv386fp5weoix" path="res://sounds/WINNERWINNERWINNER.ogg" id="3_81qpy"]
+[ext_resource type="FontFile" uid="uid://cakknxsgxbvmm" path="res://fonts/Nightmare-Regular.ttf" id="3_oepxw"]
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -43,10 +44,14 @@ THE KIDS THAT ARE LEFT ARE SAFE"
 
 [node name="Button" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oepxw")
+theme_override_font_sizes/font_size = 40
 text = "replay"
 
 [node name="Button2" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oepxw")
+theme_override_font_sizes/font_size = 40
 text = "quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
