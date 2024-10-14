@@ -76,7 +76,7 @@ func haunt():
 
 
 func _on_timer_timeout():
-	if haunt == true:
+	if haunted == true:
 		var demon = preload("res://scenes/Demon.tscn")
 		demon.instantiate()
 		demon.global_position = global_position
