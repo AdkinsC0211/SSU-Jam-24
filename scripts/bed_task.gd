@@ -59,6 +59,8 @@ func get_salted_idiot():
 	if not salted:
 		$salt_ring.visible = true
 		salted = true
+		haunted = false
+		$ghost_light.visible = false
 	
 
 
