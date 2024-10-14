@@ -4,6 +4,7 @@ extends Node3D
 @export var bed2 : Node3D
 @export var closet : Node3D
 @export var window : Node3D
+@export var window2 : Node3D
 
 @export var whatsHaunted := -1
 
@@ -17,3 +18,4 @@ func haunt():
 		1: bed2.haunt()
 		2: closet.haunt()
 		3: window.haunt()
+		4: window2.haunt()

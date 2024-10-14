@@ -767,14 +767,13 @@ transform = Transform3D(-1.3, 0, 1.1365e-07, 0, 1.3, 0, -1.1365e-07, 0, -1.3, 8,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8573, -1.47844, -17.8729)
 cross = NodePath("../big cross")
 
-[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("bedroom", "bed", "desk", "closet", "window", "playerBedroom", "kitchen", "bathroom", "church") instance=ExtResource("3_a8av5")]
+[node name="InteractableRigidBody3D" parent="." node_paths=PackedStringArray("bedroom", "bed", "desk", "closet", "window", "kitchen", "bathroom", "church") instance=ExtResource("3_a8av5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70287, -0.380605, -10.0372)
 bedroom = NodePath("../Bedroom")
 bed = NodePath("../Bedroom")
 desk = NodePath("../Bedroom")
 closet = NodePath("../Bedroom")
 window = NodePath("../Bedroom")
-playerBedroom = NodePath("../PlayerBedroom")
 kitchen = NodePath("../Kitchen")
 bathroom = NodePath("../Bathroom")
 church = NodePath("../Church")

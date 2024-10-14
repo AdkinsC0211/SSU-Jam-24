@@ -15,7 +15,6 @@ var pathfinding := true
 @export var desk: Node3D
 @export var closet: Node3D
 @export var window: Node3D
-@export var playerBedroom: Node3D
 @export var kitchen: Node3D
 @export var bathroom: Node3D
 @export var church: Node3D
@@ -45,7 +44,7 @@ var RightLegEnd : Vector3
 func choose_behavior() -> void:
 	if scared:
 		# look for player
-		target_list = [playerBedroom, kitchen, church, bedroom]
+		target_list = [kitchen, church, bedroom]
 		lookingForPlr = true
 	else:
 		if powerOn:

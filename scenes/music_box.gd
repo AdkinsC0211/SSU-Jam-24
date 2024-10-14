@@ -7,3 +7,5 @@ func use() -> void:
 	for closet in closets:
 		if global_position.distance_to(closet) < 5:
 			closet.unhaunt()
+			$AudioStreamPlayer3D.play_sound()
+			$AudioStreamPlayer3D2.play_sound()

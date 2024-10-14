@@ -1,6 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://d3dvk6pan37c"]
+[gd_scene load_steps=17 format=4 uid="uid://d3dvk6pan37c"]
 
 [ext_resource type="Script" path="res://scenes/music_box.gd" id="1_ry71y"]
+[ext_resource type="AudioStream" uid="uid://cec5dym2pm6d0" path="res://sounds/347035__charcrone__winding-noise-music-box.mp3" id="2_st5va"]
+[ext_resource type="Script" path="res://scripts/sound.gd" id="3_d42f1"]
+[ext_resource type="AudioStream" uid="uid://cscsf3llt0qkp" path="res://sounds/musicmusic.ogg" id="4_vwsox"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_55a6t"]
 points = PackedVector3Array(-0.92354, -0.990067, -0.892893, 0.989763, 0.676403, 0.92778, 0.927744, 0.676391, 0.989773, -0.989764, 0.676403, -0.927781, 0.958351, -0.931569, -0.958375, -0.92611, -0.961371, 0.957081, 0.957065, -0.961378, 0.92614, 0.927745, 0.676391, -0.989773, -0.989764, 0.676403, 0.927781, -0.958351, -0.931569, -0.958375, -0.987685, -0.930275, 0.895087, 0.892871, -0.990067, -0.923562, 0.892871, -0.990067, 0.923562, -0.925759, -0.899399, 0.987655, 0.925759, -0.899399, 0.987655, 0.989763, 0.676403, -0.92778, -0.927745, 0.676391, -0.989773, -0.895054, -0.930265, -0.987696, -0.927744, 0.676391, 0.989773, 0.987627, -0.93023, 0.895035, -0.92354, -0.990067, 0.892893, 0.987627, -0.93023, -0.895035, -0.987685, -0.930275, -0.895087, 0.895054, -0.930265, -0.987696, 0.895001, -0.93022, 0.987639, 0.92354, -0.990067, -0.892893, -0.892871, -0.990067, -0.923562, -0.987701, -0.899452, 0.925848, 0.987644, -0.899409, 0.925794, -0.895001, -0.93022, 0.987639, 0.92354, -0.990067, 0.892893, -0.892871, -0.990067, 0.923562)
@@ -212,3 +215,11 @@ skeleton = NodePath("")
 transform = Transform3D(0.484272, 0, 0, 0, 0.2825, 0, 0, 0, 0.484272, -0.484273, 0.194213, 0)
 mesh = SubResource("ArrayMesh_d1t2s")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_st5va")
+script = ExtResource("3_d42f1")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_vwsox")
+script = ExtResource("3_d42f1")
