@@ -12,6 +12,7 @@ func _ready() -> void:
 	set_collision_mask_value(2, true)
 	interactMessage = "Press E to Pick up"
 	$Flame.play_sound()
+	$Candle/OmniLight3D.visible = false
 
 func _on_burnout_counter_timeout() -> void:
 	if $Candle/OmniLight3D.visible:
@@ -20,7 +21,6 @@ func _on_burnout_counter_timeout() -> void:
 	if $Candle.scale.y < 0.1:
 		if player:
 			player.handsFull = false
-		player.handsFull = false
 		$Extinguish.detatch_play()
 		queue_free()
 	$"Burnout Counter".start(burnoutRate)
