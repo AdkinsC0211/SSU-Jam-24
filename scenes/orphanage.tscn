@@ -1301,6 +1301,8 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="church_main" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="church" type="CSGBox3D" parent="NavigationRegion3D/build_structure/church_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66421, 1.84589, 0.0513706)
@@ -1368,6 +1370,8 @@ material = SubResource("StandardMaterial3D_8521r")
 [node name="church_inside" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 13, -16.6669, -5.09027, 0)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="stage" type="CSGCylinder3D" parent="NavigationRegion3D/build_structure/church_inside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33242, 0)
@@ -1468,6 +1472,8 @@ material = SubResource("StandardMaterial3D_4yfo8")
 [node name="church_back" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="church_back" type="CSGBox3D" parent="NavigationRegion3D/build_structure/church_back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1717, 1.84589, 0.0513706)
@@ -1518,6 +1524,8 @@ material = SubResource("StandardMaterial3D_7xwyv")
 
 [node name="church_back_inside" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="balcony3" type="CSGBox3D" parent="NavigationRegion3D/build_structure/church_back_inside"]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 13, -18.573, 3.404, -0.009)
@@ -1570,6 +1578,8 @@ material = ExtResource("1_w3kjo")
 [node name="orphanage_main" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(0.774964, 0, 0, 0, 1, 0, 0, 0, 0.577979, -20.7133, 1.86357, 23.4286)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="orphanage" type="CSGBox3D" parent="NavigationRegion3D/build_structure/orphanage_main"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.801, 0)
@@ -1698,6 +1708,8 @@ size = Vector3(1.5, 1.8, 1.2)
 [node name="kitchen" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9855, -4.69237, 15.2539)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="kitchen" type="CSGBox3D" parent="NavigationRegion3D/build_structure/kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0426, 0.803466, 0.0804844)
@@ -1725,23 +1737,31 @@ material = SubResource("StandardMaterial3D_i0klx")
 [node name="kitchen_divider" type="CSGBox3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -5.09242, 17.2019)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(5.11676, 0.802734, 0.170898)
 material = SubResource("StandardMaterial3D_ekrl6")
 
 [node name="kitchen_divider_top" type="CSGBox3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.25152, -26.9875, -4.702, 17.2198)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(5.11676, 0.0404053, 0.340332)
 material = SubResource("StandardMaterial3D_isacq")
 
 [node name="kitchen_divider_top2" type="CSGBox3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -3.86288, 17.2198)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(5.11676, 0.0404053, 0.340332)
 material = SubResource("StandardMaterial3D_fl83h")
 
 [node name="kitchen_divider_pillars" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="kitchen_divider_pillar" type="CSGBox3D" parent="NavigationRegion3D/build_structure/kitchen_divider_pillars"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9875, -4.26976, 17.2019)
@@ -1757,6 +1777,8 @@ material = SubResource("StandardMaterial3D_cwwip")
 [node name="backrooms" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.106, -3.187, 0)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="backrooms" type="CSGBox3D" parent="NavigationRegion3D/build_structure/backrooms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29187, -0.472882, 1.40825)
@@ -1784,6 +1806,8 @@ material = SubResource("StandardMaterial3D_ntnup")
 [node name="backrooms_bathroom" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4579, -3.5692, -5.02831)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="bathroom" type="CSGBox3D" parent="NavigationRegion3D/build_structure/backrooms_bathroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483505, 0, 0)
@@ -1817,6 +1841,8 @@ material = SubResource("StandardMaterial3D_fvkjd")
 [node name="backrooms_extra" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -39.2314, -3.5692, 5.04676)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="extras" type="CSGBox3D" parent="NavigationRegion3D/build_structure/backrooms_extra"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.483505, 0, 0)
@@ -1850,6 +1876,8 @@ material = SubResource("StandardMaterial3D_ih2hd")
 [node name="backrooms_extra2" type="CSGCombiner3D" parent="NavigationRegion3D/build_structure"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.622, -3.619, 0.913089)
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 
 [node name="extras" type="CSGBox3D" parent="NavigationRegion3D/build_structure/backrooms_extra2"]
 transform = Transform3D(1, 0, -1.77636e-14, 0, 1, 0, 1.77636e-14, 0, 1, 2.96127, 0, 0)
