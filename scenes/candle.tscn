@@ -1,6 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://b870eulebkoub"]
+[gd_scene load_steps=16 format=4 uid="uid://c7x7tf27wyedy"]
 
 [ext_resource type="Script" path="res://scripts/candle.gd" id="1_ii50k"]
+[ext_resource type="AudioStream" uid="uid://btvqawwa7a884" path="res://sounds/candle.ogg" id="2_1u5g1"]
+[ext_resource type="Script" path="res://scripts/sound.gd" id="3_h57l6"]
+[ext_resource type="AudioStream" uid="uid://wy6ahfss387s" path="res://sounds/extinguish.ogg" id="4_no8ta"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_icx1k"]
 points = PackedVector3Array(-0.981893, 0.0183003, -0.183997, 0.981892, 1.98174, 0.184005, 0.947347, 1.97764, 0.305393, 0.981892, 0.0182577, 0.184005, 0.183936, 1.98151, -0.981899, -0.45729, 1.9753, 0.883995, 0.183936, 0.0184859, 0.981899, 0.457196, 0.02481, -0.884088, -0.707103, 1.9835, -0.707096, -0.397078, 0.0229326, -0.916216, -0.707103, 0.0164985, 0.707096, -0.981893, 1.9817, 0.183997, 0.83189, 1.9858, -0.554684, 0.457179, 1.97515, 0.884054, 0.734744, 0.0206744, 0.673406, 0.91629, 0.0228093, -0.396924, -0.707103, 0.0164985, -0.707096, -0.916305, 1.97716, -0.396912, -0.183979, 1.98151, 0.981894, -0.305395, 0.0224022, 0.947347, -0.947351, 0.0223993, 0.305381, -0.762136, 1.9753, 0.640075, -0.305395, 1.9776, -0.947347, 0.183936, 0.0184859, -0.981899, 0.981892, 1.98174, -0.184005, 0.83189, 1.9858, 0.554684, 0.64017, 1.97521, -0.762058, 0.83189, 0.0141954, -0.554684, -0.183979, 0.0184901, -0.981894, 0.183936, 1.98151, 0.981899, 0.396885, 0.0228311, 0.916311, 0.83189, 0.0141954, 0.554684)
@@ -132,5 +135,15 @@ draw_pass_1 = SubResource("SphereMesh_3gy6j")
 draw_skin = SubResource("Skin_eqmcl")
 
 [node name="Burnout Counter" type="Timer" parent="."]
+
+[node name="Flame" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_1u5g1")
+volume_db = 10.0
+script = ExtResource("3_h57l6")
+
+[node name="Extinguish" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_no8ta")
+volume_db = 10.0
+script = ExtResource("3_h57l6")
 
 [connection signal="timeout" from="Burnout Counter" to="." method="_on_burnout_counter_timeout"]
