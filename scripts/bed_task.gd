@@ -18,12 +18,13 @@ func _process(_delta):
 	pass
 
 func interact(body: CharacterBody3D) -> void:
-	toggle = !toggle
 	if body.is_in_group("Player"):
 		player_ref = body
-		if player_ref.heldItem.is_in_group("salt") == true:
+		if player_ref.heldItem != null and player_ref.heldItem.is_in_group("salt") == true:
 			get_salted_idiot()
 			return
+		toggle = !toggle
+			
 		camera_return_location = body.get_node("Neck").position
 		if toggle:
 			$Ruffle.play()
