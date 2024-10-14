@@ -74,21 +74,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14558, 0.5, -2.07495)
 
 [node name="Window" parent="." instance=ExtResource("7_8o5dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27649, 2.95089, -9.62549)
-blindsOpen = false
-spoopy_window = false
-interactMessage = "Press E to Interact"
 
 [node name="Window2" parent="." instance=ExtResource("7_8o5dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06304, 0, -8.47982)
-blindsOpen = false
-spoopy_window = false
-interactMessage = "Press E to Interact"
 
 [node name="Window3" parent="." instance=ExtResource("7_8o5dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.26786, 6.20562, -9.55408)
-blindsOpen = false
-spoopy_window = false
-interactMessage = "Press E to Interact"
 
 [node name="Breaker" parent="." instance=ExtResource("8_mnjke")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.1038, 2.58185, -3.23144)
@@ -122,18 +113,9 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.3175, 0.5, 0.532968)
 
 [node name="Window4" parent="." instance=ExtResource("7_8o5dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7982, 2.95089, -9.62549)
-blindsOpen = false
-spoopy_window = false
-interactMessage = "Press E to Interact"
 
 [node name="Window5" parent="." instance=ExtResource("7_8o5dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5848, 0, -8.47982)
-blindsOpen = false
-spoopy_window = false
-interactMessage = "Press E to Interact"
 
 [node name="Window6" parent="." instance=ExtResource("7_8o5dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7896, 6.20562, -9.55408)
-blindsOpen = false
-spoopy_window = false
-interactMessage = "Press E to Interact"

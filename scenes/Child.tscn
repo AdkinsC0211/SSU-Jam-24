@@ -876,6 +876,7 @@ stream = ExtResource("5_f1tac")
 
 [node name="Footstep" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_k0gxf")
+volume_db = -16.0
 pitch_scale = 2.0
 script = ExtResource("2_c7wnu")
 

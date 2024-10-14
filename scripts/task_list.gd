@@ -92,10 +92,10 @@ func _process(_delta):
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel6.visible = false
 	else:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckBedLabel6.visible = true
-	if breaker.haunted == false:
-		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = false
-	else:
+	if breaker.light_toggle == false:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = true
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = false
 	if closet1.haunted == false:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel.visible = false
 	else:

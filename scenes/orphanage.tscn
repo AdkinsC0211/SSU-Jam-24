@@ -1,7 +1,8 @@
-[gd_scene load_steps=117 format=3 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=119 format=3 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="Texture2D" uid="uid://5i0y45aq0w10" path="res://images/paperwall.jpg" id="1_3d32n"]
+[ext_resource type="Script" path="res://scripts/orphanage.gd" id="1_id5dw"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Texture2D" uid="uid://dnqxmo2hqsxvo" path="res://images/dirty.jpg" id="1_v8inn"]
 [ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
@@ -12,11 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bncn8tma7ckub" path="res://materials/Tiles045_2K-JPG_Color.jpg" id="3_y4u5a"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
 [ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
-[ext_resource type="PackedScene" uid="uid://cuyy1tk40x4kk" path="res://scenes/chair.tscn" id="5_8vjjt"]
-[ext_resource type="PackedScene" path="res://scenes/big_cross.tscn" id="5_boc3o"]
+[ext_resource type="PackedScene" uid="uid://di0uojwwwq8xt" path="res://scenes/chair.tscn" id="5_8vjjt"]
+[ext_resource type="PackedScene" uid="uid://bj6ltbmqhhvig" path="res://scenes/big_cross.tscn" id="5_boc3o"]
 [ext_resource type="PackedScene" uid="uid://c1ceh88vbb3a3" path="res://scenes/stall_door.tscn" id="5_is5h5"]
 [ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="5_vgclx"]
-[ext_resource type="PackedScene" uid="uid://dwdxywr0ohvi5" path="res://scenes/podium.tscn" id="6_0n88v"]
+[ext_resource type="PackedScene" uid="uid://cj7ybuhiyqm6q" path="res://scenes/podium.tscn" id="6_0n88v"]
 [ext_resource type="PackedScene" uid="uid://v1m0yjfll3f8" path="res://Meshes/KitchenObjects/Cabinet.glb" id="6_3vupu"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="6_677g2"]
 [ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="6_ny0h2"]
@@ -25,9 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="7_de6i3"]
 [ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="7_o2l0q"]
 [ext_resource type="PackedScene" uid="uid://l2278t5b11nf" path="res://scenes/bathroom_sink.tscn" id="7_wnfh0"]
-[ext_resource type="PackedScene" uid="uid://dyc07dxycsoh3" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
-[ext_resource type="PackedScene" uid="uid://dsc7ar3g60ht4" path="res://scenes/pew.tscn" id="8_5xyxa"]
-[ext_resource type="PackedScene" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
+[ext_resource type="PackedScene" uid="uid://dttmtefyne1l1" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
+[ext_resource type="PackedScene" uid="uid://baq3ke86bs363" path="res://scenes/pew.tscn" id="8_5xyxa"]
+[ext_resource type="PackedScene" uid="uid://c180w2bc1bphn" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
 [ext_resource type="PackedScene" uid="uid://bdwrw0erfiysh" path="res://scenes/pepper.tscn" id="8_xxscp"]
 [ext_resource type="PackedScene" uid="uid://be8hr3nvglm5t" path="res://scenes/salt.tscn" id="9_brttr"]
 [ext_resource type="Texture2D" uid="uid://bnjqr0aiw5555" path="res://images/brick.jpg" id="9_hdgge"]
@@ -36,12 +37,12 @@
 [ext_resource type="PackedScene" uid="uid://b870eulebkoub" path="res://scenes/candle.tscn" id="10_aci4u"]
 [ext_resource type="Texture2D" uid="uid://cbn5o4fm3x7a6" path="res://images/lacecarpet.jpg" id="11_f6quf"]
 [ext_resource type="PackedScene" uid="uid://cj8t4nlhgm4m6" path="res://scenes/dresser.tscn" id="19_6k5gk"]
-[ext_resource type="PackedScene" path="res://scenes/mirror.tscn" id="20_htaji"]
+[ext_resource type="PackedScene" uid="uid://da2stukv76ui1" path="res://scenes/mirror.tscn" id="20_htaji"]
 [ext_resource type="PackedScene" uid="uid://dv1r3bxtxaj1q" path="res://scenes/table.tscn" id="20_rtk4q"]
-[ext_resource type="PackedScene" uid="uid://bjmtmy7hbj07x" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
+[ext_resource type="PackedScene" uid="uid://dqac5caqk36xo" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
 [ext_resource type="PackedScene" uid="uid://dcuklp8v0ei48" path="res://scenes/shower_controls.tscn" id="22_3uo7l"]
 [ext_resource type="PackedScene" uid="uid://f1vh8gn63ask" path="res://scenes/shower_drain.tscn" id="23_xx8dx"]
-[ext_resource type="PackedScene" uid="uid://cx0u7do3812jw" path="res://scenes/towel_rack.tscn" id="24_qulpj"]
+[ext_resource type="PackedScene" uid="uid://dq2h70cwwoyby" path="res://scenes/towel_rack.tscn" id="24_qulpj"]
 [ext_resource type="PackedScene" uid="uid://bxqt7ejdduegy" path="res://Meshes/Bedroom.tscn" id="25_6nf26"]
 [ext_resource type="PackedScene" uid="uid://eykdqh3u5e1x" path="res://closet.tscn" id="28_0rv8j"]
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="30_2ytt0"]
@@ -50,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="44_y56yl"]
 [ext_resource type="PackedScene" uid="uid://5bocqpuqphub" path="res://scenes/tasks/sink_task.tscn" id="45_ph0rk"]
 [ext_resource type="PackedScene" uid="uid://5wr2qsma7yp3" path="res://scenes/grandfatherclock.tscn" id="46_jna4t"]
+[ext_resource type="PackedScene" uid="uid://bh3gr6e4uk5y1" path="res://scenes/tasks/task_list.tscn" id="51_3d6v5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -257,6 +259,7 @@ albedo_texture = ExtResource("3_y4u5a")
 albedo_texture = ExtResource("3_y4u5a")
 
 [node name="world_root" type="Node3D"]
+script = ExtResource("1_id5dw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -2057,3 +2060,23 @@ size = Vector3(1.405, 2.277, 1.875)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09185, 0.141467)
 operation = 2
 size = Vector3(1.405, 2.1403, 1.875)
+
+[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "window4", "window5", "window6", "bed1", "bed2", "bed3", "bed4", "bed5", "bed6", "closet1", "closet2", "closet3", "breaker") instance=ExtResource("51_3d6v5")]
+rosary = NodePath("../rosary_root")
+dishes = NodePath("../sink_task_root")
+window1 = NodePath("../furniture_orphanage/bedroom1/Window")
+window2 = NodePath("../furniture_orphanage/bedroom1/Window2")
+window3 = NodePath("../furniture_orphanage/bedroom2/Window3")
+window4 = NodePath("../furniture_orphanage/bedroom2/Window4")
+window5 = NodePath("../furniture_orphanage/bedroom3/Window5")
+window6 = NodePath("../furniture_orphanage/bedroom3/Window6")
+bed1 = NodePath("../furniture_orphanage/bedroom1/bed_root_node")
+bed2 = NodePath("../furniture_orphanage/bedroom1/bed_root_node2")
+bed3 = NodePath("../furniture_orphanage/bedroom2/bed_root_node")
+bed4 = NodePath("../furniture_orphanage/bedroom2/bed_root_node2")
+bed5 = NodePath("../furniture_orphanage/bedroom3/bed_root_node")
+bed6 = NodePath("../furniture_orphanage/bedroom3/bed_root_node2")
+closet1 = NodePath("../furniture_orphanage/bedroom1/Closet")
+closet2 = NodePath("../furniture_orphanage/bedroom2/Closet")
+closet3 = NodePath("../furniture_orphanage/bedroom3/Closet")
+breaker = NodePath("../hauntable_tasks/Breaker")

@@ -23,6 +23,9 @@ GameInfo="*res://scripts/game_info.gd"
 
 window/size/viewport_width=704
 window/size/viewport_height=512
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [global_group]
 

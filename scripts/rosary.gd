@@ -20,7 +20,7 @@ func use() -> void:
 		player.doing_wait_task = false
 		$prayerTimer.paused = true
 		
-	if global_position.distance_to(cross.global_position) < 3 and not praying and canPray:
+	if global_position.distance_to(cross.global_position) < 10 and not praying and canPray:
 		player.doing_wait_task = true
 		print('praying')
 		$prayerTimer.start()

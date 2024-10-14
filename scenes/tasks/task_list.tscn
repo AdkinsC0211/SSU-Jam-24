@@ -198,21 +198,21 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
-text = "Check the Closet"
+text = "Play Music Box Near the Closet"
 
 [node name="CheckClosetLabel2" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
-text = "Check the Closet"
+text = "Play Music Box Near the Closet"
 
 [node name="CheckClosetLabel3" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jjvnu")
 theme_override_font_sizes/font_size = 25
-text = "Check the Closet"
+text = "Play Music Box Near the Closet"
 
 [node name="FlipBreakerLabel" type="Label" parent="CanvasLayer/PaperTexture/BigContainer/TaskContainer"]
 visible = false
