@@ -62,6 +62,7 @@ func get_salted_idiot():
 		salted = true
 		haunted = false
 		$ghost_light.visible = false
+		$Ritual.play()
 	
 
 

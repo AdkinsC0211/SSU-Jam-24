@@ -160,7 +160,7 @@ func _on_interact_range_body_exited(body: Node3D) -> void:
 		$Crosshair.visible = false
 		
 func win():
-	pass
+	get_tree().change_scene_to_file("res://scenes/WIN.tscn")
 	
 func die(): # lose
-	pass
+	get_tree().change_scene_to_file("res://scenes/LOSE.tscn")

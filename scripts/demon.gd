@@ -11,6 +11,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("spookify"):
 		body.spookify()
 	if body.is_in_group("Player"):
+		$AudioStreamPlayer.play()
 		timer.start(28)
 		player = body
 
@@ -24,6 +25,7 @@ func _ready() -> void:
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Player"):
+		$AudioStreamPlayer.stop()
 		timer.stop()
 		player = null
 	if body.has_method("unspookify"):
