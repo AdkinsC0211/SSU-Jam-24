@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c180w2bc1bphn"]
+[gd_scene load_steps=7 format=3 uid="uid://cf5j6m32fdx3c"]
 
 [ext_resource type="Script" path="res://scripts/confession_booth.gd" id="1_6w36o"]
 [ext_resource type="PackedScene" uid="uid://cvascgm3jtw07" path="res://Meshes/ChurchObjects/Confessional.glb" id="2_qsjah"]
+[ext_resource type="AudioStream" uid="uid://bionce55ombim" path="res://sounds/saved.ogg" id="3_3hfci"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0x35u"]
 size = Vector3(4.32791, 2.96254, 0.179747)
@@ -46,3 +47,6 @@ shape = SubResource("BoxShape3D_tg01d")
 
 [node name="Confessional" parent="." instance=ExtResource("2_qsjah")]
 transform = Transform3D(-1.87502e-08, 0, 0.428954, 0, 0.428954, 0, -0.428954, 0, -1.87502e-08, -0.238177, 0.261929, 0.108822)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_3hfci")
