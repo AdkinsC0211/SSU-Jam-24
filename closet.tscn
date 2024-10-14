@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Closet.gd" id="1_4xnsb"]
 [ext_resource type="AudioStream" uid="uid://inrjdjqgf0rb" path="res://sounds/MonsterBreath.ogg" id="2_bny2r"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" groups=["closets"]]
 script = ExtResource("1_4xnsb")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

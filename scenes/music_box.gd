@@ -3,6 +3,7 @@ extends StaticBody3D
 
 func use() -> void:
 	# do something
-	# rotation of $MusicBox/music_box_handle around z axis will do a wind animation
-	# rotation of $MusicBox/music_box_lid around z axis will open the box
-	pass
+	var closets = get_tree().get_nodes_in_group("closets")
+	for closet in closets:
+		if global_position.distance_to(closet) < 5:
+			closet.unhaunt()
