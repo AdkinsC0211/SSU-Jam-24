@@ -1,47 +1,46 @@
-[gd_scene load_steps=136 format=4 uid="uid://d0e56x5tjxjry"]
+[gd_scene load_steps=135 format=4 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="Texture2D" uid="uid://5i0y45aq0w10" path="res://images/paperwall.jpg" id="1_3d32n"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Texture2D" uid="uid://dnqxmo2hqsxvo" path="res://images/dirty.jpg" id="1_v8inn"]
-[ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
+[ext_resource type="Material" uid="uid://4ypsj7nowab" path="res://materials/stairs.tres" id="1_w3kjo"]
 [ext_resource type="Texture2D" uid="uid://d35spfabp78xe" path="res://images/stone_floor_rough.jpg" id="2_irxtc"]
-[ext_resource type="PackedScene" uid="uid://dcc5wp6facgol" path="res://scenes/stairs.tscn" id="2_yiu2y"]
+[ext_resource type="PackedScene" uid="uid://cnowc6tenm8fx" path="res://scenes/stairs.tscn" id="2_yiu2y"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="3_2f11t"]
 [ext_resource type="Texture2D" uid="uid://bonjari234fuq" path="res://images/wavey.jpg" id="3_pc7d0"]
 [ext_resource type="Texture2D" uid="uid://bncn8tma7ckub" path="res://materials/Tiles045_2K-JPG_Color.jpg" id="3_y4u5a"]
 [ext_resource type="PackedScene" uid="uid://yjvu183em8yo" path="res://scenes/dining_table.tscn" id="4_nqkn7"]
 [ext_resource type="PackedScene" uid="uid://dmxg3komo0h8f" path="res://scenes/stall_panel.tscn" id="4_yk265"]
-[ext_resource type="PackedScene" uid="uid://di0uojwwwq8xt" path="res://scenes/chair.tscn" id="5_8vjjt"]
-[ext_resource type="PackedScene" uid="uid://bj6ltbmqhhvig" path="res://scenes/big_cross.tscn" id="5_boc3o"]
+[ext_resource type="PackedScene" uid="uid://cuyy1tk40x4kk" path="res://scenes/chair.tscn" id="5_8vjjt"]
+[ext_resource type="PackedScene" path="res://scenes/big_cross.tscn" id="5_boc3o"]
 [ext_resource type="PackedScene" uid="uid://c1ceh88vbb3a3" path="res://scenes/stall_door.tscn" id="5_is5h5"]
-[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="5_vgclx"]
-[ext_resource type="PackedScene" uid="uid://cj7ybuhiyqm6q" path="res://scenes/podium.tscn" id="6_0n88v"]
+[ext_resource type="PackedScene" path="res://scenes/plate.tscn" id="5_vgclx"]
+[ext_resource type="PackedScene" path="res://scenes/podium.tscn" id="6_0n88v"]
 [ext_resource type="PackedScene" uid="uid://v1m0yjfll3f8" path="res://Meshes/KitchenObjects/Cabinet.glb" id="6_3vupu"]
 [ext_resource type="PackedScene" uid="uid://8vjefhfjin8y" path="res://scenes/tasks/breaker_switch.tscn" id="6_677g2"]
-[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="6_ny0h2"]
-[ext_resource type="PackedScene" path="res://scenes/toilet.tscn" id="6_rtq11"]
-[ext_resource type="PackedScene" path="res://scenes/toilet_paper.tscn" id="7_1tyxx"]
+[ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="6_ny0h2"]
+[ext_resource type="PackedScene" uid="uid://b6fwgrx2hndob" path="res://scenes/toilet.tscn" id="6_rtq11"]
+[ext_resource type="PackedScene" uid="uid://bj14v03t81y7v" path="res://scenes/toilet_paper.tscn" id="7_1tyxx"]
 [ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="7_de6i3"]
-[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="7_o2l0q"]
+[ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="7_o2l0q"]
 [ext_resource type="PackedScene" path="res://scenes/bathroom_sink.tscn" id="7_wnfh0"]
-[ext_resource type="PackedScene" uid="uid://dttmtefyne1l1" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
-[ext_resource type="PackedScene" uid="uid://baq3ke86bs363" path="res://scenes/pew.tscn" id="8_5xyxa"]
-[ext_resource type="PackedScene" path="res://scenes/pepper.tscn" id="8_xxscp"]
-[ext_resource type="PackedScene" path="res://scenes/salt.tscn" id="9_brttr"]
+[ext_resource type="PackedScene" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
+[ext_resource type="PackedScene" path="res://scenes/pew.tscn" id="8_5xyxa"]
+[ext_resource type="PackedScene" uid="uid://bdwrw0erfiysh" path="res://scenes/pepper.tscn" id="8_xxscp"]
+[ext_resource type="PackedScene" uid="uid://be8hr3nvglm5t" path="res://scenes/salt.tscn" id="9_brttr"]
 [ext_resource type="Texture2D" uid="uid://bnjqr0aiw5555" path="res://images/brick.jpg" id="9_hdgge"]
+[ext_resource type="PackedScene" uid="uid://bj2xbmcrfnk5i" path="res://scenes/tasks/toggle_light.tscn" id="9_xp021"]
 [ext_resource type="Texture2D" uid="uid://crx3reetlfogw" path="res://images/brightwood.jpg" id="10_6q4x1"]
-[ext_resource type="PackedScene" path="res://scenes/candle.tscn" id="10_aci4u"]
+[ext_resource type="PackedScene" uid="uid://b870eulebkoub" path="res://scenes/candle.tscn" id="10_aci4u"]
 [ext_resource type="Texture2D" uid="uid://cbn5o4fm3x7a6" path="res://images/lacecarpet.jpg" id="11_f6quf"]
-[ext_resource type="PackedScene" uid="uid://c180w2bc1bphn" path="res://scenes/confession_booth.tscn" id="16_8lkjd"]
-[ext_resource type="PackedScene" uid="uid://bo3oebfyyldx2" path="res://scenes/dresser.tscn" id="19_6k5gk"]
+[ext_resource type="PackedScene" path="res://scenes/dresser.tscn" id="19_6k5gk"]
 [ext_resource type="PackedScene" path="res://scenes/mirror.tscn" id="20_htaji"]
 [ext_resource type="PackedScene" uid="uid://dv1r3bxtxaj1q" path="res://scenes/table.tscn" id="20_rtk4q"]
-[ext_resource type="PackedScene" uid="uid://dqac5caqk36xo" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
+[ext_resource type="PackedScene" path="res://scenes/Showerhead.tscn" id="21_3vslb"]
 [ext_resource type="PackedScene" path="res://scenes/shower_controls.tscn" id="22_3uo7l"]
 [ext_resource type="PackedScene" path="res://scenes/shower_drain.tscn" id="23_xx8dx"]
-[ext_resource type="PackedScene" uid="uid://dq2h70cwwoyby" path="res://scenes/towel_rack.tscn" id="24_qulpj"]
-[ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="29_ye5tw"]
+[ext_resource type="PackedScene" path="res://scenes/towel_rack.tscn" id="24_qulpj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3w6e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -726,6 +725,7 @@ shadow_mesh = SubResource("ArrayMesh_m0ti3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -2055,8 +2055,9 @@ transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 
 [node name="furniture_storage1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.189, -10.6419, 7.58728)
 
-[node name="Breaker" parent="furniture_storage1" instance=ExtResource("6_677g2")]
+[node name="Breaker" parent="furniture_storage1" node_paths=PackedStringArray("controlled_lights") instance=ExtResource("6_677g2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.27473)
+controlled_lights = NodePath("../../light_manager")
 
 [node name="furniture_shower" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.183, -12.8643, 9.2712)
@@ -2307,3 +2308,83 @@ transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, -61.6347, -0.0679
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ni8bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36668, -8.94491, -2.52125)
+
+[node name="light_manager" type="Node3D" parent="."]
+
+[node name="ToggleLight" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.0976, -6.91308, 29.0549)
+
+[node name="ToggleLight2" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.0976, -6.91308, 40.3274)
+
+[node name="ToggleLight3" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.0976, -6.91308, 54.3982)
+
+[node name="ToggleLight4" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.0976, -6.91308, 66.7757)
+
+[node name="ToggleLight5" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -69.6483, 0.0762188, 18.0197)
+
+[node name="ToggleLight6" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.0097, 0.0762188, 18.0197)
+
+[node name="ToggleLight7" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.0097, 0.0762188, -17.5079)
+
+[node name="ToggleLight8" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -71.8834, 0.0762188, -17.5079)
+
+[node name="ToggleLight9" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -85.773, -4.91003, -0.634093)
+
+[node name="ToggleLight10" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -98.1632, -4.91003, -0.634093)
+
+[node name="ToggleLight11" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -112.251, -4.91003, -0.634093)
+
+[node name="ToggleLight12" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -123.687, -4.91003, -6.05836)
+
+[node name="ToggleLight13" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -102.447, -4.91003, -10.4945)
+
+[node name="ToggleLight14" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -93.2718, -4.91003, -10.4945)
+
+[node name="ToggleLight15" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -93.2718, -4.91003, 7.67253)
+
+[node name="ToggleLight16" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -88.7602, -4.91003, 7.67253)
+
+[node name="ToggleLight17" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -101.748, -4.91003, 11.502)
+
+[node name="ToggleLight18" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -109.771, -4.91003, 11.502)
+
+[node name="ToggleLight19" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.774, 7.82116, 11.502)
+
+[node name="ToggleLight20" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.17552, 7.82116, 11.502)
+
+[node name="ToggleLight21" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.46332, 7.82116, 11.502)
+
+[node name="ToggleLight22" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.46332, 7.82116, -11.5256)
+
+[node name="ToggleLight23" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.74687, 7.82116, -11.5256)
+
+[node name="ToggleLight24" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.6169, 7.82116, -11.5256)
+
+[node name="ToggleLight25" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(0.612372, 0.612372, -0.5, 0.707107, -0.707107, 6.18172e-08, -0.353553, -0.353553, -0.866025, -33.3737, -10.1922, -6.22015)
+
+[node name="ToggleLight26" parent="light_manager" instance=ExtResource("9_xp021")]
+transform = Transform3D(0.612372, 0.612372, 0.5, 0.707107, -0.707107, 8.64224e-08, 0.353554, 0.353553, -0.866025, -32.803, -10.6564, 5.13397)
