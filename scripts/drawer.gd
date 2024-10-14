@@ -10,7 +10,8 @@ var open := false
 
 func interact(_body):
 	open = !open
-	$Cabinet.play()
+	if $Cabinet:
+		$Cabinet.play()
 	
 func _process(delta):
 	if open and !(mesh.position == doorOpen):
