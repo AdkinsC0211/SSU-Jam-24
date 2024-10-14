@@ -1,4 +1,4 @@
-wwwextends Node3D
+extends Node3D
 
 @export var hours : int
 @export var minutes : int
