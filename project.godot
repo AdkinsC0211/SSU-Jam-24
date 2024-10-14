@@ -18,11 +18,6 @@ config/icon="res://icon.svg"
 
 GameInfo="*res://scripts/game_info.gd"
 
-[global_group]
-
-rooms=""
-orphans=""
-
 [input]
 
 W={
