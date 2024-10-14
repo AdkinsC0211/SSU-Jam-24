@@ -6,6 +6,9 @@ extends Node2D
 @export var window1 : InteractableStaticBody3D
 @export var window2 : InteractableStaticBody3D
 @export var window3 : InteractableStaticBody3D
+@export var window4 : InteractableStaticBody3D
+@export var window5 : InteractableStaticBody3D
+@export var window6 : InteractableStaticBody3D
 @export var bed1 : InteractableStaticBody3D
 @export var bed2: InteractableStaticBody3D
 @export var bed3 : InteractableStaticBody3D
@@ -53,6 +56,18 @@ func _process(_delta):
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow3.visible = false
 	else:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow3.visible = true
+	if window4.window_open == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow4.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow4.visible = true
+	if window5.window_open == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow5.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow5.visible = true
+	if window6.window_open == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow6.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CloseTheWindow6.visible = true
 	if bed1.haunted == true:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/TopBedLabel.visible = true
 	else:
