@@ -7,6 +7,7 @@ var neck_moved = false
 var haunted = false
 var salted = false
 var player_near = false
+var need_die
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,10 +32,12 @@ func interact(body: CharacterBody3D) -> void:
 			$Ruffle.play()
 			if haunted:
 				$MonsterCatch.play()
+				need_die  = player_ref
 			body.get_node("Neck").position += Vector3(0,-2.3,0)
 			neck_moved = true
 			$ghost_light.visible = false
 			haunted = false
+			
 		else:
 			body.get_node("Neck").position += Vector3(0,2.3,0)
 			neck_moved = false
@@ -76,3 +79,7 @@ func _on_timer_timeout():
 		demon.instantiate()
 		demon.global_position = global_position
 		add_sibling(demon)
+
+
+func _on_monster_catch_finished():
+	need_die.die()
