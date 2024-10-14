@@ -15,9 +15,9 @@ extends Node2D
 @export var bed4 : InteractableStaticBody3D
 @export var bed5: InteractableStaticBody3D
 @export var bed6 : InteractableStaticBody3D
-#@export var closet1 : Node3D
-#@export var closet2 : Node3D
-#@export var closet3 : Node3D
+@export var closet1 : Node3D
+@export var closet2 : Node3D
+@export var closet3 : Node3D
 @export var breaker : InteractableStaticBody3D
 #@export var demon1 : CharacterBody3D
 #@export var demon2 : CharacterBody3D
@@ -96,6 +96,18 @@ func _process(_delta):
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = false
 	else:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/FlipBreakerLabel.visible = true
+	if closet1.haunted == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel.visible = true
+	if closet2.haunted == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel2.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel2.visible = true
+	if closet3.haunted == false:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel3.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/CheckClosetLabel3.visible = true
 	#add three closet and five demons
 	
 	

@@ -1,15 +1,18 @@
 extends Node3D
 
 var visited_targets : Array = []
+var haunted = false
 
 func haunt():
 	$AudioStreamPlayer3D.play()
 	$Timer.start(120)
+	haunted = true
 	
 	
 func unhaunt():
 	$AudioStreamPlayer3D.stop()
 	$Timer.stop()
+	haunted = false
 
 func kill_orphan():
 	var closest_target: Node3D = null
