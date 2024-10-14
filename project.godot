@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 
 GameInfo="*res://scripts/game_info.gd"
 
+[display]
+
+window/size/viewport_width=704
+window/size/viewport_height=512
+
 [global_group]
 
 rooms=""
