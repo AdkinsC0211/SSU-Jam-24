@@ -14,8 +14,11 @@ func _process(_delta):
 
 
 func interact(_body: CharacterBody3D) -> void:
+	if haunted:
+		$Saved.play()
 	haunted = false
 	$ghost_light.visible = false
+	
 	
 	
 	
