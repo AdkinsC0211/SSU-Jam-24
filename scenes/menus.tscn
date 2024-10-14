@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://yfvwxd1tkwoj"]
+[gd_scene load_steps=6 format=3 uid="uid://yfvwxd1tkwoj"]
 
 [ext_resource type="Script" path="res://scripts/menus.gd" id="1_7quha"]
 [ext_resource type="FontFile" uid="uid://cakknxsgxbvmm" path="res://fonts/Nightmare-Regular.ttf" id="2_8cobt"]
+[ext_resource type="Texture2D" uid="uid://7n6e1dcayubb" path="res://images/finalMainMenuBG.png" id="2_e8xcd"]
 [ext_resource type="Texture2D" uid="uid://dbvh2pk2q8ibd" path="res://images/main_menu_background.png" id="2_f0gpk"]
 [ext_resource type="Texture2D" uid="uid://br3gsfr1616ux" path="res://images/pauseMessage.PNG" id="4_ox45w"]
 
@@ -19,6 +20,7 @@ size_flags_vertical = 4
 script = ExtResource("1_7quha")
 
 [node name="mainBGimage" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,11 +31,21 @@ offset_right = 5.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_e8xcd")
+expand_mode = 1
+
+[node name="pauseBGimage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_f0gpk")
 expand_mode = 1
-stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,10 +90,10 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/pauseGroup"]
 layout_mode = 2
-offset_left = -320.0
-offset_top = -390.0
-offset_right = 357.0
-offset_bottom = 59.0
+offset_left = -98.0
+offset_top = -459.0
+offset_right = 579.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_ox45w")
@@ -174,6 +186,8 @@ horizontal_alignment = 1
 
 [node name="volSlider" type="HSlider" parent="CenterContainer/optionsGroup/CenterContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 2.0
+step = 0.001
 
 [connection signal="pressed" from="CenterContainer/mainGroup/CenterContainer/VBoxContainer/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/mainGroup/CenterContainer/VBoxContainer/optionButton" to="." method="_on_option_button_pressed"]
@@ -181,4 +195,8 @@ layout_mode = 2
 [connection signal="pressed" from="CenterContainer/pauseGroup/CenterContainer/VBoxContainer/resumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CenterContainer/pauseGroup/CenterContainer/VBoxContainer/optionButton" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="CenterContainer/pauseGroup/CenterContainer/VBoxContainer/mainmenuButton" to="." method="_on_mainmenu_button_pressed"]
+[connection signal="visibility_changed" from="CenterContainer/optionsGroup" to="." method="_on_options_group_visibility_changed"]
 [connection signal="pressed" from="CenterContainer/optionsGroup/CenterContainer/VBoxContainer/optionsBackButton" to="." method="_on_options_back_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/optionsGroup/CenterContainer/VBoxContainer/fovSlider" to="." method="_on_fov_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/optionsGroup/CenterContainer/VBoxContainer/sensSlider" to="." method="_on_sens_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/optionsGroup/CenterContainer/VBoxContainer/volSlider" to="." method="_on_vol_slider_value_changed"]

@@ -138,6 +138,8 @@ func _physics_process(delta: float) -> void:
 		$Walking/AnimationPlayer.play("mixamo_com")
 	elif not velocity:
 		$Walking/AnimationPlayer.stop()
+	if velocity and not $Footstep.playing:
+		$Footstep.play_sound()
 		
 	global_rotation = Vector3.ZERO
 
