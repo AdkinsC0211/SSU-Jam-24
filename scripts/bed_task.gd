@@ -20,7 +20,7 @@ func _process(_delta):
 func interact(body: CharacterBody3D) -> void:
 	if body.is_in_group("Player"):
 		player_ref = body
-		if player_ref.heldItem != null and player_ref.heldItem.is_in_group("salt") == true:
+		if player_ref.heldItem != null and player_ref.heldItem.is_in_group("salt") == true and haunted == true:
 			get_salted_idiot()
 			return
 		toggle = !toggle
