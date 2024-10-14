@@ -21,6 +21,7 @@ func _on_burnout_counter_timeout() -> void:
 	if $Candle.scale.y < 0.1:
 		if player:
 			player.handsFull = false
+		player.handsFull = false
 		$Extinguish.detatch_play()
 		queue_free()
 	$"Burnout Counter".start(burnoutRate)
