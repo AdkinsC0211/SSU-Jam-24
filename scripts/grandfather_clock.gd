@@ -17,7 +17,10 @@ func _process(delta: float) -> void:
 		confessionalHaunted = true
 		if confessional:
 			confessional.haunt()
-	
+			
+	if hours == 6:
+		var player = get_tree().get_first_node_in_group("Player")
+		player.win()	
 	$GrandfatherClock/hour_hand.rotation_degrees.x = (-360 * hours/12) + (-360 * minutes/(60*12))
 	$GrandfatherClock/minute_hand.rotation_degrees.x = -360 * minutes/60
 

@@ -159,3 +159,8 @@ func _on_interact_range_body_exited(body: Node3D) -> void:
 	if body.has_method("interact"):
 		$Crosshair.visible = false
 		
+func win():
+	pass
+	
+func die(): # lose
+	pass
