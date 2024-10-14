@@ -6,6 +6,7 @@ var toggle: bool = false
 var neck_moved = false
 var haunted = false
 var salted = false
+var player_near = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,6 +52,7 @@ func _on_area_3d_body_exited(body):
 		body.get_node("Neck").position += Vector3(0,2.3,0)
 		toggle = false
 	player_ref = null
+	player_near = false
 	
 	
 func get_salted_idiot():
@@ -58,3 +60,7 @@ func get_salted_idiot():
 		$salt_ring.visible = true
 		salted = true
 	
+
+
+func _on_area_3d_body_entered(body):
+	player_near = true
