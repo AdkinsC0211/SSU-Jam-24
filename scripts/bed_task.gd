@@ -46,6 +46,7 @@ func haunt():
 	$ghost_light.visible = true
 	haunted = true
 	$MonsterBreath.play_sound()
+	$Timer.start()
 
 func _on_area_3d_body_exited(body):
 	if neck_moved and player_ref != null:
@@ -66,3 +67,11 @@ func get_salted_idiot():
 
 func _on_area_3d_body_entered(body):
 	player_near = true
+
+
+func _on_timer_timeout():
+	if haunt:
+		var demon = preload("res://scenes/Demon.tscn")
+		demon.instantiate()
+		demon.global_position = global_position
+		add_sibling(demon)

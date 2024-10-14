@@ -1435,6 +1435,9 @@ _data = {
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_3e1ny")
+blindsOpen = null
+spoopy_window = null
+interactMessage = null
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -1693,5 +1696,10 @@ libraries = {
 "": SubResource("AnimationLibrary_tkdsv")
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
 [connection signal="timeout" from="break_open_delay" to="." method="_on_break_open_delay_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

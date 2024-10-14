@@ -57,5 +57,10 @@ stream = ExtResource("7_pm4js")
 transform = Transform3D(-1.70395e-08, -0.625975, -3.52955e-08, 0, -2.73622e-08, 0.807467, -0.389818, 2.73622e-08, 1.54281e-15, -0.112663, -0.392352, 0)
 texture = ExtResource("8_5k6re")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

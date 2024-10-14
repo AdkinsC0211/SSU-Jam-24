@@ -48,6 +48,8 @@ func _on_break_open_delay_timeout():
 	$Area3D.queue_free()
 	$Open.play_sound()
 	haunted = true
+	
+	$Timer.start()
 
 
 func interact(_body: CharacterBody3D) -> void:
@@ -71,3 +73,11 @@ func interact(_body: CharacterBody3D) -> void:
 		
 func haunt():
 	_on_break_open_delay_timeout()
+
+
+func _on_timer_timeout():
+	if haunt == true:
+		var demon = preload("res://scenes/Demon.tscn")
+		demon.instantiate()
+		demon.global_position = global_position
+		add_sibling(demon)
