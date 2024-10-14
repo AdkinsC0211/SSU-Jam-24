@@ -1,6 +1,5 @@
-extends StaticBody3D
+extends GrabbableStaticBody3D
 
 
 func use() -> void:
-	#do something
 	pass
