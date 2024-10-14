@@ -2,6 +2,7 @@ extends InteractableStaticBody3D
 
 @onready var window_delay_time = randf_range(0.3, 2.0)
 @onready var timer = $break_open_delay
+@export var blindsOpen : bool
 
 @export var spoopy_window: bool
 var haunted: bool = false
@@ -20,6 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	blindsOpen = $Blinds.blinds_open
 	if window_open and $Wind.playing==false:
 		$Wind.play_sound()
 	elif not window_open:

@@ -57,6 +57,7 @@ func choose_behavior() -> void:
 				target_list = [bathroom]
 			else:
 				#check blinds, sleep
+				blindsAreOpen = window.blindsOpen
 				if blindsPreferOpen == blindsAreOpen:
 					target_list = [bed]
 					asleep = true

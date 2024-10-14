@@ -859,6 +859,7 @@ libraries = {
 
 [node name="PPTimer" type="Timer" parent="."]
 one_shot = true
+
 [node name="Scream" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_00sp8")
 volume_db = -10.0
