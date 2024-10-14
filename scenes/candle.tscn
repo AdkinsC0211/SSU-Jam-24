@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c7x7tf27wyedy"]
+[gd_scene load_steps=16 format=4 uid="uid://b870eulebkoub"]
 
 [ext_resource type="Script" path="res://scripts/candle.gd" id="1_ii50k"]
 [ext_resource type="AudioStream" uid="uid://btvqawwa7a884" path="res://sounds/candle.ogg" id="2_1u5g1"]
