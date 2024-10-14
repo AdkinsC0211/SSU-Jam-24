@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://co0ff3j7vbabp"]
+[gd_scene load_steps=15 format=4 uid="uid://qw5ov3rtlx1w"]
 
 [ext_resource type="Script" path="res://scripts/hinged_door.gd" id="1_5if81"]
 [ext_resource type="Script" path="res://scripts/drawer.gd" id="1_c6x0g"]

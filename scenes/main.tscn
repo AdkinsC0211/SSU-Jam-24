@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_4xf7i"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_mwm7c"]
-[ext_resource type="PackedScene" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
-[ext_resource type="PackedScene" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
-[ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="8_rng1w"]
-[ext_resource type="PackedScene" path="res://scenes/mug.tscn" id="9_ial17"]
-[ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="9_jdxiq"]
-[ext_resource type="PackedScene" path="res://scenes/plate.tscn" id="10_mixt5"]
-[ext_resource type="PackedScene" uid="uid://dr62xavsfwvaj" path="res://scenes/tasks/sink_task.tscn" id="11_2nfgt"]
+[ext_resource type="PackedScene" uid="uid://qw5ov3rtlx1w" path="res://scenes/cabinet.tscn" id="4_g7j6u"]
+[ext_resource type="PackedScene" uid="uid://5wr2qsma7yp3" path="res://scenes/grandfatherclock.tscn" id="6_o4r36"]
+[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_rng1w"]
+[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_ial17"]
+[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="9_jdxiq"]
+[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_mixt5"]
+[ext_resource type="PackedScene" uid="uid://5bocqpuqphub" path="res://scenes/tasks/sink_task.tscn" id="11_2nfgt"]
 [ext_resource type="PackedScene" uid="uid://bdskpx45mgtyr" path="res://scenes/door.tscn" id="11_dthy1"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="12_ouoxv"]
 [ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="13_0fvoq"]
@@ -76,6 +76,8 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="world_root2" type="Node3D"]
 script = ExtResource("1_4xf7i")
+hours = null
+minutes = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)

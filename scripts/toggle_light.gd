@@ -3,7 +3,7 @@ class_name toggle_light
 
 var light_strength: int = 1
 var toggle: bool = true
-
+var spooky = false
 var preSpookedToggle := true
 
 # Called when the node enters the scene tree for the first time.
@@ -11,11 +11,16 @@ func _ready():
 	pass
 
 func spookify():
-	preSpookedToggle = toggle
-	$flickerTimer.start(0.25)
-	
+	if not spooky:
+		spooky = true
+		preSpookedToggle = toggle
+		$flickerTimer.start(0.25)
+		
 func unspookify():
-	toggle = preSpookedToggle
+	spooky = false
+	if not toggle == preSpookedToggle:
+		flip_state()
+	
 	$flickerTimer.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,9 +39,6 @@ func flip_state():
 	$Buzz.stop()
 	$Off.play()
 	
-	
-	
-
 
 func _on_flicker_timer_timeout() -> void:
-	toggle = !toggle
+	flip_state()

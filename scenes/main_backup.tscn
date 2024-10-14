@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="2_vurdn"]
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="3_a8av5"]
 [ext_resource type="PackedScene" uid="uid://qw5ov3rtlx1w" path="res://scenes/cabinet.tscn" id="4_2n140"]
-[ext_resource type="PackedScene" path="res://scenes/sink.tscn" id="5_mgihw"]
+[ext_resource type="PackedScene" uid="uid://blw7bjna5m2j8" path="res://scenes/sink.tscn" id="5_mgihw"]
 [ext_resource type="PackedScene" uid="uid://5wr2qsma7yp3" path="res://scenes/grandfatherclock.tscn" id="6_mwlh2"]
-[ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="7_kqkca"]
-[ext_resource type="PackedScene" path="res://scenes/cup.tscn" id="8_b1v6m"]
-[ext_resource type="PackedScene" path="res://scenes/mug.tscn" id="9_8ygo2"]
-[ext_resource type="PackedScene" path="res://scenes/plate.tscn" id="10_eokee"]
+[ext_resource type="PackedScene" uid="uid://dhki4y26bmqhi" path="res://scenes/bowl.tscn" id="7_kqkca"]
+[ext_resource type="PackedScene" uid="uid://uddve7mj41f8" path="res://scenes/cup.tscn" id="8_b1v6m"]
+[ext_resource type="PackedScene" uid="uid://2r5fggeblyik" path="res://scenes/mug.tscn" id="9_8ygo2"]
+[ext_resource type="PackedScene" uid="uid://cqyrkxyyjmot7" path="res://scenes/plate.tscn" id="10_eokee"]
 [ext_resource type="PackedScene" uid="uid://cwqeh00i8jcwj" path="res://scenes/tasks/bed_task.tscn" id="11_pktfj"]
-[ext_resource type="PackedScene" uid="uid://bj6ltbmqhhvig" path="res://scenes/big_cross.tscn" id="12_5radu"]
+[ext_resource type="PackedScene" path="res://scenes/big_cross.tscn" id="12_5radu"]
 [ext_resource type="PackedScene" uid="uid://dv1r3bxtxaj1q" path="res://scenes/table.tscn" id="12_78vc0"]
 [ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="13_0scs1"]
 
@@ -86,6 +86,8 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="world_root" type="Node3D"]
 script = ExtResource("1_4dm7v")
+hours = null
+minutes = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
