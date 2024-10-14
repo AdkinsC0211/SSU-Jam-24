@@ -163,4 +163,5 @@ func win():
 	get_tree().change_scene_to_file("res://scenes/WIN.tscn")
 	
 func die(): # lose
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://scenes/LOSE.tscn")
