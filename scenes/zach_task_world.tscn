@@ -45,12 +45,15 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wxvi2")
 
-[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "bed1", "bed2", "bed3", "bed4", "bed5", "bed6", "breaker") instance=ExtResource("4_dcdj3")]
+[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "window4", "window5", "window6", "bed1", "bed2", "bed3", "bed4", "bed5", "bed6", "breaker") instance=ExtResource("4_dcdj3")]
 rosary = NodePath("../rosary_root")
 dishes = NodePath("../sink_task_root")
 window1 = NodePath("../Window")
 window2 = NodePath("../Window2")
 window3 = NodePath("../Window3")
+window4 = NodePath("../Window4")
+window5 = NodePath("../Window5")
+window6 = NodePath("../Window6")
 bed1 = NodePath("../Node3D/bed_root_node")
 bed2 = NodePath("../Node3D/bed_root_node2")
 bed3 = NodePath("../Node3D/bed_root_node3")
@@ -116,3 +119,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80868, 5.01925, 4.5294)
 
 [node name="GrabbableStaticBody3D" parent="." instance=ExtResource("11_f7wk4")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.3175, 0.5, 0.532968)
+
+[node name="Window4" parent="." instance=ExtResource("7_8o5dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7982, 2.95089, -9.62549)
+blindsOpen = false
+spoopy_window = false
+interactMessage = "Press E to Interact"
+
+[node name="Window5" parent="." instance=ExtResource("7_8o5dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5848, 0, -8.47982)
+blindsOpen = false
+spoopy_window = false
+interactMessage = "Press E to Interact"
+
+[node name="Window6" parent="." instance=ExtResource("7_8o5dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7896, 6.20562, -9.55408)
+blindsOpen = false
+spoopy_window = false
+interactMessage = "Press E to Interact"
