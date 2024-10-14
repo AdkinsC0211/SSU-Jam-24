@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://scripts/Bedroom.gd" id="1_xx71d"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" groups=["rooms"]]
 script = ExtResource("1_xx71d")

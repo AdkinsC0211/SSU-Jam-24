@@ -39,7 +39,7 @@ func _process(delta):
 			$Water.stop()
 	
 # Virtual function that can be overridden by child classes
-func interact(body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	$Squeak.play()
 	doing_task = !doing_task
 	if body.name ==  "CharacterBody3D":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://we13p4es2pxs"]
+[gd_scene load_steps=27 format=4 uid="uid://we13p4es2pxs"]
 
 [ext_resource type="Script" path="res://scripts/child.gd" id="1_1gtr3"]
 [ext_resource type="AudioStream" uid="uid://dnx8ogx4l61yh" path="res://sounds/397686__piermic__little-girl-screaming.mp3" id="2_00sp8"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dq8yu5hpb40hm" path="res://sounds/footstep.ogg" id="3_k0gxf"]
 [ext_resource type="AudioStream" uid="uid://c0l28ktvwoy1q" path="res://sounds/kidcomplain.ogg" id="4_fuwb8"]
 [ext_resource type="AudioStream" uid="uid://1n7ude1airie" path="res://sounds/kidsnore.ogg" id="5_f1tac"]
+[ext_resource type="Script" path="res://scenes/Interactor.gd" id="7_k0tik"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0ebn6"]
 
@@ -880,6 +881,15 @@ volume_db = -16.0
 pitch_scale = 2.0
 script = ExtResource("2_c7wnu")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601242, 0)
+target_position = Vector3(0, 0, -2)
+script = ExtResource("7_k0tik")
+
+[node name="Timer" type="Timer" parent="RayCast3D"]
+one_shot = true
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="body_entered" from="plrDetector" to="." method="_on_plr_detector_body_entered"]
 [connection signal="timeout" from="PPTimer" to="." method="_on_pp_timer_timeout"]
+[connection signal="timeout" from="RayCast3D/Timer" to="RayCast3D" method="_on_timer_timeout"]

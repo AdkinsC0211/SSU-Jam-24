@@ -67,6 +67,9 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	$PPTimer.start(randi_range(120,1200))
 	$NavigationAgent3D.target_desired_distance = 7.5
+	scared = randi_range(0,1)
+	need2Pee = randi_range(0,1)
+	blindsPreferOpen = randi_range(0,1)
 
 # Find the closest unvisited target
 func find_closest_target() -> Node3D:
@@ -89,7 +92,7 @@ func _process(_delta: float) -> void:
 func die():
 	queue_free()
 
-func interact(_body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	followingPlr = false
 	scared = false
 

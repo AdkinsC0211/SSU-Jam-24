@@ -9,5 +9,5 @@ func _ready() -> void:
 	set_collision_mask_value(2, true)
 	
 # Virtual function that can be overridden by child classes
-func interact(body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	print("Base interact: ", body)

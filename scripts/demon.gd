@@ -22,6 +22,8 @@ func _on_timer_timeout() -> void:
 
 func _ready() -> void:
 	current_target = chooseTarget()
+	print("Demon Here")
+	$NavigationAgent3D.target_desired_distance = 3
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Player"):

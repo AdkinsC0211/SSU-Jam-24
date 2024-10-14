@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf5j6m32fdx3c"]
+[gd_scene load_steps=7 format=3 uid="uid://785pf6h3rpae"]
 
 [ext_resource type="Script" path="res://scripts/confession_booth.gd" id="1_6w36o"]
 [ext_resource type="PackedScene" uid="uid://cvascgm3jtw07" path="res://Meshes/ChurchObjects/Confessional.glb" id="2_qsjah"]

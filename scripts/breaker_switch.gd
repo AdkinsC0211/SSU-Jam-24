@@ -16,7 +16,7 @@ func _process(_delta):
 	pass
 	
 
-func interact(_body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	light_toggle = !light_toggle
 	$AnimationPlayer.active = true
 	if controlled_lights.get_child_count() > 0:

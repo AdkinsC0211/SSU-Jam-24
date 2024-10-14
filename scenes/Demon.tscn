@@ -26,6 +26,7 @@ shape = SubResource("SphereShape3D_3c4g2")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_pqh1h")
 surface_material_override/0 = SubResource("StandardMaterial3D_2kspd")
 

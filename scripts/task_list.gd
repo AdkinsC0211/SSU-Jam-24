@@ -1,6 +1,6 @@
 extends Node2D
 
-#@export var entrance : InteractableStaticBody3D
+@export var entrance : InteractableStaticBody3D
 @export var rosary : GrabbableStaticBody3D
 @export var dishes : WaitTimeTask
 @export var window1 : InteractableStaticBody3D
@@ -32,10 +32,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	#if entrance.locked == true:
-	#	$CanvasLayer/PaperTexture/BigContainer/TaskContainer/EntranceLabel.visible = false
-	#else:
-	#	$CanvasLayer/PaperTexture/BigContainer/TaskContainer/EntranceLabel.visible = true
+	if entrance.locked == true:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/EntranceLabel.visible = false
+	else:
+		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/EntranceLabel.visible = true
 	if rosary.canPray == false:
 		$CanvasLayer/PaperTexture/BigContainer/TaskContainer/RosaryPrayerLabel.visible = false
 	else:

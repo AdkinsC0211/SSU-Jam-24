@@ -13,7 +13,7 @@ func _process(_delta):
 	pass
 
 
-func interact(_body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	if haunted:
 		$Saved.play()
 	haunted = false

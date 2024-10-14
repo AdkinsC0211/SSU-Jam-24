@@ -1,8 +1,8 @@
-[gd_scene load_steps=120 format=3 uid="uid://b6glsxturcv22"]
+[gd_scene load_steps=119 format=3 uid="uid://b6glsxturcv22"]
 
 [ext_resource type="Texture2D" uid="uid://cwws0ox5m2nw" path="res://images/wood_wall.jpg" id="1_1nb0r"]
 [ext_resource type="Texture2D" uid="uid://5i0y45aq0w10" path="res://images/paperwall.jpg" id="1_3d32n"]
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_mf3km"]
+[ext_resource type="Script" path="res://scripts/orphanage.gd" id="1_id5dw"]
 [ext_resource type="PackedScene" uid="uid://brkxffodp8drd" path="res://scenes/player.tscn" id="1_ni8bi"]
 [ext_resource type="Texture2D" uid="uid://dnqxmo2hqsxvo" path="res://images/dirty.jpg" id="1_v8inn"]
 [ext_resource type="Material" uid="uid://bieg2msvqhve6" path="res://materials/stairs.tres" id="1_w3kjo"]
@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://l2278t5b11nf" path="res://scenes/bathroom_sink.tscn" id="7_wnfh0"]
 [ext_resource type="PackedScene" uid="uid://dyc07dxycsoh3" path="res://scenes/Double_door.tscn" id="7_xa3w4"]
 [ext_resource type="PackedScene" uid="uid://dsc7ar3g60ht4" path="res://scenes/pew.tscn" id="8_5xyxa"]
-[ext_resource type="PackedScene" uid="uid://785pf6h3rpae" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
+[ext_resource type="PackedScene" path="res://scenes/confession_booth.tscn" id="8_eb8u3"]
 [ext_resource type="PackedScene" uid="uid://bdwrw0erfiysh" path="res://scenes/pepper.tscn" id="8_xxscp"]
 [ext_resource type="PackedScene" uid="uid://be8hr3nvglm5t" path="res://scenes/salt.tscn" id="9_brttr"]
 [ext_resource type="Texture2D" uid="uid://bnjqr0aiw5555" path="res://images/brick.jpg" id="9_hdgge"]
@@ -47,7 +47,6 @@
 [ext_resource type="PackedScene" uid="uid://eykdqh3u5e1x" path="res://closet.tscn" id="28_0rv8j"]
 [ext_resource type="PackedScene" uid="uid://we13p4es2pxs" path="res://scenes/Child.tscn" id="30_2ytt0"]
 [ext_resource type="PackedScene" uid="uid://bf0scv8y2eu8o" path="res://scenes/tasks/window.tscn" id="31_nwjpp"]
-[ext_resource type="PackedScene" uid="uid://d3dvk6pan37c" path="res://scenes/music_box.tscn" id="38_uunmr"]
 [ext_resource type="PackedScene" uid="uid://c0dv0qd7wjwvv" path="res://scenes/Haunter.tscn" id="40_ugdkf"]
 [ext_resource type="PackedScene" uid="uid://bu1giwbtkvi2c" path="res://scenes/tasks/rosary.tscn" id="44_y56yl"]
 [ext_resource type="PackedScene" uid="uid://5bocqpuqphub" path="res://scenes/tasks/sink_task.tscn" id="45_ph0rk"]
@@ -259,8 +258,8 @@ albedo_texture = ExtResource("3_y4u5a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v62sp"]
 albedo_texture = ExtResource("3_y4u5a")
 
-[node name="world_root" type="Node3D" groups=["orphanage"]]
-script = ExtResource("1_mf3km")
+[node name="world_root" type="Node3D"]
+script = ExtResource("1_id5dw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -272,7 +271,7 @@ environment = SubResource("Environment_ga0bn")
 
 [node name="furniture_church" type="Node3D" parent="."]
 
-[node name="big_cross" parent="furniture_church" groups=["rooms"] instance=ExtResource("5_boc3o")]
+[node name="big_cross" parent="furniture_church" instance=ExtResource("5_boc3o")]
 transform = Transform3D(3.3, 0, 0, 0, 3.3, 0, 0, 0, 3.3, -41.6748, -5.3891, 0)
 
 [node name="podium" parent="furniture_church" instance=ExtResource("6_0n88v")]
@@ -280,8 +279,6 @@ transform = Transform3D(2.98122e-09, 0, -0.25, 0, 0.25, 0, 0.25, 0, 2.98122e-09,
 
 [node name="double_door" parent="furniture_church" instance=ExtResource("7_xa3w4")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 28.9841, -2.26296, 0)
-collision_layer = 3
-collision_mask = 3
 
 [node name="pews" type="Node3D" parent="furniture_church"]
 
@@ -420,7 +417,7 @@ transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 
 operation = 2
 size = Vector3(0.298706, 1.8, 1.2)
 
-[node name="kitchen" type="Node3D" parent="furniture_orphanage" groups=["rooms"]]
+[node name="kitchen" type="Node3D" parent="furniture_orphanage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0175, 1.51246, 7.86538)
 
 [node name="table" type="Node3D" parent="furniture_orphanage/kitchen"]
@@ -550,11 +547,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75248, -0.499718, -0.80610
 
 [node name="Bedroom" parent="furniture_orphanage/bedroom1" node_paths=PackedStringArray("bed1", "bed2", "closet", "window", "window2") instance=ExtResource("25_6nf26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.755327, -4.80105)
-bed1 = NodePath("../../../hauntable_tasks/bed_root_node3")
-bed2 = NodePath("../../../hauntable_tasks/bed_root_node4")
-closet = NodePath("../../../hauntable_tasks/Closet")
-window = NodePath("../../../hauntable_tasks/Window")
-window2 = NodePath("../../../hauntable_tasks/Window2")
+bed1 = NodePath("../bed_root_node")
+bed2 = NodePath("../bed_root_node2")
+closet = NodePath("../Closet")
+window = NodePath("../Window")
+window2 = NodePath("../Window2")
 
 [node name="chair9" parent="furniture_orphanage/bedroom1" instance=ExtResource("5_8vjjt")]
 transform = Transform3D(0.108103, 0, -0.0520938, 0, 0.12, 0, 0.0520938, 0, 0.108103, -1.47129, 0.749853, 1.089)
@@ -567,14 +564,20 @@ transform = Transform3D(1.43099e-09, 0, -0.12, 0, 0.12, 0, 0.12, 0, 1.43099e-09,
 
 [node name="Node3D" parent="furniture_orphanage/bedroom1" instance=ExtResource("28_0rv8j")]
 
+[node name="bed_root_node" parent="furniture_orphanage/bedroom1" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.75248, 0.499718, -3.81869)
+
+[node name="bed_root_node2" parent="furniture_orphanage/bedroom1" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.75248, 0.499718, -9.37639)
+
 [node name="InteractableRigidBody3D" parent="furniture_orphanage/bedroom1" node_paths=PackedStringArray("bedroom", "playerBedroom", "bed", "desk", "closet", "window", "kitchen", "bathroom", "church") instance=ExtResource("30_2ytt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711556, -1.03629)
 bedroom = NodePath("../Bedroom")
 playerBedroom = NodePath("../../bedroom3/PlayerBedroom")
-bed = NodePath("../../../hauntable_tasks/bed_root_node3")
+bed = NodePath("../bed_root_node")
 desk = NodePath("../StaticBody3D2")
-closet = NodePath("../../../hauntable_tasks/Closet")
-window = NodePath("../../../hauntable_tasks/Window")
+closet = NodePath("../Closet")
+window = NodePath("../Window")
 kitchen = NodePath("../../kitchen/chairs/chair3")
 bathroom = NodePath("../../../furniture_bathroomG/full_stall4")
 church = NodePath("../../../furniture_church/double_door")
@@ -584,25 +587,34 @@ scared = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711556, -0.786526)
 bedroom = NodePath("../Bedroom")
 playerBedroom = NodePath("../../bedroom3/PlayerBedroom")
-bed = NodePath("../../../hauntable_tasks/bed_root_node4")
+bed = NodePath("../bed_root_node2")
 desk = NodePath("../StaticBody3D2")
-closet = NodePath("../../../hauntable_tasks/Closet")
-window = NodePath("../../../hauntable_tasks/Window2")
+closet = NodePath("../Closet")
+window = NodePath("../Window2")
 kitchen = NodePath("../../kitchen/chairs/chair3")
 bathroom = NodePath("../../../furniture_bathroomG/full_stall4")
 church = NodePath("../../../furniture_church/double_door")
 scared = true
+
+[node name="Closet" parent="furniture_orphanage/bedroom1" instance=ExtResource("28_0rv8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74234, 1.70921, 1.71122)
+
+[node name="Window" parent="furniture_orphanage/bedroom1" instance=ExtResource("31_nwjpp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.03113, 3.94278, -9.32442)
+
+[node name="Window2" parent="furniture_orphanage/bedroom1" instance=ExtResource("31_nwjpp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.02413, 3.93475, -3.38033)
 
 [node name="bedroom2" type="Node3D" parent="furniture_orphanage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75248, -0.499718, 15.037)
 
 [node name="Bedroom" parent="furniture_orphanage/bedroom2" node_paths=PackedStringArray("bed1", "bed2", "closet", "window", "window2") instance=ExtResource("25_6nf26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.755327, -4.80105)
-bed1 = NodePath("../../../hauntable_tasks/bed_root_node5")
-bed2 = NodePath("../../../hauntable_tasks/bed_root_node6")
-closet = NodePath("../../../hauntable_tasks/Closet2")
-window = NodePath("../../../hauntable_tasks/Window3")
-window2 = NodePath("../../../hauntable_tasks/Window4")
+bed1 = NodePath("../bed_root_node")
+bed2 = NodePath("../bed_root_node2")
+closet = NodePath("../Closet")
+window = NodePath("../Window3")
+window2 = NodePath("../Window4")
 
 [node name="chair9" parent="furniture_orphanage/bedroom2" instance=ExtResource("5_8vjjt")]
 transform = Transform3D(0.108103, 0, -0.0520938, 0, 0.12, 0, 0.0520938, 0, 0.108103, -1.47129, 0.749853, 1.089)
@@ -615,14 +627,20 @@ transform = Transform3D(1.43099e-09, 0, -0.12, 0, 0.12, 0, 0.12, 0, 1.43099e-09,
 
 [node name="Node3D" parent="furniture_orphanage/bedroom2" instance=ExtResource("28_0rv8j")]
 
+[node name="bed_root_node" parent="furniture_orphanage/bedroom2" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.75248, 0.499718, -3.81869)
+
+[node name="bed_root_node2" parent="furniture_orphanage/bedroom2" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.75248, 0.499718, -9.37639)
+
 [node name="InteractableRigidBody3D" parent="furniture_orphanage/bedroom2" node_paths=PackedStringArray("bedroom", "playerBedroom", "bed", "desk", "closet", "window", "kitchen", "bathroom", "church") instance=ExtResource("30_2ytt0")]
 transform = Transform3D(1, 0, 0, 0, 0.985238, 0.17119, 0, -0.17119, 0.985238, 0, 0.711556, -0.152905)
 bedroom = NodePath("../Bedroom")
 playerBedroom = NodePath("../../bedroom3/PlayerBedroom")
-bed = NodePath("../../../hauntable_tasks/bed_root_node5")
+bed = NodePath("../bed_root_node")
 desk = NodePath("../StaticBody3D2")
-closet = NodePath("../../../hauntable_tasks/Closet2")
-window = NodePath("../../../hauntable_tasks/Window3")
+closet = NodePath("../Closet")
+window = NodePath("../Window3")
 kitchen = NodePath("../../kitchen/chairs/chair3")
 bathroom = NodePath("../../../furniture_bathroomG/full_stall4")
 church = NodePath("../../../furniture_church/double_door")
@@ -632,25 +650,34 @@ scared = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711556, 0)
 bedroom = NodePath("../Bedroom")
 playerBedroom = NodePath("../../bedroom3/PlayerBedroom")
-bed = NodePath("../../../hauntable_tasks/bed_root_node6")
+bed = NodePath("../bed_root_node2")
 desk = NodePath("../StaticBody3D2")
-closet = NodePath("../../../hauntable_tasks/Closet2")
-window = NodePath("../../../hauntable_tasks/Window4")
+closet = NodePath("../Closet")
+window = NodePath("../Window4")
 kitchen = NodePath("../../kitchen/chairs/chair3")
 bathroom = NodePath("../../../furniture_bathroomG/full_stall4")
 church = NodePath("../../../furniture_church/double_door")
 scared = true
+
+[node name="Closet" parent="furniture_orphanage/bedroom2" instance=ExtResource("28_0rv8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74234, 1.70921, 1.71122)
+
+[node name="Window3" parent="furniture_orphanage/bedroom2" instance=ExtResource("31_nwjpp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.03113, 3.94278, -9.01809)
+
+[node name="Window4" parent="furniture_orphanage/bedroom2" instance=ExtResource("31_nwjpp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.03113, 3.94278, -3.18036)
 
 [node name="bedroom3" type="Node3D" parent="furniture_orphanage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75248, -0.499718, 30.6846)
 
 [node name="Bedroom" parent="furniture_orphanage/bedroom3" node_paths=PackedStringArray("bed1", "bed2", "closet", "window", "window2") instance=ExtResource("25_6nf26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.755327, -4.80105)
-bed1 = NodePath("../../../hauntable_tasks/bed_root_node")
-bed2 = NodePath("../../../hauntable_tasks/bed_root_node2")
-closet = NodePath("../../../hauntable_tasks/Closet3")
-window = NodePath("../../../hauntable_tasks/Window5")
-window2 = NodePath("../../../hauntable_tasks/Window6")
+bed1 = NodePath("../bed_root_node")
+bed2 = NodePath("../bed_root_node2")
+closet = NodePath("../Closet")
+window = NodePath("../Window5")
+window2 = NodePath("../Window6")
 
 [node name="chair9" parent="furniture_orphanage/bedroom3" instance=ExtResource("5_8vjjt")]
 transform = Transform3D(0.108103, 0, -0.0520938, 0, 0.12, 0, 0.0520938, 0, 0.108103, -1.47129, 0.749853, 1.089)
@@ -663,14 +690,20 @@ transform = Transform3D(1.43099e-09, 0, -0.12, 0, 0.12, 0, 0.12, 0, 1.43099e-09,
 
 [node name="Node3D" parent="furniture_orphanage/bedroom3" instance=ExtResource("28_0rv8j")]
 
+[node name="bed_root_node" parent="furniture_orphanage/bedroom3" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.75248, 0.499718, -3.81869)
+
+[node name="bed_root_node2" parent="furniture_orphanage/bedroom3" instance=ExtResource("3_2f11t")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.75248, 0.499718, -9.37639)
+
 [node name="InteractableRigidBody3D" parent="furniture_orphanage/bedroom3" node_paths=PackedStringArray("bedroom", "playerBedroom", "bed", "desk", "closet", "window", "kitchen", "bathroom", "church") instance=ExtResource("30_2ytt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711556, -1.90415)
 bedroom = NodePath("../Bedroom")
 playerBedroom = NodePath("../PlayerBedroom")
-bed = NodePath("../../../hauntable_tasks/bed_root_node2")
+bed = NodePath("../bed_root_node2")
 desk = NodePath("../StaticBody3D2")
-closet = NodePath("../../../hauntable_tasks/Closet3")
-window = NodePath("../../../hauntable_tasks/Window5")
+closet = NodePath("../Closet")
+window = NodePath("../Window5")
 kitchen = NodePath("../../kitchen/chairs/chair3")
 bathroom = NodePath("../../../furniture_bathroomG/full_stall4")
 church = NodePath("../../../furniture_church/double_door")
@@ -680,14 +713,23 @@ scared = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114033, 0.866109, -0.861832)
 bedroom = NodePath("../Bedroom")
 playerBedroom = NodePath("../PlayerBedroom")
-bed = NodePath("../../../hauntable_tasks/bed_root_node")
+bed = NodePath("../bed_root_node")
 desk = NodePath("../StaticBody3D2")
-closet = NodePath("../../../hauntable_tasks/Closet3")
-window = NodePath("../../../hauntable_tasks/Window6")
+closet = NodePath("../Closet")
+window = NodePath("../Window6")
 kitchen = NodePath("../../kitchen/chairs/chair3")
 bathroom = NodePath("../../../furniture_bathroomG/full_stall4")
 church = NodePath("../../../furniture_church/double_door")
 scared = true
+
+[node name="Closet" parent="furniture_orphanage/bedroom3" instance=ExtResource("28_0rv8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75227, 1.75718, 1.72718)
+
+[node name="Window5" parent="furniture_orphanage/bedroom3" instance=ExtResource("31_nwjpp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.03113, 3.94278, -8.94048)
+
+[node name="Window6" parent="furniture_orphanage/bedroom3" instance=ExtResource("31_nwjpp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.03113, 3.94278, -3.17318)
 
 [node name="PlayerBedroom" type="Node3D" parent="furniture_orphanage/bedroom3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.999, 0.850187, 0)
@@ -695,7 +737,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.999, 0.850187, 0)
 [node name="furniture_bathroomG" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.4814, -11.3613, -13.3979)
 
-[node name="full_stall" type="Node3D" parent="furniture_bathroomG" groups=["rooms"]]
+[node name="full_stall" type="Node3D" parent="furniture_bathroomG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, 6.75599)
 
 [node name="StaticBody3D" parent="furniture_bathroomG/full_stall" instance=ExtResource("4_yk265")]
@@ -793,7 +835,7 @@ transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 
 [node name="furniture_bathroomB" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -97.4814, -11.3613, -13.3979)
 
-[node name="full_stall" type="Node3D" parent="furniture_bathroomB" groups=["rooms"]]
+[node name="full_stall" type="Node3D" parent="furniture_bathroomB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62278, 0, 5.10817)
 
 [node name="StaticBody3D" parent="furniture_bathroomB/full_stall" instance=ExtResource("4_yk265")]
@@ -890,10 +932,10 @@ transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 
 [node name="StaticBody3D8" parent="furniture_bathroomB/mirrors" instance=ExtResource("20_htaji")]
 transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 0.608688, 0.799399, -4.14623)
 
-[node name="furniture_storage1" type="Node3D" parent="." groups=["rooms"]]
+[node name="furniture_storage1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.189, -10.6419, 7.58728)
 
-[node name="furniture_shower" type="Node3D" parent="." groups=["rooms"]]
+[node name="furniture_shower" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.183, -12.8643, 9.2712)
 
 [node name="shower1" type="Node3D" parent="furniture_shower"]
@@ -985,7 +1027,7 @@ transform = Transform3D(5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, -1
 [node name="StaticBody3D" parent="furniture_shower/shower6" instance=ExtResource("24_qulpj")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.10847, 2.05245, -0.630239)
 
-[node name="furniture_shower2" type="Node3D" parent="." groups=["rooms"]]
+[node name="furniture_shower2" type="Node3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -120.724, -12.8643, -10.2724)
 
 [node name="shower1" type="Node3D" parent="furniture_shower2"]
@@ -1096,13 +1138,16 @@ transform = Transform3D(-0.425, 0, -3.71547e-08, 0, 0.425, 0, 3.71547e-08, 0, -0
 transform = Transform3D(-0.425, 0, -3.71547e-08, 0, 0.425, 0, 3.71547e-08, 0, -0.425, 10.2715, 21.9508, -18.0337)
 
 [node name="InteractableStaticBody3D6" parent="doors" instance=ExtResource("7_de6i3")]
-transform = Transform3D(-0.425, 0, -3.71547e-08, 0, 0.425, 0, 3.71547e-08, 0, -0.425, 9.75748, -0.0581884, 25.385)
+transform = Transform3D(-0.425, 0, -3.71547e-08, 0, 0.425, 0, 3.71547e-08, 0, -0.425, 9.75748, -0.0581884, 25.3849)
+open = true
 
 [node name="InteractableStaticBody3D7" parent="doors" instance=ExtResource("7_de6i3")]
 transform = Transform3D(-0.425, 0, -3.71547e-08, 0, 0.425, 0, 3.71547e-08, 0, -0.425, 9.75748, -0.0581884, 41.1713)
+open = true
 
 [node name="InteractableStaticBody3D8" parent="doors" instance=ExtResource("7_de6i3")]
 transform = Transform3D(-0.425, 0, -3.71547e-08, 0, 0.425, 0, 3.71547e-08, 0, -0.425, 9.75748, -0.0581884, 56.7838)
+open = true
 
 [node name="InteractableStaticBody3D9" parent="doors" instance=ExtResource("7_de6i3")]
 transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, -6.24423, -0.0581884, 66.5606)
@@ -1234,57 +1279,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.85, -4.42475, -40.315)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.339, -6.21715, 44.6275)
 controlled_lights = NodePath("../../light_manager")
 
-[node name="bed_root_node" parent="hauntable_tasks" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.014, -7.95645, 102.413)
-
-[node name="bed_root_node2" parent="hauntable_tasks" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.014, -7.95645, 96.8555)
-
-[node name="bed_root_node3" parent="hauntable_tasks" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.014, -7.95645, 70.9225)
-
-[node name="bed_root_node4" parent="hauntable_tasks" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.014, -7.95645, 65.3648)
-
-[node name="Closet" parent="hauntable_tasks" instance=ExtResource("28_0rv8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0039, -6.74696, 76.4524)
-
-[node name="Window" parent="hauntable_tasks" instance=ExtResource("31_nwjpp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.2926, -4.51339, 65.4168)
-
-[node name="Window2" parent="hauntable_tasks" instance=ExtResource("31_nwjpp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.2857, -4.52142, 71.3609)
-
-[node name="bed_root_node5" parent="hauntable_tasks" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.014, -7.95645, 86.7656)
-
-[node name="bed_root_node6" parent="hauntable_tasks" instance=ExtResource("3_2f11t")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.014, -7.95645, 81.2079)
-
-[node name="Closet2" parent="hauntable_tasks" instance=ExtResource("28_0rv8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0039, -6.74696, 92.2955)
-
-[node name="Window3" parent="hauntable_tasks" instance=ExtResource("31_nwjpp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.2926, -4.51339, 81.5662)
-
-[node name="Window4" parent="hauntable_tasks" instance=ExtResource("31_nwjpp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.2926, -4.51339, 87.4039)
-
-[node name="Closet3" parent="hauntable_tasks" instance=ExtResource("28_0rv8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0138, -6.69899, 107.959)
-
-[node name="Window5" parent="hauntable_tasks" instance=ExtResource("31_nwjpp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.2926, -4.51339, 97.2914)
-
-[node name="Window6" parent="hauntable_tasks" instance=ExtResource("31_nwjpp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.2926, -4.51339, 103.059)
-
 [node name="rosary_root" parent="." node_paths=PackedStringArray("cross") instance=ExtResource("44_y56yl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5483, -10.4062, 28.1307)
 cross = NodePath("../furniture_church/big_cross")
 
 [node name="sink_task_root" parent="." instance=ExtResource("45_ph0rk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3644, -12.2561, 52.3646)
+completion_time = null
+task_name = null
 
 [node name="ConfessionBooth" parent="." instance=ExtResource("8_eb8u3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.8685, -12.8357, -3.6023)
@@ -2089,30 +2091,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09185, 0.141467)
 operation = 2
 size = Vector3(1.405, 2.1403, 1.875)
 
-[node name="TaskList" parent="." node_paths=PackedStringArray("entrance", "rosary", "dishes", "window1", "window2", "window3", "window4", "window5", "window6", "bed1", "bed2", "bed3", "bed4", "bed5", "bed6", "closet1", "closet2", "closet3", "breaker") instance=ExtResource("51_3d6v5")]
-entrance = NodePath("../furniture_church/double_door")
+[node name="TaskList" parent="." node_paths=PackedStringArray("rosary", "dishes", "window1", "window2", "window3", "window4", "window5", "window6", "bed1", "bed2", "bed3", "bed4", "bed5", "bed6", "closet1", "closet2", "closet3", "breaker") instance=ExtResource("51_3d6v5")]
 rosary = NodePath("../rosary_root")
 dishes = NodePath("../sink_task_root")
-window1 = NodePath("../hauntable_tasks/Window")
-window2 = NodePath("../hauntable_tasks/Window2")
-window3 = NodePath("../hauntable_tasks/Window3")
-window4 = NodePath("../hauntable_tasks/Window4")
-window5 = NodePath("../hauntable_tasks/Window5")
-window6 = NodePath("../hauntable_tasks/Window6")
-bed1 = NodePath("../hauntable_tasks/bed_root_node3")
-bed2 = NodePath("../hauntable_tasks/bed_root_node4")
-bed3 = NodePath("../hauntable_tasks/bed_root_node5")
-bed4 = NodePath("../hauntable_tasks/bed_root_node6")
-bed5 = NodePath("../hauntable_tasks/bed_root_node")
-bed6 = NodePath("../hauntable_tasks/bed_root_node2")
-closet1 = NodePath("../hauntable_tasks/Closet")
-closet2 = NodePath("../hauntable_tasks/Closet2")
-closet3 = NodePath("../hauntable_tasks/Closet3")
+window1 = NodePath("../furniture_orphanage/bedroom1/Window")
+window2 = NodePath("../furniture_orphanage/bedroom1/Window2")
+window3 = NodePath("../furniture_orphanage/bedroom2/Window3")
+window4 = NodePath("../furniture_orphanage/bedroom2/Window4")
+window5 = NodePath("../furniture_orphanage/bedroom3/Window5")
+window6 = NodePath("../furniture_orphanage/bedroom3/Window6")
+bed1 = NodePath("../furniture_orphanage/bedroom1/bed_root_node")
+bed2 = NodePath("../furniture_orphanage/bedroom1/bed_root_node2")
+bed3 = NodePath("../furniture_orphanage/bedroom2/bed_root_node")
+bed4 = NodePath("../furniture_orphanage/bedroom2/bed_root_node2")
+bed5 = NodePath("../furniture_orphanage/bedroom3/bed_root_node")
+bed6 = NodePath("../furniture_orphanage/bedroom3/bed_root_node2")
+closet1 = NodePath("../furniture_orphanage/bedroom1/Closet")
+closet2 = NodePath("../furniture_orphanage/bedroom2/Closet")
+closet3 = NodePath("../furniture_orphanage/bedroom3/Closet")
 breaker = NodePath("../hauntable_tasks/Breaker")
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="GrabbableStaticBody3D" parent="." instance=ExtResource("38_uunmr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -67.3678, -12.7989, 55.951)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

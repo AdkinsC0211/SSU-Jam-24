@@ -45,14 +45,15 @@ func _on_break_open_delay_timeout():
 	$AnimationPlayer.play("open_window",-1,1,false)
 	$AnimationPlayer.speed_scale = 8
 	window_open = true
-	$Area3D.queue_free()
+	if $Area3D:
+		$Area3D.queue_free()
 	$Open.play_sound()
 	haunted = true
 	
 	$Timer.start()
 
 
-func interact(_body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	$AnimationPlayer.active = true
 	$AnimationPlayer.speed_scale = 1
 	one_for_the_one_time = true
@@ -74,10 +75,35 @@ func interact(_body: CharacterBody3D) -> void:
 func haunt():
 	_on_break_open_delay_timeout()
 
+var visited_targets = GameInfo.deadOrphans
+
+func kill_orphan():
+	var closest_target: Node3D = null
+	var min_distance: float = INF
+	
+	var target_list = get_tree().get_nodes_in_group("orphans")
+	if target_list:
+		for target in target_list:
+			if target in visited_targets:
+				continue  # Skip if already visited
+
+			var distance: float = global_position.distance_to(target.global_position)
+			if distance < min_distance:
+				min_distance = distance
+				closest_target = target
+		if not closest_target:
+			var player = get_tree().get_first_node_in_group("Player")
+			closest_target = player
+		closest_target.die()
+		visited_targets.append(closest_target)
+
 
 func _on_timer_timeout():
 	if haunted == true:
 		var demon = preload("res://scenes/Demon.tscn")
-		demon.instantiate()
-		demon.global_position = global_position
-		add_sibling(demon)
+		var thisDemon = demon.instantiate()
+		thisDemon.global_position = global_position
+		var Orphanage = get_tree().get_first_node_in_group("orphanage")
+		Orphanage.add_child(thisDemon)
+		haunted = false
+		kill_orphan()

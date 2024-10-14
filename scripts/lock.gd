@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 
-func interact(body: CharacterBody3D) -> void:
+func interact(body: Node3D) -> void:
 	if locked:
 		locked = false
 		$handle.rotate_z(deg_to_rad(90))

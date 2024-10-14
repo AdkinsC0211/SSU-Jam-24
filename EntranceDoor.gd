@@ -7,3 +7,4 @@ func _ready() -> void:
 
 func interact(body) -> void:
 	locked = true
+	interactMessage = "This Door is already Locked"
