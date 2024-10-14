@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_head_bobs(delta)
 	handle_fov_change(delta)
+	SENSITIVITY = GameInfo.sensitivity
 	handle_interactions()
 	#handle_quest_journal()
 	move_and_slide()
@@ -99,6 +100,7 @@ func handle_fov_change(delta: float) -> void:
 	var velocity_clamped = clamp(velocity.length(), 0.5, RUNSPEED * 2)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+	BASE_FOV = GameInfo.fov
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
